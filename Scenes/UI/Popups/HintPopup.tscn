@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://chdlorp6jhduw"]
+
+[ext_resource type="Script" uid="uid://bb0k4ajmkgn1s" path="res://Scripts/UI/hint_popup.gd" id="1_flatv"]
+[ext_resource type="Texture2D" uid="uid://c1ns7rrbgo2y4" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png" id="1_qu4ac"]
+[ext_resource type="Texture2D" uid="uid://dvjwa7xcsqm47" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png" id="2_2mxf1"]
+[ext_resource type="Script" path="res://Scripts/UI/ui_popup_animator.gd" id="2_symdr"]
+[ext_resource type="FontFile" uid="uid://dsqg6knw4gj3i" path="res://assets/Font/calibri/calibri-bold.ttf" id="3_kyohf"]
+[ext_resource type="Texture2D" uid="uid://bbc5lw6gbs3g0" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="4_tmc3y"]
+[ext_resource type="Texture2D" uid="uid://bubw0k6upg033" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665064.png" id="5_2mxf1"]
+[ext_resource type="Texture2D" uid="uid://lwniiet8sk2g" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665065.png" id="6_kyohf"]
+[ext_resource type="Texture2D" uid="uid://b1bubi14vhenh" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664622.png" id="6_tmc3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0beda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tipsq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w2oaf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ioc4q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxh44"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kj54i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oag7m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ps604"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyohf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmc3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxsie"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dfr0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62n0m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0lox"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x2hc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i711r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sja73"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6i48y"]
+
+[node name="HintPopup" type="Control" unique_id=2050146452]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_flatv")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=16009689]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.69803923, 0.6901961, 0.69411767, 0.5921569)
+
+[node name="HintPanel" type="Panel" parent="." unique_id=611864752]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -275.0
+offset_right = 425.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0beda")
+script = ExtResource("2_symdr")
+animation_style = 1
+animation_duration = 0.3
+
+[node name="Header" type="TextureRect" parent="HintPanel" unique_id=1341021594]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qu4ac")
+expand_mode = 1
+
+[node name="HintBg" type="TextureRect" parent="HintPanel/Header" unique_id=1213735246]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("2_2mxf1")
+expand_mode = 1
+
+[node name="HintLabel" type="Label" parent="HintPanel/Header/HintBg" unique_id=1679966909]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -33.0
+offset_right = 57.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_kyohf")
+theme_override_font_sizes/font_size = 95
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tipsq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w2oaf")
+text = "Hint"
+
+[node name="CloseButton" type="Button" parent="HintPanel/Header" unique_id=2002861485]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.0
+offset_top = 23.0
+offset_right = 283.0
+offset_bottom = 482.0
+grow_horizontal = 0
+scale = Vector2(0.35, 0.35)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ioc4q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wxh44")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kj54i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_oag7m")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ps604")
+icon = ExtResource("4_tmc3y")
+
+[node name="HintForPreview" type="Button" parent="HintPanel" unique_id=5534951]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298
+anchor_top = 0.66300005
+anchor_right = 0.298
+anchor_bottom = 0.66300005
+offset_left = -125.3
+offset_top = -124.650024
+offset_right = 873.7
+offset_bottom = 874.35
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kyohf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tmc3y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fxsie")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dfr0h")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_62n0m")
+icon = ExtResource("5_2mxf1")
+
+[node name="AD" type="TextureRect" parent="HintPanel/HintForPreview" unique_id=960138319]
+layout_mode = 0
+offset_left = 539.99994
+offset_top = 769.99994
+offset_right = 891.99994
+offset_bottom = 978.99994
+texture = ExtResource("6_tmc3y")
+
+[node name="HintForPathSolve" type="Button" parent="HintPanel" unique_id=174725882]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.697
+anchor_top = 0.66300005
+anchor_right = 0.697
+anchor_bottom = 0.66300005
+offset_left = -124.45001
+offset_top = -124.650024
+offset_right = 874.55
+offset_bottom = 874.35
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f0lox")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5x2hc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i711r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sja73")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6i48y")
+icon = ExtResource("6_kyohf")
+
+[node name="AD" type="TextureRect" parent="HintPanel/HintForPathSolve" unique_id=1001093652]
+layout_mode = 0
+offset_left = 539.99994
+offset_top = 769.99994
+offset_right = 891.99994
+offset_bottom = 978.99994
+texture = ExtResource("6_tmc3y")
+
+[connection signal="pressed" from="HintPanel/HintForPreview" to="." method="_on_hint_for_preview_pressed"]
+[connection signal="pressed" from="HintPanel/HintForPathSolve" to="." method="_on_hint_for_path_solve_pressed"]

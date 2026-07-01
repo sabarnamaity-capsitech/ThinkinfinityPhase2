@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="fhdfhinkfinity"
+run/main_scene="uid://bpif2p76x0uwo"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/image="uid://cn08k5y0c2h7o"
+config/icon="uid://b5w3h7cg3g7vx"
+boot_splash/minimum_display_time=4
+
+[autoload]
+
+SoundManager="*res://Scripts/Managers/SoundManager.gd"
+AdMob="*uid://dqv072e4anuua"
+NetworkManager="*uid://bytg7ropjdk5y"
+Analytics="*uid://baysfy0hpa7mo"
+Crashlytics="*uid://b50y6pe8dj0il"
+MetaSdk="*uid://dy2rmofy41ut5"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=2392
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/godotx_firebase/plugin.cfg", "res://addons/mytool/plugin.cfg")
+
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://translations/ThinkfinityLabels.ar.translation", "res://translations/ThinkfinityLabels.en.translation", "res://translations/ThinkfinityLabels.es.translation", "res://translations/ThinkfinityLabels.fr.translation", "res://translations/ThinkfinityLabels.pt_BR.translation", "res://translations/ThinkfinityLabels.ru.translation")
+locale/translation_add_builtin_strings_to_pot=true
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

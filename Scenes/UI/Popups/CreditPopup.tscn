@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://cdi5ai0pi2abu"]
+
+[ext_resource type="Script" path="res://Scripts/UI/credit_popup.gd" id="1_vopj6"]
+[ext_resource type="Script" path="res://Scripts/UI/ui_popup_animator.gd" id="2_lxlme"]
+[ext_resource type="Texture2D" uid="uid://bedxrs7vafb6y" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png" id="3_dor3b"]
+[ext_resource type="Texture2D" uid="uid://c1gc8nrwo1sy7" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png" id="4_sh0wv"]
+[ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="5_srsxd"]
+[ext_resource type="FontFile" uid="uid://dkrjae17mgjlv" path="res://assets/Font/calibri/calibri-regular.ttf" id="6_57kfa"]
+[ext_resource type="Texture2D" uid="uid://r5ebcr8sl1ad" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="6_83pu1"]
+[ext_resource type="FontFile" uid="uid://p5qavy5gmq1" path="res://assets/Font/calibri/calibri-bold-italic.ttf" id="7_vopj6"]
+[ext_resource type="FontFile" uid="uid://1f4jy6r2t6i5" path="res://assets/Font/calibri/calibri-italic.ttf" id="8_lxlme"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dor3b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sh0wv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_srsxd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_83pu1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txuoy"]
+
+[node name="CreditPopup" type="Control" unique_id=2050146452]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vopj6")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=16009689]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.69803923, 0.6901961, 0.69411767, 0.5921569)
+
+[node name="CreditPanel" type="Panel" parent="." unique_id=1889062611]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_lxlme")
+animation_style = 1
+animation_duration = 0.3
+
+[node name="PanelBG" type="TextureRect" parent="CreditPanel" unique_id=1320264466]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -430.0
+offset_top = -510.0
+offset_right = 430.0
+offset_bottom = 510.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dor3b")
+expand_mode = 1
+
+[node name="HeaderBG" type="TextureRect" parent="CreditPanel/PanelBG" unique_id=1759261196]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("4_sh0wv")
+expand_mode = 1
+
+[node name="LABEL" type="Label" parent="CreditPanel/PanelBG/HeaderBG" unique_id=1786020350]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -46.0
+offset_right = 199.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_srsxd")
+theme_override_font_sizes/font_size = 95
+text = "CREDIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="CreditPanel/PanelBG" unique_id=427223223]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -174.0
+offset_top = 16.999998
+offset_right = 285.0
+offset_bottom = 476.0
+grow_horizontal = 0
+scale = Vector2(0.35, 0.35)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dor3b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sh0wv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_srsxd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_83pu1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_txuoy")
+icon = ExtResource("6_83pu1")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CreditPanel/PanelBG" unique_id=1967931685]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.57600003
+anchor_right = 0.5
+anchor_bottom = 0.57600003
+offset_left = -375.0
+offset_top = -339.52002
+offset_right = 375.0
+offset_bottom = 340.47998
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditPanel/PanelBG/ScrollContainer" unique_id=1706507998]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_57kfa")
+theme_override_fonts/bold_font = ExtResource("5_srsxd")
+theme_override_fonts/bold_italics_font = ExtResource("7_vopj6")
+theme_override_fonts/italics_font = ExtResource("8_lxlme")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[b][font_size=40]This game uses Godot Engine, available under the following license:[/font_size][/b]
+ 
+[i][font_size=30]Copyright (c) 2014-present Godot Engine contributors. 
+Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.[/font_size][/i]
+ 
+[font_size=34]Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.[/font_size]
+ 
+[font_size=34][color=darkslategray]THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.[/color][/font_size]"

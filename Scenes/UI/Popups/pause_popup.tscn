@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://cucyfpe03a067"]
+
+[ext_resource type="Texture2D" uid="uid://c1ns7rrbgo2y4" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png" id="1_0kial"]
+[ext_resource type="Script" uid="uid://c6242rtsr74lw" path="res://Scripts/UI/pause_popup.gd" id="1_kppeh"]
+[ext_resource type="Texture2D" uid="uid://dvjwa7xcsqm47" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png" id="2_1mxf4"]
+[ext_resource type="Script" path="res://Scripts/UI/ui_popup_animator.gd" id="2_17idv"]
+[ext_resource type="FontFile" uid="uid://dsqg6knw4gj3i" path="res://assets/Font/calibri/calibri-bold.ttf" id="3_jvtvr"]
+[ext_resource type="Texture2D" uid="uid://bbc5lw6gbs3g0" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="4_ggjmr"]
+[ext_resource type="Texture2D" uid="uid://mpeuv81x0y3q" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665043.png" id="5_ljlg6"]
+[ext_resource type="Texture2D" uid="uid://dpy4d2f3xuofb" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (3).png" id="6_jmnap"]
+[ext_resource type="Texture2D" uid="uid://c0umdmlmscrc3" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (1).png" id="7_ljlg6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rno0m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tktv3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5rjie"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p7k78"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8o8tm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4y2y4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ljlg6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jmnap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmkfd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4q1u3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2n0f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xn3f1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usoy7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eurmw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6jb1f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bw7x5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmfu8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_isivl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gr37x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjn4f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8jiu"]
+
+[node name="PausePopup" type="Control" unique_id=1497417389 node_paths=PackedStringArray("_restartBtn")]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kppeh")
+_restartBtn = NodePath("PausePanel/RestartButton")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=322419925]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.69803923, 0.6901961, 0.69411767, 0.5921569)
+
+[node name="PausePanel" type="Panel" parent="." unique_id=1140009299]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -310.0
+offset_right = 425.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rno0m")
+script = ExtResource("2_17idv")
+animation_style = 1
+animation_duration = 0.3
+
+[node name="Header" type="TextureRect" parent="PausePanel" unique_id=286963418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0kial")
+expand_mode = 1
+
+[node name="TitleBg" type="TextureRect" parent="PausePanel/Header" unique_id=657852323]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("2_1mxf4")
+expand_mode = 1
+
+[node name="TitleLabel" type="Label" parent="PausePanel/Header/TitleBg" unique_id=1620801058]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_jvtvr")
+theme_override_font_sizes/font_size = 95
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="PausePanel/Header" unique_id=1905235292]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -171.0
+offset_top = 17.0
+offset_right = 288.0
+offset_bottom = 476.0
+grow_horizontal = 0
+scale = Vector2(0.35, 0.35)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tktv3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5rjie")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p7k78")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8o8tm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4y2y4")
+icon = ExtResource("4_ggjmr")
+
+[node name="HomeButton" type="Button" parent="PausePanel" unique_id=936773564]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.209
+anchor_top = 0.642
+anchor_right = 0.209
+anchor_bottom = 0.642
+offset_left = -123.65001
+offset_top = -124.04001
+offset_right = 867.35
+offset_bottom = 866.95996
+grow_horizontal = 0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ljlg6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jmnap")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pmkfd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4q1u3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p2n0f")
+icon = ExtResource("5_ljlg6")
+
+[node name="ResumeButton" type="Button" parent="PausePanel" unique_id=1336686988]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.64100003
+anchor_right = 0.5
+anchor_bottom = 0.64100003
+offset_left = -151.0
+offset_top = -147.42001
+offset_right = 904.0
+offset_bottom = 907.57996
+scale = Vector2(0.28, 0.28)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xn3f1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_usoy7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eurmw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6jb1f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bw7x5")
+icon = ExtResource("6_jmnap")
+
+[node name="RestartButton" type="Button" parent="PausePanel" unique_id=741896364]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.814
+anchor_top = 0.62600005
+anchor_right = 0.814
+anchor_bottom = 0.62600005
+offset_left = -113.900024
+offset_top = -114.120026
+offset_right = 877.1
+offset_bottom = 876.88
+scale = Vector2(0.23, 0.23)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hmfu8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_isivl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gr37x")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qjn4f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h8jiu")
+icon = ExtResource("7_ljlg6")

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dpyn6j46upwyn"]
+
+[ext_resource type="Texture2D" uid="uid://bbcl502jxm0n2" path="res://assets/ThinkfinityAsset/Art/Smoke/confetti_large.png" id="1_msqth"]
+
+[sub_resource type="Curve" id="Curve_msqth"]
+_data = [Vector2(0.013015188, 0.14893621), 0.0, 0.0, 0, 0, Vector2(0.55531454, 0.5957447), 0.5807665, 0.5807665, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wcije"]
+curve = SubResource("Curve_msqth")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wcije"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 28.09
+angle_min = -89.99999
+angle_max = 45.00001
+direction = Vector3(-1, -1, 0)
+spread = 28.56
+initial_velocity_min = 54.0
+initial_velocity_max = 135.0
+angular_velocity_min = -45.000015
+angular_velocity_max = 44.999985
+gravity = Vector3(-50, -98, 0)
+scale_min = 0.19999999
+scale_max = 0.59999996
+scale_curve = SubResource("CurveTexture_wcije")
+
+[node name="WinParticleRight" type="GPUParticles2D" unique_id=2129364974]
+position = Vector2(907, 1303)
+emitting = false
+amount = 20
+texture = ExtResource("1_msqth")
+lifetime = 3.25
+preprocess = 0.85
+speed_scale = 4.74
+explosiveness = 0.15
+randomness = 0.14
+process_material = SubResource("ParticleProcessMaterial_wcije")

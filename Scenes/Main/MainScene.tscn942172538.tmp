@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bpif2p76x0uwo"]
+
+[ext_resource type="Script" uid="uid://13pvno42m6sr" path="res://assets/Scripts/Main/LevelGenerator.gd" id="2_levelgen"]
+
+[node name="MainScene" type="Node2D" unique_id=1611358075]
+
+[node name="DataManager" type="Node2D" parent="." unique_id=1488437963]
+
+[node name="LevelGenerator" type="Node2D" parent="." unique_id=104053075]
+script = ExtResource("2_levelgen")
+
+[node name="GameManager" type="Node" parent="." unique_id=749240246]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1648754347]
+position = Vector2(540, 960)

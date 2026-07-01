@@ -1,0 +1,12 @@
+res://Scenes/Main/ui_manager.gd
+res://Scenes/UI/popup_panel_main.gd
+res://Scenes/Main/MainScene.tscn
+res://Scenes/UI/popup_panelMain.tscn
+res://Scripts/UI/game_scene_ui.gd
+res://Scripts/UI/preview_overlay.gd
+res://Scripts/UI/main_menu_scene.gd
+res://Scripts/UI/level_scene.gd
+res://Scripts/UI/settings_popup.gd
+res://Scripts/Main/LevelGenerator.gd
+res://Scenes/UI/Popups/SettingsPopup.tscn
+res://Scenes/UI/GameSceneUI.tscn

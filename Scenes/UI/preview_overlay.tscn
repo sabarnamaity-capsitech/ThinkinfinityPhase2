@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://byi74ed4ag6ib"]
+
+[ext_resource type="Script" uid="uid://bi1s8nmpsbs86" path="res://Scripts/UI/preview_overlay.gd" id="1_0rnsl"]
+[ext_resource type="Texture2D" uid="uid://cu14mogrqjnun" path="res://assets/ThinkfinityAsset/Art/LevelFrame/Frame 2085664936.png" id="2_h6y4t"]
+[ext_resource type="Texture2D" uid="uid://bbqctcubdk8o6" path="res://assets/ThinkfinityAsset/Art/Group 2085664595.png" id="3_wgml3"]
+[ext_resource type="Texture2D" uid="uid://fokqq45sv8fb" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Group 2085664954 (1).png" id="5_egmet"]
+[ext_resource type="Texture2D" uid="uid://bwpe6ia0j0kxj" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Vector (5).png" id="6_l3fs1"]
+[ext_resource type="Texture2D" uid="uid://dkr8o4mdr8da5" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/loader.png" id="7_nypxd"]
+[ext_resource type="Texture2D" uid="uid://didmaq111715m" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666221.png" id="8_h6y4t"]
+[ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="8_qix8a"]
+
+[node name="PreviewOverlay" type="Control" unique_id=2099259832 node_paths=PackedStringArray("levelNumber", "bg")]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0rnsl")
+levelNumber = NodePath("Level/LevelNumber")
+bg = NodePath("Bg")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=272147962]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h6y4t")
+expand_mode = 1
+
+[node name="PreviewImage" type="TextureRect" parent="." unique_id=340543304]
+custom_minimum_size = Vector2(800, 800)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wgml3")
+expand_mode = 1
+
+[node name="Clock" type="TextureRect" parent="." unique_id=544588336]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_top = 233.68
+offset_right = 57.0
+offset_bottom = 373.6806
+grow_horizontal = 2
+texture = ExtResource("5_egmet")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="hand" type="TextureRect" parent="Clock" unique_id=1586201137]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.75
+offset_top = -21.830017
+offset_right = 8.0
+offset_bottom = 15.169983
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(7.75, 30)
+texture = ExtResource("6_l3fs1")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="loader" type="TextureProgressBar" parent="Clock" unique_id=1057524879]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -41.83002
+offset_right = 48.0
+offset_bottom = 58.169975
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 4
+texture_progress = ExtResource("7_nypxd")
+
+[node name="Level" type="TextureRect" parent="." unique_id=941949000]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_top = 104.0
+offset_right = 131.0
+offset_bottom = 189.0
+grow_horizontal = 2
+texture = ExtResource("8_h6y4t")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="LevelNumber" type="Label" parent="Level" unique_id=801451953]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -42.5
+offset_right = 100.5
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_qix8a")
+theme_override_font_sizes/font_size = 45
+text = "Label"
+horizontal_alignment = 1
+vertical_alignment = 1

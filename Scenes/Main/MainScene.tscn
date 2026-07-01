@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bpif2p76x0uwo"]
+
+[ext_resource type="Texture2D" uid="uid://cu14mogrqjnun" path="res://assets/ThinkfinityAsset/Art/LevelFrame/Frame 2085664936.png" id="1_fwn18"]
+[ext_resource type="Texture2D" uid="uid://c1tv8u7lviylp" path="res://assets/ThinkfinityAsset/Art/10382282-removebg-preview.png" id="2_6epw3"]
+[ext_resource type="Script" uid="uid://32j1a7njl6so" path="res://Scripts/Main/Car.gd" id="3_gow0r"]
+[ext_resource type="PackedScene" uid="uid://bwmis87abtqgp" path="res://assets/ThinkfinityAsset/Art/Smoke/smoke.tscn" id="4_60yff"]
+[ext_resource type="Script" uid="uid://13pvno42m6sr" path="res://Scripts/Main/LevelGenerator.gd" id="5_e1a1m"]
+[ext_resource type="PackedScene" uid="uid://cbmot8wafocy1" path="res://tile.tscn" id="7_6epw3"]
+[ext_resource type="Script" uid="uid://c15urw73iou2u" path="res://Scripts/Main/Hint.gd" id="7_y53yf"]
+[ext_resource type="Texture2D" uid="uid://bl0wp7rjr71w4" path="res://assets/ThinkfinityAsset/Art/LevelSprite/Group 2085664553.png" id="8_dc2gf"]
+[ext_resource type="PackedScene" uid="uid://bsy7dxu57gy7v" path="res://Scenes/UI/UiMain.tscn" id="9_dc2gf"]
+[ext_resource type="Texture2D" uid="uid://2fbte1bxv3u2" path="res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 1.png" id="9_ox8ul"]
+[ext_resource type="PackedScene" uid="uid://byi74ed4ag6ib" path="res://Scenes/UI/preview_overlay.tscn" id="10_ox8ul"]
+[ext_resource type="Texture2D" uid="uid://b5q4e05dpu8id" path="res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 3.png" id="10_yp3fl"]
+[ext_resource type="Texture2D" uid="uid://ca0mgh4awlwa2" path="res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 2.png" id="11_2rprw"]
+[ext_resource type="PackedScene" uid="uid://cde4fwobn5rft" path="res://Scenes/UI/confetti_burst.tscn" id="11_6epw3"]
+[ext_resource type="Script" uid="uid://vr4ivet3krl4" path="res://Scripts/Main/GameManager.gd" id="12_e1a1m"]
+[ext_resource type="PackedScene" uid="uid://dqweavmudjsuw" path="res://Scenes/UI/GameSceneUI.tscn" id="12_gow0r"]
+[ext_resource type="Texture2D" uid="uid://cjtpcliybuimb" path="res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 4.png" id="12_vxa78"]
+[ext_resource type="Texture2D" uid="uid://b3t0o4cw8stsi" path="res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 5.png" id="13_ntl8m"]
+[ext_resource type="Script" uid="uid://ch8vvfr51cp18" path="res://Scenes/Main/ui_manager.gd" id="17_vxa78"]
+[ext_resource type="PackedScene" uid="uid://bh56gkvpopkkm" path="res://Scenes/UI/MainMenuScene.tscn" id="18_vxa78"]
+[ext_resource type="PackedScene" uid="uid://dl3egsnnsadmu" path="res://Scenes/UI/LevelScene.tscn" id="20_ntl8m"]
+[ext_resource type="PackedScene" uid="uid://c0qikmuxme82f" path="res://Scenes/UI/popup_panelMain.tscn" id="22_vxa78"]
+
+[node name="GamePlayScene" type="Node2D" unique_id=1611358075]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=418139013]
+position = Vector2(560.9999, 1181)
+enabled = false
+zoom = Vector2(1.46, 1.46)
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1477208765]
+visible = false
+z_index = -2
+position = Vector2(540.49994, 959.5)
+scale = Vector2(0.24976853, 0.2501302)
+texture = ExtResource("1_fwn18")
+
+[node name="Car" type="Sprite2D" parent="." unique_id=1318883695 node_paths=PackedStringArray("car", "winConfeti", "smoke")]
+z_index = 2
+position = Vector2(-657, -120.99999)
+scale = Vector2(0.061, 0.055)
+texture = ExtResource("2_6epw3")
+script = ExtResource("3_gow0r")
+car = NodePath(".")
+winConfeti = NodePath("ConfettiBurst")
+smoke = NodePath("Smoke")
+
+[node name="Smoke" parent="Car" unique_id=439366083 instance=ExtResource("4_60yff")]
+position = Vector2(-0.00046348572, 199.99985)
+sub_emitter = NodePath(".")
+
+[node name="ConfettiBurst" parent="Car" unique_id=46963208 instance=ExtResource("11_6epw3")]
+z_index = 4
+position = Vector2(16327.867, 17090.908)
+scale = Vector2(16.393442, 18.181818)
+emitting = false
+lifetime = 0.45
+one_shot = true
+speed_scale = 0.6
+
+[node name="LevelGenerator" type="Node2D" parent="." unique_id=104053075 node_paths=PackedStringArray("grid_area")]
+script = ExtResource("5_e1a1m")
+tile_scene = ExtResource("7_6epw3")
+grid_area = NodePath("../UIManager/GameSceneUI/Control")
+dead_end = ExtResource("8_dc2gf")
+straight = ExtResource("9_ox8ul")
+corner = ExtResource("10_yp3fl")
+t = ExtResource("11_2rprw")
+cross = ExtResource("12_vxa78")
+circle = ExtResource("13_ntl8m")
+
+[node name="Hint" type="Node2D" parent="." unique_id=90046519]
+script = ExtResource("7_y53yf")
+
+[node name="GameManager" type="Node2D" parent="." unique_id=1264755453 node_paths=PackedStringArray("level_generator")]
+script = ExtResource("12_e1a1m")
+level_generator = NodePath("../LevelGenerator")
+
+[node name="UiMain" parent="." unique_id=23609706 instance=ExtResource("9_dc2gf")]
+
+[node name="UIManager" type="CanvasLayer" parent="." unique_id=1116174838 node_paths=PackedStringArray("main_menu", "game_scene", "level_scene", "preview_overlay", "popup_manager")]
+script = ExtResource("17_vxa78")
+main_menu = NodePath("MainMenu")
+game_scene = NodePath("GameSceneUI")
+level_scene = NodePath("LevelScene")
+preview_overlay = NodePath("PreviewOverlay")
+popup_manager = NodePath("../CanvasLayer/PopupPanel")
+
+[node name="MainMenu" parent="UIManager" unique_id=60258633 instance=ExtResource("18_vxa78")]
+
+[node name="GameSceneUI" parent="UIManager" unique_id=1981980151 instance=ExtResource("12_gow0r")]
+visible = false
+mouse_filter = 0
+
+[node name="LevelScene" parent="UIManager" unique_id=723355462 instance=ExtResource("20_ntl8m")]
+visible = false
+
+[node name="PreviewOverlay" parent="UIManager" unique_id=2099259832 instance=ExtResource("10_ox8ul")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1453976824]
+layer = 2
+
+[node name="PopupPanel" parent="CanvasLayer" unique_id=1120987855 instance=ExtResource("22_vxa78")]
+z_index = 3
+mouse_filter = 2
+
+[editable path="UIManager/GameSceneUI"]

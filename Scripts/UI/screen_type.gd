@@ -1,0 +1,20 @@
+extends Node
+class_name ScreenType
+
+enum Screen {
+	NONE,
+	MAIN_MENU,
+	LEVEL_SCREEN,
+	GAME_HUD
+	
+}
+enum popup
+{   NONE,
+	SETTINGS_POPUP,
+	TUTORIAL_POPUP,
+	WIN_POPUP,
+	LOSE_POPUP,
+	HINT_POPUP,
+	PAUSE_POPUP,
+	CREDIT_POPUP
+}

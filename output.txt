@@ -1,0 +1,6 @@
+Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+
+C:/Users/CT_USER/AppData/Roaming/Godot/app_userdata/Thinkfinity/gamedata.dat
+Loaded successfully (DAT)
+Loaded 3 levels.
+Current Platform : Windows

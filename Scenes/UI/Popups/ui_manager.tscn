@@ -1,0 +1,971 @@
+[gd_scene format=3 uid="uid://b573jmjebpy6t"]
+
+[ext_resource type="Script" uid="uid://1exsnp56mqum" path="res://Scripts/UI/UIManager.gd" id="1_c865o"]
+[ext_resource type="Texture2D" uid="uid://bxqspo0ueffcb" path="res://assets/New Prefab/LoginPanel/Background.png" id="3_i38ch"]
+[ext_resource type="Texture2D" uid="uid://cafgysxpn62vg" path="res://assets/New Prefab/LoginPanel/Skipbutton.png" id="4_x3vkm"]
+[ext_resource type="Texture2D" uid="uid://cwlifoend4h1g" path="res://assets/New Prefab/LoginPanel/GameText.png" id="5_103pp"]
+[ext_resource type="Script" uid="uid://b7jvnhvmmo6v8" path="res://Scripts/UI/SettingPopUpController.gd" id="6_48qad"]
+[ext_resource type="Texture2D" uid="uid://x42l0yo4gyvx" path="res://assets/New Prefab/LoginPanel/GameCentre.png" id="6_rctno"]
+[ext_resource type="Texture2D" uid="uid://cwpu2fx4tsgre" path="res://assets/New Prefab/LoginPanel/Profile.png" id="7_e5fhf"]
+[ext_resource type="Texture2D" uid="uid://bs1yf6s5qrew5" path="res://assets/New Prefab/LoginPanel/Add.png" id="8_x3vkm"]
+[ext_resource type="Script" uid="uid://bq73j2g37wts2" path="res://Scripts/UI/HomePanelController.gd" id="9_2n5bx"]
+[ext_resource type="Texture2D" uid="uid://bg4m0akn0sx34" path="res://assets/New Prefab/Game Panel/Score Box.png" id="11_rctno"]
+[ext_resource type="Texture2D" uid="uid://4oebck85wurm" path="res://assets/New Prefab/Game Panel/Coin.png" id="12_e5fhf"]
+[ext_resource type="Texture2D" uid="uid://b84y556a3641g" path="res://assets/New Prefab/Game Panel/SettingButton.png" id="13_e5fhf"]
+[ext_resource type="Texture2D" uid="uid://dnxr8xmjli1gf" path="res://assets/Sprite/UI/board/main board .png" id="13_tt62i"]
+[ext_resource type="Texture2D" uid="uid://8ou7ho4doiin" path="res://assets/Sprite/UI/board/board top.png" id="14_rmjt4"]
+[ext_resource type="Texture2D" uid="uid://bbgraprtuoxbw" path="res://assets/Sprite/UI/spund on.png" id="14_rnhox"]
+[ext_resource type="Texture2D" uid="uid://b5qmtfk243xjq" path="res://assets/New Prefab/Game Panel/ShopButton.png" id="14_whyg7"]
+[ext_resource type="Texture2D" uid="uid://u4jtgbuxyilr" path="res://assets/Sprite/UI/music on.png" id="15_nxvt1"]
+[ext_resource type="Texture2D" uid="uid://dkx2e1gpvk3k3" path="res://assets/New Prefab/Game Panel/LeftButton.png" id="15_oaku6"]
+[ext_resource type="Texture2D" uid="uid://chvc7jj546ft" path="res://assets/New Prefab/Game Panel/Bar.png" id="15_qo5j5"]
+[ext_resource type="Texture2D" uid="uid://ct0to8vqlyqkm" path="res://assets/Sprite/UI/Revive panel/button.png" id="15_rmjt4"]
+[ext_resource type="Texture2D" uid="uid://cwnpp43ys4hux" path="res://assets/New Prefab/Game Panel/Hand.png" id="16_4c20f"]
+[ext_resource type="Texture2D" uid="uid://bfgtju8kdsjot" path="res://assets/Sprite/UI/Delete Logo.png" id="16_6blw0"]
+[ext_resource type="Texture2D" uid="uid://masuylmmuqq4" path="res://assets/New Prefab/Game Panel/ModeButton.png" id="16_rspck"]
+[ext_resource type="Texture2D" uid="uid://kxdm5bdan0lt" path="res://assets/New Prefab/Game Panel/RightButton.png" id="17_qo5j5"]
+[ext_resource type="Script" uid="uid://dagpjrt0tu5gp" path="res://Scripts/UI/GameOverPopUpController.gd" id="19_2n5bx"]
+[ext_resource type="Script" uid="uid://b3xungg7hqxr0" path="res://Scripts/UI/PopUpPanelController.gd" id="19_103pp"]
+[ext_resource type="Texture2D" uid="uid://dql6ri6ktwdaf" path="res://assets/Sprite/UI/fileflies board.png" id="19_g7bxj"]
+[ext_resource type="Script" uid="uid://bei5axbn3qdv5" path="res://Scripts/UI/GamePanelController.gd" id="20_5jb3p"]
+[ext_resource type="Texture2D" uid="uid://d2oog5mu2ykw8" path="res://assets/Sprite/New Prefab/PopUps/GameOverPopUp/Rectangle.png" id="21_eop77"]
+[ext_resource type="Texture2D" uid="uid://c17y1i1tagula" path="res://assets/Sprite/New Prefab/PopUps/GameOverPopUp/Home.png" id="22_2n5bx"]
+[ext_resource type="Texture2D" uid="uid://c33uhgvvaocik" path="res://assets/Sprite/New Prefab/PopUps/GameOverPopUp/Replay.png" id="23_g7bxj"]
+[ext_resource type="Texture2D" uid="uid://bxqwvhebwlbbn" path="res://assets/New Prefab/PopUp/PopUp Board.png" id="34_qo5j5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vhvx"]
+
+[node name="UIManager" type="Control" unique_id=2038655336 node_paths=PackedStringArray("gamePanel", "startPanel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c865o")
+gamePanel = NodePath("GamePanel")
+startPanel = NodePath("StartPanel")
+
+[node name="LoginPanel" type="Panel" parent="." unique_id=1210581313]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="LoginPanel" unique_id=653442158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i38ch")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="LoginPanel" unique_id=187514962]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoginPanel/MarginContainer" unique_id=612491398]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="TopRow" type="Control" parent="LoginPanel/MarginContainer/VBoxContainer" unique_id=1921395701]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SkipButton" type="TextureButton" parent="LoginPanel/MarginContainer/VBoxContainer/TopRow" unique_id=304318784]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.841
+anchor_right = 1.0
+anchor_bottom = 0.34100002
+offset_left = 0.27996826
+offset_bottom = 0.051986694
+grow_horizontal = 0
+texture_normal = ExtResource("4_x3vkm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CenterRow" type="Control" parent="LoginPanel/MarginContainer/VBoxContainer" unique_id=1853414049]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Logo" type="TextureRect" parent="LoginPanel/MarginContainer/VBoxContainer/CenterRow" unique_id=1672305775]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_103pp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BottomRow" type="HBoxContainer" parent="LoginPanel/MarginContainer/VBoxContainer" unique_id=21972909]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 220
+
+[node name="PlatformButton" type="TextureButton" parent="LoginPanel/MarginContainer/VBoxContainer/BottomRow" unique_id=251426756]
+layout_mode = 2
+texture_normal = ExtResource("6_rctno")
+
+[node name="ProfileButton" type="TextureButton" parent="LoginPanel/MarginContainer/VBoxContainer/BottomRow" unique_id=270046892]
+layout_mode = 2
+texture_normal = ExtResource("7_e5fhf")
+
+[node name="TextureButton" type="TextureButton" parent="LoginPanel" unique_id=383788760]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -339.0
+offset_top = -106.0
+offset_right = 339.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("8_x3vkm")
+
+[node name="StartPanel" type="Panel" parent="." unique_id=1301954702 node_paths=PackedStringArray("setting_Btn", "start_Btn")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6vhvx")
+script = ExtResource("9_2n5bx")
+setting_Btn = NodePath("MarginContainer/VBoxContainer/TopRow/SettingButton")
+start_Btn = NodePath("MarginContainer/VBoxContainer/BottomRow/MainVBox/Control1/MarginContainer/LeftButton")
+
+[node name="Background" type="TextureRect" parent="StartPanel" unique_id=417686936]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i38ch")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="StartPanel" unique_id=2089510553]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartPanel/MarginContainer" unique_id=1946715783]
+layout_mode = 2
+alignment = 1
+
+[node name="TopRow" type="Control" parent="StartPanel/MarginContainer/VBoxContainer" unique_id=1797869266]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScoreBoard" type="TextureRect" parent="StartPanel/MarginContainer/VBoxContainer/TopRow" unique_id=153148458]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.39100003
+anchor_bottom = 0.34600002
+offset_right = 0.27996826
+offset_bottom = -0.088012695
+texture = ExtResource("11_rctno")
+expand_mode = 1
+
+[node name="CoinIcon" type="TextureRect" parent="StartPanel/MarginContainer/VBoxContainer/TopRow/ScoreBoard" unique_id=1761816355]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053000003
+anchor_top = 0.19600001
+anchor_right = 0.30800003
+anchor_bottom = 0.73600006
+offset_left = -0.08000183
+offset_top = -0.0080013275
+offset_right = 0.11998749
+offset_bottom = 0.07199097
+grow_vertical = 2
+texture = ExtResource("12_e5fhf")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="StartPanel/MarginContainer/VBoxContainer/TopRow/ScoreBoard" unique_id=1175242106]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30800003
+anchor_top = 0.18900001
+anchor_right = 0.93900007
+anchor_bottom = 0.74
+offset_left = 0.11998749
+offset_top = 0.02799797
+offset_right = -0.040039063
+offset_bottom = -0.020004272
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = ": 123"
+vertical_alignment = 1
+
+[node name="SettingButton" type="TextureButton" parent="StartPanel/MarginContainer/VBoxContainer/TopRow" unique_id=1077286382]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+texture_normal = ExtResource("13_e5fhf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ShopButton" type="TextureButton" parent="StartPanel/MarginContainer/VBoxContainer/TopRow" unique_id=802130605]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.66400003
+anchor_right = 0.15200001
+anchor_bottom = 1.0
+offset_top = -0.1920166
+offset_right = 0.1599884
+grow_vertical = 0
+texture_normal = ExtResource("14_whyg7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CenterRow" type="Control" parent="StartPanel/MarginContainer/VBoxContainer" unique_id=398722317]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Logo" type="TextureRect" parent="StartPanel/MarginContainer/VBoxContainer/CenterRow" unique_id=850448901]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_103pp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Score" type="Label" parent="StartPanel/MarginContainer/VBoxContainer/CenterRow" unique_id=1406383626]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20400001
+anchor_top = 0.822
+anchor_right = 0.758
+anchor_bottom = 0.96000004
+offset_left = 0.31999207
+offset_top = 0.36798096
+offset_right = -0.35998535
+offset_bottom = 117.23999
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 85
+text = "HIGH SCORE
+"
+
+[node name="BottomRow" type="Control" parent="StartPanel/MarginContainer/VBoxContainer" unique_id=2126430965]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainVBox" type="VBoxContainer" parent="StartPanel/MarginContainer/VBoxContainer/BottomRow" unique_id=953656138]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.082
+anchor_right = 1.047
+anchor_bottom = 0.97200006
+offset_top = 0.09600067
+offset_right = -0.24005127
+offset_bottom = -0.016021729
+
+[node name="Control" type="Control" parent="StartPanel/MarginContainer/VBoxContainer/BottomRow/MainVBox" unique_id=1498257437]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Bar" type="TextureRect" parent="StartPanel/MarginContainer/VBoxContainer/BottomRow/MainVBox/Control" unique_id=584419285]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19500001
+anchor_top = 0.374
+anchor_right = 0.735
+anchor_bottom = 0.646
+offset_left = 0.21499634
+offset_top = 0.02199936
+offset_right = 0.19500732
+offset_bottom = 0.037994385
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_qo5j5")
+
+[node name="Hand" type="TextureRect" parent="StartPanel/MarginContainer/VBoxContainer/BottomRow/MainVBox/Control/Bar" unique_id=438069008]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.5
+offset_right = 46.5
+offset_bottom = 130.0
+grow_horizontal = 2
+texture = ExtResource("16_4c20f")
+
+[node name="Control1" type="HBoxContainer" parent="StartPanel/MarginContainer/VBoxContainer/BottomRow/MainVBox" unique_id=835158170]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 120
+
+[node name="MarginContainer" type="MarginContainer" parent="StartPanel/MarginContainer/VBoxContainer/BottomRow/MainVBox/Control1" unique_id=2088015058]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 20
+
+[node name="LeftButton" type="TextureButton" parent="StartPanel/MarginContainer/VBoxContainer/BottomRow/MainVBox/Control1/MarginContainer" unique_id=195968950]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("15_oaku6")
+
+[node name="ModeButton" type="TextureRect" parent="StartPanel/MarginContainer/VBoxContainer/BottomRow/MainVBox/Control1/MarginContainer" unique_id=1020445324]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("16_rspck")
+
+[node name="Label" type="Label" parent="StartPanel/MarginContainer/VBoxContainer/BottomRow/MainVBox/Control1/MarginContainer/ModeButton" unique_id=276468845]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -29.0
+offset_right = 161.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "Reverse Control"
+horizontal_alignment = 1
+
+[node name="RightButton" type="TextureButton" parent="StartPanel/MarginContainer/VBoxContainer/BottomRow/MainVBox/Control1/MarginContainer" unique_id=1879819157]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture_normal = ExtResource("17_qo5j5")
+
+[node name="TextureButton" type="TextureButton" parent="StartPanel" unique_id=1604811565]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -339.0
+offset_top = -106.0
+offset_right = 339.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("8_x3vkm")
+
+[node name="GamePanel" type="Panel" parent="." unique_id=638409159 node_paths=PackedStringArray("moveCountLabel", "timeLeftLabel")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6vhvx")
+script = ExtResource("20_5jb3p")
+moveCountLabel = NodePath("MarginContainer/VBoxContainer/TopRow/Label")
+timeLeftLabel = NodePath("MarginContainer/VBoxContainer/TopRow2/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="GamePanel" unique_id=1459099428]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GamePanel/MarginContainer" unique_id=73493809]
+layout_mode = 2
+alignment = 1
+
+[node name="TopRow" type="Control" parent="GamePanel/MarginContainer/VBoxContainer" unique_id=1181686537]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="GamePanel/MarginContainer/VBoxContainer/TopRow" unique_id=1572839639]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -460.0
+offset_right = 498.0
+offset_bottom = 506.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 250
+text = "45626"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopRow2" type="Control" parent="GamePanel/MarginContainer/VBoxContainer" unique_id=1572714818]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="GamePanel/MarginContainer/VBoxContainer/TopRow2" unique_id=1765745676]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -460.0
+offset_right = 498.0
+offset_bottom = 506.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 250
+text = "45626"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="GamePanel" unique_id=162052671]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -339.0
+offset_top = -106.0
+offset_right = 339.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("8_x3vkm")
+
+[node name="PopupManager" type="Control" parent="." unique_id=1877844100 node_paths=PackedStringArray("gameOver", "settingPopUp")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("19_103pp")
+gameOver = NodePath("GameOverPopup")
+settingPopUp = NodePath("SettingPopup")
+
+[node name="SettingPopup" type="Panel" parent="PopupManager" unique_id=590324662]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_48qad")
+
+[node name="CenterContainer" type="CenterContainer" parent="PopupManager/SettingPopup" unique_id=1347003283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupManager/SettingPopup/CenterContainer" unique_id=167085540]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 80
+
+[node name="Board" type="TextureRect" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer" unique_id=478364731]
+custom_minimum_size = Vector2(780, 865.04)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("13_tt62i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BoardName" type="TextureRect" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board" unique_id=2126808873]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.106000006
+anchor_top = -0.052
+anchor_right = 0.90500003
+anchor_bottom = 0.109000005
+offset_left = 0.31999207
+offset_top = -0.017906189
+offset_right = 0.099975586
+offset_bottom = -0.33792877
+grow_horizontal = 2
+texture = ExtResource("14_rmjt4")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/BoardName" unique_id=631746266]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board" unique_id=1334477882]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.5
+offset_bottom = 70.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 291
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 172
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer" unique_id=1534407220]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="SoundBtn" type="TextureButton" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer" unique_id=1747130389]
+custom_minimum_size = Vector2(50, 150)
+layout_mode = 2
+texture_normal = ExtResource("15_rmjt4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/SoundBtn" unique_id=1894351547]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 122.825
+offset_top = -46.0
+offset_right = 363.82538
+offset_bottom = 46.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 67
+text = "Sound :"
+
+[node name="TextureRect" type="TextureRect" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/SoundBtn" unique_id=1205058910]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -45.0
+offset_right = -79.99948
+offset_bottom = 54.99994
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("14_rnhox")
+expand_mode = 1
+
+[node name="MusicBtn" type="TextureButton" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer" unique_id=1724311600]
+custom_minimum_size = Vector2(50, 150)
+layout_mode = 2
+texture_normal = ExtResource("15_rmjt4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/MusicBtn" unique_id=926942047]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 122.825
+offset_top = -46.0
+offset_right = 363.82538
+offset_bottom = 46.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 67
+text = "Music :"
+
+[node name="TextureRect" type="TextureRect" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/MusicBtn" unique_id=1525108336]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -37.435
+offset_right = -100.0
+offset_bottom = 42.565002
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("15_nxvt1")
+expand_mode = 1
+
+[node name="SignInBtn" type="TextureButton" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer" unique_id=1159285402]
+custom_minimum_size = Vector2(50, 150)
+layout_mode = 2
+texture_normal = ExtResource("15_rmjt4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/SignInBtn" unique_id=1102653991]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 67
+text = "Sign-in"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Privacy and Del Btn" type="Control" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer" unique_id=752990086]
+custom_minimum_size = Vector2(50, 230.7)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/Privacy and Del Btn" unique_id=816158658]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DeleteBtn" type="TextureRect" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/Privacy and Del Btn/VBoxContainer" unique_id=71571313]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/Privacy and Del Btn/VBoxContainer/DeleteBtn" unique_id=1898396038]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/Privacy and Del Btn/VBoxContainer/DeleteBtn/HBoxContainer" unique_id=447906436]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("16_6blw0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/Privacy and Del Btn/VBoxContainer/DeleteBtn/HBoxContainer" unique_id=333047174]
+custom_minimum_size = Vector2(300, 90)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 38
+text = "Delete Account"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PrivacyPolicyBtn" type="TextureRect" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/Privacy and Del Btn/VBoxContainer" unique_id=1798098740]
+custom_minimum_size = Vector2(50, 85.765)
+layout_mode = 2
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/Privacy and Del Btn/VBoxContainer/PrivacyPolicyBtn" unique_id=1806333869]
+custom_minimum_size = Vector2(11.515, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Privacy Policy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="PopupManager/SettingPopup/CenterContainer/MarginContainer/Board" unique_id=1717014318]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+texture_normal = ExtResource("19_g7bxj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="GameOverPopup" type="Panel" parent="PopupManager" unique_id=993093092]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("19_2n5bx")
+
+[node name="CenterContainer" type="CenterContainer" parent="PopupManager/GameOverPopup" unique_id=1771672804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupManager/GameOverPopup/CenterContainer" unique_id=225242069]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 80
+
+[node name="Board" type="TextureRect" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer" unique_id=1976284935]
+custom_minimum_size = Vector2(780, 865.04)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("34_qo5j5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board" unique_id=1896173540]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.123
+anchor_top = 0.043
+anchor_right = 0.88100004
+anchor_bottom = 0.17
+offset_left = 0.05999756
+offset_top = -0.19672012
+offset_right = -0.18005371
+offset_bottom = -0.056793213
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.1254902, 0.11372549, 1)
+theme_override_font_sizes/font_size = 86
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board" unique_id=1520976225]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.098000005
+anchor_right = 1.0
+anchor_bottom = 1.07
+offset_top = 14.273926
+offset_bottom = 9.947144
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 291
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 172
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer" unique_id=505894855]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="BestScore" type="TextureRect" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer" unique_id=148878797]
+custom_minimum_size = Vector2(40, 100)
+layout_mode = 2
+texture = ExtResource("21_eop77")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/BestScore" unique_id=1575662475]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.040000003
+anchor_right = 0.97800004
+anchor_bottom = 0.887
+offset_left = -2.2000008
+offset_top = -1.0200195
+offset_right = -2.2400513
+offset_bottom = 3.9299774
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "High score : "
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Score" type="TextureRect" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer" unique_id=218895813]
+custom_minimum_size = Vector2(40, 100)
+layout_mode = 2
+texture = ExtResource("21_eop77")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/Score" unique_id=462168427]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.040000003
+anchor_right = 0.97800004
+anchor_bottom = 0.887
+offset_left = -0.20000076
+offset_top = -1.0200195
+offset_right = -0.24005127
+offset_bottom = 3.9299774
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "Score :"
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Coins2" type="TextureRect" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer" unique_id=16920260]
+custom_minimum_size = Vector2(40, 100)
+layout_mode = 2
+texture = ExtResource("21_eop77")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/Coins2" unique_id=744442227]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.040000003
+anchor_right = 0.97800004
+anchor_bottom = 0.887
+offset_left = -0.20000076
+offset_top = -1.0200195
+offset_right = -0.24005127
+offset_bottom = 3.9299774
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "Coins :"
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Coins" type="TextureRect" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer" unique_id=1891635438]
+visible = false
+custom_minimum_size = Vector2(380, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("21_eop77")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/Coins" unique_id=829908432]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -41.02002
+offset_right = -97.0
+offset_bottom = 28.97998
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "Coins:"
+vertical_alignment = 1
+
+[node name="buttons" type="Control" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer" unique_id=1223006634]
+custom_minimum_size = Vector2(50, 230.7)
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/buttons" unique_id=807791851]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.40100002
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -10.530724
+offset_right = -1.0
+offset_bottom = 2.344986
+grow_vertical = 2
+theme_override_constants/separation = 112
+alignment = 1
+
+[node name="HomeBtn" type="TextureButton" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/buttons/VBoxContainer" unique_id=852454330]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("22_2n5bx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RestartBtn" type="TextureButton" parent="PopupManager/GameOverPopup/CenterContainer/MarginContainer/Board/MarginContainer/VBoxContainer/buttons/VBoxContainer" unique_id=1703241253]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("23_g7bxj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="focus_entered" from="StartPanel" to="." method="_on_game_panel_focus_entered"]

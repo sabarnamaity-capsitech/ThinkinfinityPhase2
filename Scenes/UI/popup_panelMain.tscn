@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c0qikmuxme82f"]
+
+[ext_resource type="PackedScene" uid="uid://xn7kt7rpdk0v" path="res://Scenes/UI/Popups/SettingsPopup.tscn" id="1_0kpx6"]
+[ext_resource type="Script" uid="uid://chokthyaoh2dt" path="res://Scenes/UI/popup_panel_main.gd" id="1_qb264"]
+[ext_resource type="PackedScene" uid="uid://cucyfpe03a067" path="res://Scenes/UI/Popups/pause_popup.tscn" id="2_qb264"]
+[ext_resource type="PackedScene" uid="uid://cl560swqanngt" path="res://Scenes/UI/Popups/NoAdsPopup.tscn" id="3_t4s12"]
+[ext_resource type="PackedScene" uid="uid://cdi5ai0pi2abu" path="res://Scenes/UI/Popups/CreditPopup.tscn" id="4_vs6na"]
+[ext_resource type="PackedScene" uid="uid://b0tel3uo40ijw" path="res://Scenes/UI/Popups/FailurePopup.tscn" id="5_bu42o"]
+[ext_resource type="PackedScene" uid="uid://chdlorp6jhduw" path="res://Scenes/UI/Popups/HintPopup.tscn" id="6_fvuj5"]
+[ext_resource type="PackedScene" uid="uid://bexci25ogfbw1" path="res://Scenes/UI/Popups/WinnerPopUp.tscn" id="7_j0mlb"]
+[ext_resource type="PackedScene" uid="uid://dydrddkokndyk" path="res://Scenes/UI/Popups/InformationPopup.tscn" id="9_t4s12"]
+
+[node name="PopupPanel" type="Control" unique_id=1120987855 node_paths=PackedStringArray("pause_popup", "win_popup", "lose_popup", "settings_popup", "tutorial_popup", "hint_popup", "credit_popup")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qb264")
+pause_popup = NodePath("PausePopup")
+win_popup = NodePath("WinnerPopUp")
+lose_popup = NodePath("FailurePopUp")
+settings_popup = NodePath("SettingsPopup")
+tutorial_popup = NodePath("HowToPlayPopup")
+hint_popup = NodePath("HintPopup")
+credit_popup = NodePath("CreditPopup")
+
+[node name="SettingsPopup" parent="." unique_id=863485404 instance=ExtResource("1_0kpx6")]
+visible = false
+layout_mode = 1
+
+[node name="PausePopup" parent="." unique_id=1497417389 instance=ExtResource("2_qb264")]
+visible = false
+layout_mode = 1
+
+[node name="NoAdsPopup" parent="." unique_id=890636628 instance=ExtResource("3_t4s12")]
+visible = false
+layout_mode = 1
+
+[node name="CreditPopup" parent="." unique_id=2050146452 instance=ExtResource("4_vs6na")]
+visible = false
+layout_mode = 1
+
+[node name="FailurePopUp" parent="." unique_id=248883616 instance=ExtResource("5_bu42o")]
+visible = false
+layout_mode = 1
+
+[node name="HintPopup" parent="." unique_id=1752979371 instance=ExtResource("6_fvuj5")]
+visible = false
+layout_mode = 1
+
+[node name="WinnerPopUp" parent="." unique_id=1452882592 instance=ExtResource("7_j0mlb")]
+visible = false
+layout_mode = 1
+
+[node name="HowToPlayPopup" parent="." unique_id=583294124 instance=ExtResource("9_t4s12")]
+visible = false
+layout_mode = 1

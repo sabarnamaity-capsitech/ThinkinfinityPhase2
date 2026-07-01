@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://b0tel3uo40ijw"]
+
+[ext_resource type="Texture2D" uid="uid://c1ns7rrbgo2y4" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png" id="1_kr1y5"]
+[ext_resource type="Script" uid="uid://cm464qnounnvf" path="res://Scripts/UI/lose_popup.gd" id="1_s5wv1"]
+[ext_resource type="Texture2D" uid="uid://dvjwa7xcsqm47" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png" id="2_k1613"]
+[ext_resource type="Script" uid="uid://bfiw7gb5g67sj" path="res://Scripts/UI/ui_popup_animator.gd" id="2_q6s7g"]
+[ext_resource type="FontFile" uid="uid://dsqg6knw4gj3i" path="res://assets/Font/calibri/calibri-bold.ttf" id="3_kt8rn"]
+[ext_resource type="Texture2D" uid="uid://bbc5lw6gbs3g0" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="4_kt8rn"]
+[ext_resource type="Texture2D" uid="uid://bve4f8ctvu54x" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (2).png" id="5_mhpw8"]
+[ext_resource type="Texture2D" uid="uid://c0umdmlmscrc3" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (1).png" id="6_mhpw8"]
+[ext_resource type="Texture2D" uid="uid://b1bubi14vhenh" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664622.png" id="6_ow604"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_at4pl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ow604"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ddmt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5h0s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2pguw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3cweb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhpw8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ohm6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4wcso"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1qw8a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1koed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0rym"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8d14a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdbkc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_axphc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmna5"]
+
+[node name="FailurePopUp" type="Control" unique_id=248883616 node_paths=PackedStringArray("restartBtn", "resumetimer", "levelTxt")]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s5wv1")
+restartBtn = NodePath("FailurePanel/RestartButton")
+resumetimer = NodePath("FailurePanel/RewardButton")
+levelTxt = NodePath("FailurePanel/LevelText")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=714909494]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.69803923, 0.6901961, 0.69411767, 0.5921569)
+
+[node name="FailurePanel" type="Panel" parent="." unique_id=1497679778]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -275.0
+offset_right = 425.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_at4pl")
+script = ExtResource("2_q6s7g")
+animation_style = 1
+animation_duration = 0.3
+
+[node name="Header" type="TextureRect" parent="FailurePanel" unique_id=2024204510]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kr1y5")
+expand_mode = 1
+
+[node name="failurebg" type="TextureRect" parent="FailurePanel/Header" unique_id=1035225263]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("2_k1613")
+expand_mode = 1
+
+[node name="failurelabel" type="Label" parent="FailurePanel/Header/failurebg" unique_id=1392662051]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_kt8rn")
+theme_override_font_sizes/font_size = 95
+text = "FAILED"
+
+[node name="CloseButton" type="Button" parent="FailurePanel/Header" unique_id=574342182]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -203.0
+offset_top = 21.0
+offset_right = 264.0
+offset_bottom = 488.0
+grow_horizontal = 0
+scale = Vector2(0.35, 0.35)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ow604")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3ddmt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u5h0s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2pguw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3cweb")
+icon = ExtResource("4_kt8rn")
+
+[node name="LevelText" type="Label" parent="FailurePanel" unique_id=333811664]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -74.0
+offset_right = 135.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.17641911, 0.17641908, 0.17641908, 1)
+theme_override_fonts/font = ExtResource("3_kt8rn")
+theme_override_font_sizes/font_size = 90
+text = "Level 1"
+
+[node name="RewardButton" type="Button" parent="FailurePanel" unique_id=1262570088]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = 30.0
+offset_right = 690.0
+offset_bottom = 1029.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhpw8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ohm6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4wcso")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1qw8a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1koed")
+icon = ExtResource("5_mhpw8")
+
+[node name="AD" type="TextureRect" parent="FailurePanel/RewardButton" unique_id=1858942330]
+layout_mode = 0
+offset_left = 579.99994
+offset_top = 714.99994
+offset_right = 932.0
+offset_bottom = 923.99994
+texture = ExtResource("6_ow604")
+
+[node name="RestartButton" type="Button" parent="FailurePanel" unique_id=689629985]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 72.0
+offset_top = 30.0
+offset_right = 1071.0
+offset_bottom = 1029.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b0rym")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8d14a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jdbkc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_axphc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fmna5")
+icon = ExtResource("6_mhpw8")

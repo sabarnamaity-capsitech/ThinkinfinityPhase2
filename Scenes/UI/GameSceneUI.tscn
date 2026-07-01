@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://dqweavmudjsuw"]
+
+[ext_resource type="Script" uid="uid://cwkpdw7mkj3y5" path="res://Scripts/UI/game_scene_ui.gd" id="1_tkcnv"]
+[ext_resource type="Texture2D" uid="uid://8im0nrorg48o" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664542.png" id="2_4ek86"]
+[ext_resource type="Texture2D" uid="uid://bc3yuvtc6lgfd" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664566 (1).png" id="3_aknwl"]
+[ext_resource type="Texture2D" uid="uid://bex141nlpin64" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508 (2).png" id="4_6pmpd"]
+[ext_resource type="Texture2D" uid="uid://didmaq111715m" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666221.png" id="4_sdejy"]
+[ext_resource type="Texture2D" uid="uid://q6j48gnjof1p" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665125.png" id="5_i6gcw"]
+[ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="5_tkcnv"]
+[ext_resource type="Texture2D" uid="uid://cgw4ywicd2orl" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Frame 2085664935.png" id="8_dqeh6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afec1"]
+texture = ExtResource("2_4ek86")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31qfy"]
+texture = ExtResource("4_6pmpd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qie43"]
+texture = ExtResource("2_4ek86")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61cf8"]
+texture = ExtResource("2_4ek86")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rnncn"]
+texture = ExtResource("2_4ek86")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fnrj"]
+texture = ExtResource("2_4ek86")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m04lp"]
+texture = ExtResource("2_4ek86")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1thib"]
+texture = ExtResource("4_6pmpd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i6gcw"]
+texture = ExtResource("4_sdejy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfvr7"]
+texture = ExtResource("5_i6gcw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iht1c"]
+texture = ExtResource("3_aknwl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1t4j"]
+texture = ExtResource("3_aknwl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dl1jy"]
+texture = ExtResource("3_aknwl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y4010"]
+texture = ExtResource("3_aknwl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2gjqv"]
+texture = ExtResource("3_aknwl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ig1gi"]
+texture = ExtResource("3_aknwl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ek86"]
+texture = ExtResource("3_aknwl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xxvoy"]
+texture = ExtResource("3_aknwl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5p6wj"]
+texture = ExtResource("2_4ek86")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqeh6"]
+texture = ExtResource("2_4ek86")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tkcnv"]
+texture = ExtResource("2_4ek86")
+
+[node name="GameSceneUI" type="Control" unique_id=60258633 node_paths=PackedStringArray("timer", "_timerBox", "top_text", "bg", "levelBox")]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_tkcnv")
+timer = NodePath("Timerlabel/Label")
+_timerBox = NodePath("Timerlabel")
+top_text = NodePath("Level/Label")
+bg = NodePath("Bg")
+levelBox = NodePath("Level")
+screen_type = 3
+
+[node name="SettingsButton" type="Button" parent="." unique_id=358707857]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.142
+anchor_top = 0.075
+anchor_right = 0.142
+anchor_bottom = 0.075
+offset_left = -67.36
+offset_top = -68.0
+offset_right = 67.64
+offset_bottom = 67.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_afec1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_31qfy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qie43")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_61cf8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rnncn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_3fnrj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_m04lp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_1thib")
+
+[node name="Level" type="Label" parent="." unique_id=208162787]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51500005
+anchor_top = 0.05
+anchor_right = 0.51500005
+anchor_bottom = 0.05
+offset_left = -176.20007
+offset_top = -29.599998
+offset_right = 143.79993
+offset_bottom = 62.4
+grow_horizontal = 2
+scale = Vector2(1.1, 1.1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_i6gcw")
+
+[node name="Label" type="Label" parent="Level" unique_id=1628421716]
+layout_direction = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.31500003
+anchor_top = 0.5
+anchor_right = 0.31500003
+anchor_bottom = 0.5
+offset_left = 1.1999893
+offset_top = -32.0
+offset_right = 191.19998
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("5_tkcnv")
+theme_override_font_sizes/font_size = 38
+text = "Label 1"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Timerlabel" type="Label" parent="." unique_id=997481047]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512
+anchor_top = 0.10700001
+anchor_right = 0.512
+anchor_bottom = 0.10700001
+offset_left = -160.96002
+offset_top = -55.944016
+offset_right = 107.03998
+offset_bottom = 54.055984
+grow_horizontal = 2
+scale = Vector2(1.2, 1.2)
+theme_override_styles/normal = SubResource("StyleBoxTexture_cfvr7")
+
+[node name="Label" type="Label" parent="Timerlabel" unique_id=1172954586]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -24.0
+offset_right = 79.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7764706, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_tkcnv")
+theme_override_font_sizes/font_size = 35
+text = "00.00"
+vertical_alignment = 1
+
+[node name="PauseButton" type="Button" parent="." unique_id=467924455]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -227.0
+offset_top = 76.0
+offset_right = -92.0
+offset_bottom = 211.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_iht1c")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_l1t4j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dl1jy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_y4010")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2gjqv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_ig1gi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4ek86")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_xxvoy")
+
+[node name="HintButton" type="Button" parent="." unique_id=1777694722]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.87700003
+anchor_right = 0.5
+anchor_bottom = 0.87700003
+offset_left = -192.0
+offset_top = -56.840088
+offset_right = 176.0
+offset_bottom = 58.159912
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.1, 1.1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_afec1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_5p6wj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dqeh6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_61cf8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rnncn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_3fnrj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_m04lp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_tkcnv")
+
+[node name="Label" type="Label" parent="HintButton" unique_id=348708879]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -44.44409
+offset_right = 161.0
+offset_bottom = 40.55591
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("5_tkcnv")
+theme_override_font_sizes/font_size = 48
+text = "Hint"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Bg" type="TextureRect" parent="." unique_id=1230218033]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_dqeh6")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="." unique_id=60885549]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

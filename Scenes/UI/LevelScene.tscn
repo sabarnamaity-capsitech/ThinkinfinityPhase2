@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://dl3egsnnsadmu"]
+
+[ext_resource type="Script" uid="uid://h2ovdxfea7we" path="res://Scripts/UI/level_scene.gd" id="1_h211i"]
+[ext_resource type="Texture2D" uid="uid://gy82i6xuf1dm" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508.png" id="2_hxhy7"]
+[ext_resource type="PackedScene" uid="uid://cxs2gxdgxtgqe" path="res://Scenes/UI/LevelComponent.tscn" id="3_klrs3"]
+[ext_resource type="Script" path="res://Scripts/UI/ui_popup_animator.gd" id="4_vvyfw"]
+[ext_resource type="Texture2D" uid="uid://cdm1pihdn3s0x" path="res://assets/ThinkfinityAsset/Art/Environment/Frame 2085664943.png" id="5_h7ko0"]
+[ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="7_h7ko0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afec1"]
+texture = ExtResource("2_hxhy7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31qfy"]
+texture = ExtResource("2_hxhy7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qie43"]
+texture = ExtResource("2_hxhy7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61cf8"]
+texture = ExtResource("2_hxhy7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rnncn"]
+texture = ExtResource("2_hxhy7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fnrj"]
+texture = ExtResource("2_hxhy7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m04lp"]
+texture = ExtResource("2_hxhy7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1thib"]
+texture = ExtResource("2_hxhy7")
+
+[node name="LevelScene" type="Control" unique_id=60258633]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h211i")
+_level_button_prefab = ExtResource("3_klrs3")
+
+[node name="Panel" type="Panel" parent="." unique_id=1193455704]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_vvyfw")
+animation_duration = 0.3
+
+[node name="BG" type="TextureRect" parent="Panel" unique_id=298361679]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_h7ko0")
+expand_mode = 1
+
+[node name="BackButton" type="Button" parent="Panel" unique_id=358707857]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.142
+anchor_top = 0.075
+anchor_right = 0.142
+anchor_bottom = 0.075
+offset_left = -88.36
+offset_top = -68.00001
+offset_right = 46.64
+offset_bottom = 66.999985
+theme_override_styles/normal = SubResource("StyleBoxTexture_afec1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_31qfy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qie43")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_61cf8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rnncn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_3fnrj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_m04lp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_1thib")
+
+[node name="Label" type="Label" parent="Panel" unique_id=848610533]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 104.0
+offset_right = 133.0
+offset_bottom = 257.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.05882353, 0.9647059)
+theme_override_fonts/font = ExtResource("7_h7ko0")
+theme_override_font_sizes/font_size = 111
+text = "Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=1511817479]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -405.5
+offset_top = -555.0
+offset_right = 405.5
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="Panel/ScrollContainer" unique_id=493031641]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 40
+columns = 4

@@ -1,0 +1,49 @@
+WARNING: res://assets/scenes/Main/MainScene.tscn:6 - ext_resource, invalid UID: uid://jvu46n8spdc3 - using text path instead: res://assets/Scripts/Main/CarController.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+ERROR: Failed loading resource: res://assets/Sprite/car.png.
+   at: _load (core/io/resource_loader.cpp:343)
+   GDScript backtrace (most recent call first):
+	   [0] _ready (res://assets/Scripts/Main/CarController.gd:27)
+WARNING: Car texture not found, using fallback visual.
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+	   [0] _ready (res://assets/Scripts/Main/CarController.gd:35)
+ERROR: res://assets/LevelDataSO/Level1.tres:12 - Parse Error: Unexpected identifier 'PackedBoolArray'.
+   at: _printerr (scene/resources/resource_format_text.cpp:40)
+   GDScript backtrace (most recent call first):
+	   [0] _load_levels (res://assets/Scripts/Main/GameManager.gd:78)
+	   [1] _ready (res://assets/Scripts/Main/GameManager.gd:52)
+ERROR: Failed loading resource: res://assets/LevelDataSO/Level1.tres.
+   at: _load (core/io/resource_loader.cpp:343)
+   GDScript backtrace (most recent call first):
+	   [0] _load_levels (res://assets/Scripts/Main/GameManager.gd:78)
+	   [1] _ready (res://assets/Scripts/Main/GameManager.gd:52)
+ERROR: res://assets/LevelDataSO/Level2.tres:12 - Parse Error: Unexpected identifier 'PackedBoolArray'.
+   at: _printerr (scene/resources/resource_format_text.cpp:40)
+   GDScript backtrace (most recent call first):
+	   [0] _load_levels (res://assets/Scripts/Main/GameManager.gd:78)
+	   [1] _ready (res://assets/Scripts/Main/GameManager.gd:52)
+ERROR: Failed loading resource: res://assets/LevelDataSO/Level2.tres.
+   at: _load (core/io/resource_loader.cpp:343)
+   GDScript backtrace (most recent call first):
+	   [0] _load_levels (res://assets/Scripts/Main/GameManager.gd:78)
+	   [1] _ready (res://assets/Scripts/Main/GameManager.gd:52)
+ERROR: res://assets/LevelDataSO/Level3.tres:12 - Parse Error: Unexpected identifier 'PackedBoolArray'.
+   at: _printerr (scene/resources/resource_format_text.cpp:40)
+   GDScript backtrace (most recent call first):
+	   [0] _load_levels (res://assets/Scripts/Main/GameManager.gd:78)
+	   [1] _ready (res://assets/Scripts/Main/GameManager.gd:52)
+ERROR: Failed loading resource: res://assets/LevelDataSO/Level3.tres.
+   at: _load (core/io/resource_loader.cpp:343)
+   GDScript backtrace (most recent call first):
+	   [0] _load_levels (res://assets/Scripts/Main/GameManager.gd:78)
+	   [1] _ready (res://assets/Scripts/Main/GameManager.gd:52)
+SCRIPT ERROR: Invalid access to property or key 'theme_override_constants' on a base object of type 'HBoxContainer'.
+   at: GamePanelController._setup_hud (res://assets/Scripts/UI/GamePanelController.gd:120)
+   GDScript backtrace (most recent call first):
+	   [0] _setup_hud (res://assets/Scripts/UI/GamePanelController.gd:120)
+	   [1] _ready (res://assets/Scripts/UI/GamePanelController.gd:39)
+ERROR: Node not found: "ShopPopup" (relative to "/root/MainScene/UIManager/PopupManager").
+   at: get_node (scene/main/node.cpp:1963)
+   GDScript backtrace (most recent call first):
+	   [0] @implicit_ready (res://assets/Scripts/UI/PopUpPanelController.gd:17)

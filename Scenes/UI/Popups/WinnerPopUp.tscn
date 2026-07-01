@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://bexci25ogfbw1"]
+
+[ext_resource type="Script" uid="uid://cumhdrma6u630" path="res://Scripts/UI/win_pop_up.gd" id="1_skcjh"]
+[ext_resource type="Texture2D" uid="uid://bedxrs7vafb6y" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png" id="1_y7g28"]
+[ext_resource type="Script" path="res://Scripts/UI/ui_popup_animator.gd" id="2_8b1kx"]
+[ext_resource type="Texture2D" uid="uid://c1gc8nrwo1sy7" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png" id="2_e56vy"]
+[ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="3_o5xo1"]
+[ext_resource type="Texture2D" uid="uid://r5ebcr8sl1ad" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="4_fsrcf"]
+[ext_resource type="Texture2D" uid="uid://cdf5131wn4p7u" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Group (3).png" id="5_1x6ig"]
+[ext_resource type="Texture2D" uid="uid://c3mogn2li3j2m" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Group (4).png" id="6_4pkrt"]
+[ext_resource type="Texture2D" uid="uid://cafm6hsqar88v" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Group (5).png" id="7_0ffla"]
+[ext_resource type="Texture2D" uid="uid://e6p72g517q33" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (1).png" id="8_0ffla"]
+[ext_resource type="Texture2D" uid="uid://c75t5qnra3fu7" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665045 (1).png" id="9_obfep"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8nnl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5xo1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fsrcf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s8xlk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1vh8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1x6ig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4pkrt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ffla"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_at54w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6755"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m7qbc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2va2p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hw4ug"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obfep"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grqog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmdoq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcoyv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qivlv"]
+
+[node name="WinnerPopUp" type="Control" unique_id=1452882592 node_paths=PackedStringArray("stars", "restartBtn", "nextLevel", "levelTxt")]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_skcjh")
+stars = [NodePath("WinnerPanel/StartContainer/StartCenter"), NodePath("WinnerPanel/StartContainer/StarLeft"), NodePath("WinnerPanel/StartContainer/StarRight")]
+restartBtn = NodePath("WinnerPanel/RestartButton")
+nextLevel = NodePath("WinnerPanel/NextButton")
+levelTxt = NodePath("WinnerPanel/LevelLabel")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=190891563]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.69803923, 0.6901961, 0.69411767, 0.5921569)
+
+[node name="WinnerPanel" type="Panel" parent="." unique_id=1133062442]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -350.0
+offset_right = 435.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g8nnl")
+script = ExtResource("2_8b1kx")
+animation_style = 1
+animation_duration = 0.3
+
+[node name="Header" type="TextureRect" parent="WinnerPanel" unique_id=2004095405]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y7g28")
+expand_mode = 1
+
+[node name="Headerbg" type="TextureRect" parent="WinnerPanel/Header" unique_id=1194254906]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("2_e56vy")
+expand_mode = 1
+
+[node name="HeaderLabel" type="Label" parent="WinnerPanel/Header/Headerbg" unique_id=361125017]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -65.0
+offset_right = 245.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_o5xo1")
+theme_override_font_sizes/font_size = 95
+text = "WINNER!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CloseButton" type="Button" parent="WinnerPanel/Header" unique_id=1363188164]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -174.0
+offset_top = 17.0
+offset_right = 285.0
+offset_bottom = 476.0
+grow_horizontal = 0
+scale = Vector2(0.35, 0.35)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o5xo1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fsrcf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s8xlk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a1vh8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1x6ig")
+icon = ExtResource("4_fsrcf")
+
+[node name="StartContainer" type="Control" parent="WinnerPanel" unique_id=455666681]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -191.0
+offset_top = -240.0
+offset_right = 209.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StarLeft" type="TextureRect" parent="WinnerPanel/StartContainer" unique_id=1761919173]
+layout_mode = 1
+offset_left = -130.0
+offset_top = 100.0
+offset_right = 70.0
+offset_bottom = 300.0
+texture = ExtResource("5_1x6ig")
+expand_mode = 1
+
+[node name="StartCenter" type="TextureRect" parent="WinnerPanel/StartContainer" unique_id=27923915]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -79.005
+offset_right = 125.0
+offset_bottom = 170.99536
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_4pkrt")
+expand_mode = 1
+
+[node name="StarRight" type="TextureRect" parent="WinnerPanel/StartContainer" unique_id=2114479288]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -63.97
+offset_top = 100.0
+offset_right = 136.02881
+offset_bottom = 300.0
+grow_horizontal = 0
+texture = ExtResource("7_0ffla")
+expand_mode = 1
+
+[node name="LevelLabel" type="Label" parent="WinnerPanel" unique_id=230257416]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 70.0
+offset_right = 115.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_fonts/font = ExtResource("3_o5xo1")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4pkrt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0ffla")
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="WinnerPanel" unique_id=587301204]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30800003
+anchor_top = 0.79700005
+anchor_right = 0.30800003
+anchor_bottom = 0.79700005
+offset_left = -98.88002
+offset_top = -99.45007
+offset_right = 892.12024
+offset_bottom = 891.5499
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_at54w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l6755")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_m7qbc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2va2p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hw4ug")
+icon = ExtResource("8_0ffla")
+
+[node name="NextButton" type="Button" parent="WinnerPanel" unique_id=698797723]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.66800004
+anchor_top = 0.79800004
+anchor_right = 0.66800004
+anchor_bottom = 0.79800004
+offset_left = -88.48004
+offset_top = -100.30005
+offset_right = 910.51996
+offset_bottom = 898.69995
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_obfep")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_grqog")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hmdoq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rcoyv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qivlv")
+icon = ExtResource("9_obfep")

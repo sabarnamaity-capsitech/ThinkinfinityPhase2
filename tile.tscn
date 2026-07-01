@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cbmot8wafocy1"]
+
+[ext_resource type="Script" uid="uid://cp7ljcegmfy28" path="res://Scripts/Main/tile.gd" id="1_n3f48"]
+[ext_resource type="Texture2D" uid="uid://2fbte1bxv3u2" path="res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 1.png" id="1_vx4y2"]
+
+[node name="tile" type="TextureRect" unique_id=906648351]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vx4y2")
+expand_mode = 1
+script = ExtResource("1_n3f48")

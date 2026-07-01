@@ -1,0 +1,612 @@
+[gd_scene format=3 uid="uid://xn7kt7rpdk0v"]
+
+[ext_resource type="Texture2D" uid="uid://bedxrs7vafb6y" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png" id="1_04e40"]
+[ext_resource type="Script" uid="uid://cjbuwgwpahsqn" path="res://Scripts/UI/settings_popup.gd" id="1_abnm6"]
+[ext_resource type="Texture2D" uid="uid://c1gc8nrwo1sy7" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png" id="2_beg5x"]
+[ext_resource type="Script" uid="uid://bfiw7gb5g67sj" path="res://Scripts/UI/ui_popup_animator.gd" id="2_uf8b0"]
+[ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="3_o3yot"]
+[ext_resource type="Texture2D" uid="uid://r5ebcr8sl1ad" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="3_ovuvc"]
+[ext_resource type="Texture2D" uid="uid://wq5ixkqjq4f7" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (4).png" id="4_o3yot"]
+[ext_resource type="Texture2D" uid="uid://b5csrtc03as6a" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665043 (1).png" id="5_840by"]
+[ext_resource type="Texture2D" uid="uid://cf2f23qiix045" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665045 (2).png" id="6_vqrs7"]
+[ext_resource type="Texture2D" uid="uid://bkkv5g7bsabq" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665123.png" id="7_x2bgd"]
+[ext_resource type="Texture2D" uid="uid://bvevjep86wmwk" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665121.png" id="8_gbl04"]
+[ext_resource type="Texture2D" uid="uid://ctvwvqca0lw3t" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 3468859 (1).png" id="10_840by"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqr3k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a6dqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qrk85"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gbl04"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ej1oy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2o4s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_syhl8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wt0cl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qbat8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cii23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iey71"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ovuvc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5yspl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8vdms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t80q3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpers"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3yot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8yvxn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kwbr1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4w6qq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_or2qa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_840by"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrktt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51ulb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_77pps"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2lft1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqrs7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kysl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kikiq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sutok"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvo7n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2bgd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vba23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hg136"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgstk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3rip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jitm2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0u13"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_601us"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u2b3a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5olw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr20f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jddn6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhag5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxyxx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1dh08"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6rbl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kld0n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lhbid"]
+
+[node name="SettingsPopup" type="Control" unique_id=863485404 node_paths=PackedStringArray("privacyButton")]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abnm6")
+privacyButton = NodePath("PopupPanel/Privacy Button")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=1185596269]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.69803923, 0.6901961, 0.69411767, 0.5921569)
+
+[node name="PopupPanel" type="Panel" parent="." unique_id=1733188772]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -310.0
+offset_right = 425.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_uqr3k")
+script = ExtResource("2_uf8b0")
+animation_style = 1
+animation_duration = 0.3
+
+[node name="Header" type="TextureRect" parent="PopupPanel" unique_id=1711546813]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_04e40")
+expand_mode = 2
+
+[node name="TitleBg" type="TextureRect" parent="PopupPanel/Header" unique_id=1618588332]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("2_beg5x")
+expand_mode = 1
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/Header/TitleBg" unique_id=680048142]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.0
+offset_top = -44.0
+offset_right = 231.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_o3yot")
+theme_override_font_sizes/font_size = 90
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CloseButton" type="Button" parent="PopupPanel/Header" unique_id=49677247]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -194.0
+offset_top = 20.0
+offset_right = 273.0
+offset_bottom = 487.0
+grow_horizontal = 0
+scale = Vector2(0.35, 0.35)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a6dqq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qrk85")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gbl04")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ej1oy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b2o4s")
+icon = ExtResource("3_ovuvc")
+icon_alignment = 2
+vertical_icon_alignment = 0
+
+[node name="SoundOnButton" type="Button" parent="PopupPanel" unique_id=1418540026]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208
+anchor_top = 0.527
+anchor_right = 0.208
+anchor_bottom = 0.527
+offset_left = -131.8
+offset_top = -116.74002
+offset_right = 804.2
+offset_bottom = 819.26
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_syhl8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wt0cl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qbat8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cii23")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iey71")
+icon = ExtResource("4_o3yot")
+
+[node name="MusicOnButton" type="Button" parent="PopupPanel" unique_id=735667718]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.5
+anchor_right = 0.499
+anchor_bottom = 0.5
+offset_left = -120.150024
+offset_top = -100.0
+offset_right = 815.85
+offset_bottom = 836.0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ovuvc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5yspl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8vdms")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t80q3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tpers")
+icon = ExtResource("5_840by")
+
+[node name="LanguageButton" type="Button" parent="PopupPanel" unique_id=1668488700]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.808
+anchor_top = 0.53400004
+anchor_right = 0.808
+anchor_bottom = 0.53400004
+offset_left = -120.80005
+offset_top = -121.08002
+offset_right = 744.19995
+offset_bottom = 743.92
+scale = Vector2(0.28, 0.28)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o3yot")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8yvxn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kwbr1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4w6qq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_or2qa")
+icon = ExtResource("6_vqrs7")
+
+[node name="SoundOffButton" type="Button" parent="PopupPanel" unique_id=774571923]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208
+anchor_top = 0.5
+anchor_right = 0.208
+anchor_bottom = 0.5
+offset_left = -131.8
+offset_top = -100.0
+offset_right = 804.2
+offset_bottom = 836.0
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_840by")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hrktt")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51ulb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_77pps")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2lft1")
+icon = ExtResource("7_x2bgd")
+
+[node name="MusicOffButton" type="Button" parent="PopupPanel" unique_id=1624642314]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.527
+anchor_right = 0.499
+anchor_bottom = 0.527
+offset_left = -120.150024
+offset_top = -116.74002
+offset_right = 815.85
+offset_bottom = 819.26
+scale = Vector2(0.25, 0.25)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vqrs7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5kysl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kikiq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sutok")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bvo7n")
+icon = ExtResource("8_gbl04")
+
+[node name="CreditButton" type="Button" parent="PopupPanel" unique_id=443960795]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 140.0
+offset_right = 200.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16206536, 0.16206571, 0.16206542, 1)
+theme_override_colors/font_focus_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+theme_override_colors/font_pressed_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+theme_override_colors/font_hover_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("3_o3yot")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x2bgd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vba23")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hg136")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jgstk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p3rip")
+text = "Credit"
+autowrap_mode = 3
+
+[node name="Privacy Button" type="Button" parent="PopupPanel" unique_id=1711758315]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 520.0
+offset_right = 810.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0.16206536, 0.16206571, 0.16206542, 1)
+theme_override_colors/font_focus_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+theme_override_colors/font_pressed_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+theme_override_colors/font_hover_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("3_o3yot")
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x2bgd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vba23")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hg136")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jgstk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p3rip")
+text = "Privacy Policy"
+autowrap_mode = 3
+
+[node name="LangugagePanel" type="Panel" parent="." unique_id=95384474]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Languageheader" type="TextureRect" parent="LangugagePanel" unique_id=525093830]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -425.0
+offset_right = 425.0
+offset_bottom = 525.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_04e40")
+expand_mode = 1
+
+[node name="Languagetitlebg" type="TextureRect" parent="LangugagePanel/Languageheader" unique_id=7683831]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("2_beg5x")
+expand_mode = 1
+
+[node name="LanguageLabel" type="Label" parent="LangugagePanel/Languageheader/Languagetitlebg" unique_id=461079240]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -46.0
+offset_right = 199.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_o3yot")
+theme_override_font_sizes/font_size = 95
+text = "LANGUAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="LangugagePanel/Languageheader" unique_id=138887532]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -174.0
+offset_top = 16.999998
+offset_right = 285.0
+offset_bottom = 476.0
+grow_horizontal = 0
+scale = Vector2(0.35, 0.35)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jitm2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_r0u13")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_601us")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u2b3a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y5olw")
+icon = ExtResource("3_ovuvc")
+
+[node name="Languagepopup" type="Control" parent="LangugagePanel" unique_id=440468215]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -431.0
+offset_top = -234.0
+offset_right = 417.0
+offset_bottom = 526.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LangugagePanel/Languagepopup" unique_id=1991673747]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="EnglishButton" type="TextureButton" parent="LangugagePanel/Languagepopup/VBoxContainer" unique_id=1514265496]
+custom_minimum_size = Vector2(50, 110)
+layout_mode = 2
+texture_normal = ExtResource("10_840by")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LangugagePanel/Languagepopup/VBoxContainer/EnglishButton" unique_id=2105507475]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.13319641, 0.13319641, 0.13319638, 1)
+theme_override_fonts/font = ExtResource("3_o3yot")
+theme_override_font_sizes/font_size = 75
+text = "English"
+
+[node name="SpanishButton" type="TextureButton" parent="LangugagePanel/Languagepopup/VBoxContainer" unique_id=2108011538]
+custom_minimum_size = Vector2(50, 110)
+layout_mode = 2
+texture_normal = ExtResource("10_840by")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LangugagePanel/Languagepopup/VBoxContainer/SpanishButton" unique_id=509796721]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+theme_override_fonts/font = ExtResource("3_o3yot")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hr20f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jddn6")
+text = "Spanish"
+
+[node name="PortuguseButton" type="TextureButton" parent="LangugagePanel/Languagepopup/VBoxContainer" unique_id=678317340]
+custom_minimum_size = Vector2(50, 110)
+layout_mode = 2
+texture_normal = ExtResource("10_840by")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LangugagePanel/Languagepopup/VBoxContainer/PortuguseButton" unique_id=785886560]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+theme_override_fonts/font = ExtResource("3_o3yot")
+theme_override_font_sizes/font_size = 75
+text = "Portuguese"
+
+[node name="FrenchButton" type="TextureButton" parent="LangugagePanel/Languagepopup/VBoxContainer" unique_id=759025539]
+custom_minimum_size = Vector2(50, 110)
+layout_mode = 2
+texture_normal = ExtResource("10_840by")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LangugagePanel/Languagepopup/VBoxContainer/FrenchButton" unique_id=1538866147]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+theme_override_fonts/font = ExtResource("3_o3yot")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yhag5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fxyxx")
+text = "French"
+
+[node name="ArabicButtton" type="TextureButton" parent="LangugagePanel/Languagepopup/VBoxContainer" unique_id=596158029]
+custom_minimum_size = Vector2(50, 110)
+layout_mode = 2
+texture_normal = ExtResource("10_840by")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LangugagePanel/Languagepopup/VBoxContainer/ArabicButtton" unique_id=1107620074]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -11.5
+offset_right = 25.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+theme_override_fonts/font = ExtResource("3_o3yot")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1dh08")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6rbl0")
+text = "Arabic"
+
+[node name="RussianButton" type="TextureButton" parent="LangugagePanel/Languagepopup/VBoxContainer" unique_id=1247690955]
+custom_minimum_size = Vector2(50, 110)
+layout_mode = 2
+texture_normal = ExtResource("10_840by")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LangugagePanel/Languagepopup/VBoxContainer/RussianButton" unique_id=665482623]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -18.0
+offset_right = 55.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+theme_override_fonts/font = ExtResource("3_o3yot")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kld0n")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lhbid")
+text = "Russian"

@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://bh56gkvpopkkm"]
+
+[ext_resource type="Script" uid="uid://b1emn8k7obcry" path="res://Scripts/UI/main_menu_scene.gd" id="1_42e3r"]
+[ext_resource type="Texture2D" uid="uid://b5w3h7cg3g7vx" path="res://assets/ThinkfinityAsset/Art/Environment/MainMenuSceneBG.png" id="1_i26rj"]
+[ext_resource type="Texture2D" uid="uid://cecl16kbs8de1" path="res://assets/ThinkfinityAsset/Art/buttons/PlayButton.png" id="2_eiy7p"]
+[ext_resource type="Script" uid="uid://bfiw7gb5g67sj" path="res://Scripts/UI/ui_popup_animator.gd" id="2_f5lav"]
+[ext_resource type="Texture2D" uid="uid://c6xvycqr5el0k" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666185.png" id="3_h7a2f"]
+[ext_resource type="Texture2D" uid="uid://bex141nlpin64" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508 (2).png" id="4_qoqlk"]
+[ext_resource type="Texture2D" uid="uid://bcvec8n1xcd0u" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10398.png" id="5_1mf5a"]
+[ext_resource type="Texture2D" uid="uid://hwuwwu8opb04" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Group 2085666184.png" id="5_iwfq2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7a2f"]
+texture = ExtResource("2_eiy7p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qoqlk"]
+texture = ExtResource("2_eiy7p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwfq2"]
+texture = ExtResource("2_eiy7p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7r1g0"]
+texture = ExtResource("2_eiy7p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cqjrg"]
+texture = ExtResource("2_eiy7p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2xy7"]
+texture = ExtResource("2_eiy7p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fimr5"]
+texture = ExtResource("2_eiy7p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7cqb"]
+texture = ExtResource("2_eiy7p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afec1"]
+texture = ExtResource("3_h7a2f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31qfy"]
+texture = ExtResource("3_h7a2f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qie43"]
+texture = ExtResource("3_h7a2f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61cf8"]
+texture = ExtResource("3_h7a2f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rnncn"]
+texture = ExtResource("3_h7a2f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fnrj"]
+texture = ExtResource("3_h7a2f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m04lp"]
+texture = ExtResource("3_h7a2f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1thib"]
+texture = ExtResource("3_h7a2f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iht1c"]
+texture = ExtResource("4_qoqlk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1t4j"]
+texture = ExtResource("4_qoqlk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dl1jy"]
+texture = ExtResource("4_qoqlk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y4010"]
+texture = ExtResource("4_qoqlk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2gjqv"]
+texture = ExtResource("4_qoqlk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ig1gi"]
+texture = ExtResource("4_qoqlk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f3wmj"]
+texture = ExtResource("4_qoqlk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xxvoy"]
+texture = ExtResource("4_qoqlk")
+
+[node name="MainMenu" type="Control" unique_id=60258633]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_42e3r")
+
+[node name="Panel" type="Panel" parent="." unique_id=357878651]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_f5lav")
+animation_duration = 0.3
+
+[node name="BG" type="TextureRect" parent="Panel" unique_id=298361679]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i26rj")
+expand_mode = 1
+
+[node name="PlayButton" type="Button" parent="Panel" unique_id=301650683]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.67800003
+anchor_right = 0.5
+anchor_bottom = 0.67800003
+offset_left = -150.0
+offset_top = -124.76001
+offset_right = 150.0
+offset_bottom = 175.23999
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_h7a2f")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_qoqlk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_iwfq2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_7r1g0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cqjrg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_e2xy7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_fimr5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_u7cqb")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/PlayButton" unique_id=1818889141]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -270.0
+offset_right = 270.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_1mf5a")
+expand_mode = 1
+
+[node name="TutorialButton" type="Button" parent="Panel" unique_id=358707857]
+layout_mode = 1
+offset_left = 65.0
+offset_top = 111.0
+offset_right = 210.0
+offset_bottom = 256.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_afec1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_31qfy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qie43")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_61cf8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rnncn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_3fnrj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_m04lp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_1thib")
+
+[node name="SettingsButton" type="Button" parent="Panel" unique_id=467924455]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_top = 110.0
+offset_right = -65.0
+offset_bottom = 255.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_iht1c")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_l1t4j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dl1jy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_y4010")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2gjqv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_ig1gi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_f3wmj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_xxvoy")
+
+[node name="GameLogo" type="TextureRect" parent="Panel" unique_id=1540275074]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.35200003
+anchor_right = 0.5
+anchor_bottom = 0.35200003
+offset_left = -401.0
+offset_top = -309.84003
+offset_right = 401.0
+offset_bottom = 310.15997
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_iwfq2")
+expand_mode = 1

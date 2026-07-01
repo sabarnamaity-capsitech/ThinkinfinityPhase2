@@ -1,0 +1,414 @@
+[gd_scene format=3 uid="uid://dydrddkokndyk"]
+
+[ext_resource type="Texture2D" uid="uid://bedxrs7vafb6y" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png" id="1_5f3gk"]
+[ext_resource type="Script" uid="uid://ctqjqidycim1b" path="res://Scripts/UI/HowToPlayPopup.gd" id="1_262s3"]
+[ext_resource type="Texture2D" uid="uid://c1gc8nrwo1sy7" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png" id="2_262s3"]
+[ext_resource type="Script" uid="uid://bfiw7gb5g67sj" path="res://Scripts/UI/ui_popup_animator.gd" id="2_prrdr"]
+[ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="3_tgp64"]
+[ext_resource type="Texture2D" uid="uid://r5ebcr8sl1ad" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="4_83bjb"]
+[ext_resource type="Texture2D" uid="uid://cpg1shmgtp36u" path="res://assets/ThinkfinityAsset/Art/InfoPanelAssets/Group 2085666219.png" id="5_262s3"]
+[ext_resource type="Texture2D" uid="uid://c78ai7n16pn45" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665064.png" id="6_83bjb"]
+[ext_resource type="Texture2D" uid="uid://c4s22y2vb4sms" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665065.png" id="7_u86ax"]
+[ext_resource type="FontFile" uid="uid://dkrjae17mgjlv" path="res://assets/Font/calibri/calibri-regular.ttf" id="8_djy7j"]
+[ext_resource type="Texture2D" uid="uid://b62a63fn25dph" path="res://assets/ThinkfinityAsset/Art/InfoPanelAssets/Group 2085665085.png" id="8_u86ax"]
+[ext_resource type="Texture2D" uid="uid://dbpcgvn803sw1" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (2).png" id="9_ukrux"]
+[ext_resource type="Texture2D" uid="uid://e6p72g517q33" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (1).png" id="10_f08v3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u86ax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l8b3b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ukrux"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f08v3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xs0fv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjbbp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnjse"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46eav"]
+
+[node name="HowToPlayPopup" type="Control" unique_id=583294124]
+layout_direction = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_262s3")
+
+[node name="DimBackground" type="ColorRect" parent="." unique_id=1283240038]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.69803923, 0.6901961, 0.69411767, 0.5921569)
+
+[node name="PopupPanel" type="Panel" parent="." unique_id=1815944686]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -425.0
+offset_top = -500.0
+offset_right = 425.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u86ax")
+script = ExtResource("2_prrdr")
+animation_style = 1
+animation_duration = 0.3
+
+[node name="Header" type="TextureRect" parent="PopupPanel" unique_id=647096527]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5f3gk")
+expand_mode = 1
+
+[node name="Headerbg" type="TextureRect" parent="PopupPanel/Header" unique_id=673803188]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("2_262s3")
+expand_mode = 1
+
+[node name="TitleLabel" type="Label" parent="PopupPanel/Header/Headerbg" unique_id=100205340]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -87.0
+offset_right = 248.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_tgp64")
+theme_override_font_sizes/font_size = 85
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l8b3b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ukrux")
+text = "HOW TO PLAY?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CloseButton" type="Button" parent="PopupPanel/Header" unique_id=54754689]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 28.0
+offset_right = 307.0
+offset_bottom = 495.0
+grow_horizontal = 0
+scale = Vector2(0.3, 0.3)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f08v3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xs0fv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rjbbp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dnjse")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_46eav")
+icon = ExtResource("4_83bjb")
+
+[node name="TutorialPages" type="Control" parent="PopupPanel" unique_id=2049828707]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 142.0
+offset_right = 3.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Page1" type="Control" parent="PopupPanel/TutorialPages" unique_id=1652457165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PageImage" type="TextureRect" parent="PopupPanel/TutorialPages/Page1" unique_id=1008881865]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.381
+anchor_right = 0.5
+anchor_bottom = 0.381
+offset_left = -272.0
+offset_top = -251.90002
+offset_right = 148.0
+offset_bottom = 88.099976
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2838742, 1.2940439)
+texture = ExtResource("5_262s3")
+expand_mode = 1
+
+[node name="PageDescription" type="Label" parent="PopupPanel/TutorialPages/Page1" unique_id=928999532]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.753
+anchor_right = 0.5
+anchor_bottom = 0.753
+offset_left = -254.0
+offset_top = -130.70001
+offset_right = 257.0
+offset_bottom = 8.299988
+theme_override_colors/font_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+theme_override_fonts/font = ExtResource("8_djy7j")
+theme_override_font_sizes/font_size = 50
+text = "Tap to rotate and
+complete the road"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Page2" type="Control" parent="PopupPanel/TutorialPages" unique_id=413993073]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PageTitle" type="Label" parent="PopupPanel/TutorialPages/Page2" unique_id=1280094021]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_top = 66.0
+offset_right = 155.0
+offset_bottom = 146.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("8_djy7j")
+theme_override_font_sizes/font_size = 65
+text = "Hint"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="EyeIcon" type="TextureRect" parent="PopupPanel/TutorialPages/Page2" unique_id=1293916453]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.266
+anchor_right = 0.2
+anchor_bottom = 0.266
+offset_left = -95.0
+offset_top = -95.40001
+offset_right = 855.0
+offset_bottom = 854.6
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_83bjb")
+expand_mode = 1
+
+[node name="RoadIcon" type="TextureRect" parent="PopupPanel/TutorialPages/Page2" unique_id=1749810017]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20500001
+anchor_top = 0.69100004
+anchor_right = 0.20500001
+anchor_bottom = 0.69100004
+offset_left = -99.250015
+offset_top = -81.900024
+offset_right = 850.75
+offset_bottom = 868.1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_u86ax")
+expand_mode = 1
+
+[node name="RoadMap" type="TextureRect" parent="PopupPanel/TutorialPages/Page2" unique_id=1217390876]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.558
+anchor_top = 0.47100002
+anchor_right = 0.558
+anchor_bottom = 0.47100002
+offset_left = -82.30002
+offset_top = -139.90002
+offset_right = 82.69998
+offset_bottom = 140.09998
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_u86ax")
+expand_mode = 1
+
+[node name="eyeLabel" type="Label" parent="PopupPanel/TutorialPages/Page2" unique_id=870027676]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.257
+anchor_right = 0.5
+anchor_bottom = 0.257
+offset_left = -141.0
+offset_top = -78.3
+offset_right = 359.0
+offset_bottom = 41.699997
+theme_override_colors/font_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("8_djy7j")
+theme_override_font_sizes/font_size = 50
+text = "Preview the solution"
+vertical_alignment = 1
+
+[node name="roadLabel" type="Label" parent="PopupPanel/TutorialPages/Page2" unique_id=421784868]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.707
+anchor_right = 0.5
+anchor_bottom = 0.707
+offset_left = -126.0
+offset_top = -56.299988
+offset_right = 374.0
+offset_bottom = 63.700012
+theme_override_colors/font_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("8_djy7j")
+theme_override_font_sizes/font_size = 50
+text = "Solve half instantly"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Page3" type="Control" parent="PopupPanel/TutorialPages" unique_id=24638041]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PageLabel" type="Label" parent="PopupPanel/TutorialPages/Page3" unique_id=575502025]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50600004
+anchor_top = 0.128
+anchor_right = 0.50600004
+anchor_bottom = 0.128
+offset_left = -181.10004
+offset_top = -45.200005
+offset_right = 168.89996
+offset_bottom = 44.799995
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("8_djy7j")
+theme_override_font_sizes/font_size = 65
+text = "Failed"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="restartadicon" type="TextureRect" parent="PopupPanel/TutorialPages/Page3" unique_id=857944860]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.29700002
+anchor_right = 0.2
+anchor_bottom = 0.29700002
+offset_left = -95.0
+offset_top = -67.30002
+offset_right = 855.0
+offset_bottom = 882.69995
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_ukrux")
+expand_mode = 1
+
+[node name="restarticon" type="TextureRect" parent="PopupPanel/TutorialPages/Page3" unique_id=451660941]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.61200005
+anchor_right = 0.2
+anchor_bottom = 0.61200005
+offset_left = -95.0
+offset_top = -94.80005
+offset_right = 855.0
+offset_bottom = 855.19995
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_f08v3")
+expand_mode = 1
+
+[node name="restartadlabel" type="Label" parent="PopupPanel/TutorialPages/Page3" unique_id=1756760222]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.29700002
+anchor_right = 0.5
+anchor_bottom = 0.29700002
+offset_left = -130.0
+offset_top = -40.30002
+offset_right = 370.0
+offset_bottom = 79.69998
+theme_override_colors/font_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("8_djy7j")
+theme_override_font_sizes/font_size = 50
+text = "Second chance to win"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="restartlabel" type="Label" parent="PopupPanel/TutorialPages/Page3" unique_id=1094274238]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 485.0
+offset_right = 795.0
+offset_bottom = 605.0
+theme_override_colors/font_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+theme_override_fonts/font = ExtResource("8_djy7j")
+theme_override_font_sizes/font_size = 50
+text = "Restart the level"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="DotsContainer" type="HBoxContainer" parent="PopupPanel" unique_id=796162099]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -90.0
+offset_right = 70.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.9391376, 0.42836004)
+theme_override_constants/separation = 20
+
+[node name="Dot1" type="TextureRect" parent="PopupPanel/DotsContainer" unique_id=624803217]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Dot2" type="TextureRect" parent="PopupPanel/DotsContainer" unique_id=2098123184]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Dot3" type="TextureRect" parent="PopupPanel/DotsContainer" unique_id=781868941]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+expand_mode = 1

@@ -1,0 +1,296 @@
+72322a848ab928aa5c89f0cb78209805
+::res://::1782882211
+error.txt::TextFile::-1::1782820919::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1782820919::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::8276398096660129815::1782820919::1782820919::1::::<><><>0<>0<>306cef994f118754cc6c627319195a6b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+output.txt::TextFile::-1::1782820919::0::1::::<><><>0<>0<><>::
+README.md::TextFile::-1::1782820919::0::1::::<><><>0<>0<><>::
+tile.tscn::PackedScene::4868688479319362322::1782820919::0::1::::<><><>0<>0<><>::uid://cp7ljcegmfy28::::res://Scripts/Main/tile.gd<>uid://2fbte1bxv3u2::::res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 1.png
+::res://addons/::1782820932
+::res://addons/AdmobPlugin/::1782820932
+Admob.gd::GDScript::1190689937007163060::1782820932::0::1::::Admob<>Node<>res://addons/AdmobPlugin/icon.png<>0<>1<><>::
+AdmobPlugin.gd::GDScript::788899548848323063::1782820932::0::1::::<>EditorPlugin<><>0<>1<><>::
+android_export.cfg::TextFile::-1::1782820932::0::1::::<><><>0<>0<><>::
+icon.png::CompressedTexture2D::3833700124641984489::1782820932::1782820932::1::::<><><>0<>0<>7869584d85b793f3eba4c51c7bffb659<>res://.godot/imported/icon.png-928f79d906c5a286de384358dfb1ba26.ctex::
+InlineAdaptiveBanner.gd::GDScript::939873525633521059::1782820932::0::1::::InlineAdaptiveBanner<>Control<>res://addons/AdmobPlugin/icon.png<>0<>0<><>::
+ios_export.cfg::TextFile::-1::1782820932::0::1::::<><><>0<>0<><>::
+plugin.cfg::TextFile::-1::1782820932::0::1::::<><><>0<>0<><>::
+::res://addons/AdmobPlugin/bin/::1782820932
+::res://addons/AdmobPlugin/bin/debug/::1782820932
+::res://addons/AdmobPlugin/bin/release/::1782820932
+::res://addons/AdmobPlugin/config/::1782820932
+AdCache.gd::GDScript::6562732176683721783::1782820932::0::1::::AdCache<>RefCounted<><>0<>0<><>::
+AdmobAndroidExportConfig.gd::GDScript::5176204609585733409::1782820932::0::1::::AdmobAndroidExportConfig<>AdmobExportConfig<><>0<>0<><>::
+AdmobExportConfig.gd::GDScript::2118253306783148829::1782820932::0::1::::AdmobExportConfig<>RefCounted<><>0<>0<><>::
+AdmobIosExportConfig.gd::GDScript::4570319292714465235::1782820932::0::1::::AdmobIosExportConfig<>AdmobExportConfig<><>0<>0<><>::
+::res://addons/AdmobPlugin/model/::1782820932
+AdapterResponseInfo.gd::GDScript::1772755867539502299::1782820932::0::1::::AdapterResponseInfo<>RefCounted<><>0<>0<><>::
+AdapterStatus.gd::GDScript::8058468378844421256::1782820932::0::1::::AdapterStatus<>RefCounted<><>0<>0<><>::
+AdError.gd::GDScript::7195076059125458237::1782820932::0::1::::AdError<>RefCounted<><>0<>0<><>::
+AdInfo.gd::GDScript::7269547153272445428::1782820932::0::1::::AdInfo<>RefCounted<><>0<>0<><>::
+AdmobConfig.gd::GDScript::2109457301009866319::1782820932::0::1::::AdmobConfig<>RefCounted<><>0<>0<><>::
+AdmobSettings.gd::GDScript::4662811031574747538::1782820932::0::1::::AdmobSettings<>RefCounted<><>0<>0<><>::
+AdSize.gd::GDScript::6861365381110845029::1782820932::0::1::::AdSize<>RefCounted<><>0<>0<><>::
+ConsentRequestParameters.gd::GDScript::5387336029420954849::1782820932::0::1::::ConsentRequestParameters<>RefCounted<><>0<>0<><>::
+FormError.gd::GDScript::9199575100343692579::1782820932::0::1::::FormError<>RefCounted<><>0<>0<><>::
+InitializationStatus.gd::GDScript::132137248846160205::1782820932::0::1::::InitializationStatus<>RefCounted<><>0<>0<><>::
+LoadAdError.gd::GDScript::6536716709730120173::1782820932::0::1::::LoadAdError<>AdError<><>0<>0<><>::
+LoadAdRequest.gd::GDScript::2754256932688027661::1782820932::0::1::::LoadAdRequest<>RefCounted<><>0<>0<><>::
+MediationNetwork.gd::GDScript::4737510071533763665::1782820932::0::1::::MediationNetwork<>RefCounted<><>0<>0<><>::
+NetworkExtras.gd::GDScript::2047155455176026502::1782820932::0::1::::NetworkExtras<>Resource<><>0<>0<><>::
+NetworkPrivacySettings.gd::GDScript::9213382916396697952::1782820932::0::1::::NetworkPrivacySettings<>RefCounted<><>0<>0<><>::
+ResponseInfo.gd::GDScript::2059138243732665167::1782820932::0::1::::ResponseInfo<>RefCounted<><>0<>0<><>::
+RewardItem.gd::GDScript::3120866202714452495::1782820932::0::1::::RewardItem<>RefCounted<><>0<>0<><>::
+UserConsent.gd::GDScript::5959081297098567818::1782820932::0::1::::UserConsent<>RefCounted<><>0<>0<><>::
+::res://addons/godotx_firebase/::1782820932
+export_plugin.gd::GDScript::8853916446269915470::1782820932::0::1::::<>EditorPlugin<><>0<>1<><>::
+firebase_crashlytics_helper.gd::GDScript::9190770627519370925::1782820932::0::1::::FirebaseCrashlyticsHelper<>RefCounted<><>0<>0<><>::
+plugin.cfg::TextFile::-1::1782820932::0::1::::<><><>0<>0<><>::
+::res://addons/mytool/::1782820932
+plugin.cfg::TextFile::-1::1782820932::0::1::::<><><>0<>0<><>::
+plugin.gd::GDScript::9112475837506008475::1782820932::0::1::::<>EditorPlugin<><>0<>1<><>::
+::res://assets/::1782820932
+::res://assets/Font/::1782820932
+::res://assets/Font/calibri/::1782820932
+calibri-bold-italic.ttf::FontFile::32815782368052154::1782820932::1782820932::1::::<><><>0<>0<>4a8e9210a7c15cdea4f38a84dbad9161<>res://.godot/imported/calibri-bold-italic.ttf-edca41134e5faa6710c965daa5f85ba3.fontdata::
+calibri-bold.ttf::FontFile::8107780734983108919::1782820932::1782820932::1::::<><><>0<>0<>91f0245a3fc3a323849478d74b27523a<>res://.godot/imported/calibri-bold.ttf-5f69b9554a44c44713dea30c6c373e7f.fontdata::
+calibri-italic.ttf::FontFile::1837009997553118930::1782820932::1782820932::1::::<><><>0<>0<>33cd2997fdf8d80fb00808602277255c<>res://.godot/imported/calibri-italic.ttf-ee927ac2e5978c6a98769e0b2efb6b37.fontdata::
+calibri-regular.ttf::FontFile::7896791613942072991::1782820932::1782820932::1::::<><><>0<>0<>3a71b76f0797f2e7a43efce94906beb1<>res://.godot/imported/calibri-regular.ttf-cecb7e2d8764b962394ced09c962265d.fontdata::
+::res://assets/ThinkfinityAsset/::1782820932
+::res://assets/ThinkfinityAsset/Art/::1782820934
+10382282-removebg-preview.png::CompressedTexture2D::6638309567778076629::1782820932::1782820932::1::::<><><>0<>0<>2c7a367e1a30e61e86ace74a1fc35dc7<>res://.godot/imported/10382282-removebg-preview.png-6e1042e804709c6ea682a382aba6567c.ctex::
+Gamewise Splash Screen.png::CompressedTexture2D::5738928911147898754::1782820933::1782820933::1::::<><><>0<>0<>3c6ee22cc84f56bea8f187bd4775a712<>res://.godot/imported/Gamewise Splash Screen.png-9899049c23928e7a1801dff6162da61d.ctex::
+Group 2085664595.png::CompressedTexture2D::2489795071458480543::1782820933::1782820933::1::::<><><>0<>0<>fb7b64c2aff511c166bdb49a6c8f7151<>res://.godot/imported/Group 2085664595.png-457560bbd12f8c77fa513536f897eacc.ctex::
+::res://assets/ThinkfinityAsset/Art/Audio/::1782820933
+Car Start.wav::AudioStreamWAV::8258604464236235605::1782820933::1782820933::1::::<><><>0<>0<>faf80443a5686f1182bceff94cb1053e<>res://.godot/imported/Car Start.wav-c01f7a0d8b16bcc0d2954cb2351ed1fd.sample::
+Car StartEdit.ogg::AudioStreamOggVorbis::7547665723749317570::1782820933::1782820933::1::::<><><>0<>0<>296df0bb52d98d2f652a732eb78d41ad<>res://.godot/imported/Car StartEdit.ogg-a7749be836a36c182d64f5ab3a5b7e2a.oggvorbisstr::
+Catchy Puzzle Game.wav::AudioStreamWAV::6094566255576208776::1782820933::1782820933::1::::<><><>0<>0<>28d6f8ca769193673f9ee82731c03664<>res://.godot/imported/Catchy Puzzle Game.wav-cf66c1b2afada2db82264d8b47fb30f4.sample::
+Congratsbell.wav::AudioStreamWAV::2811209810817962301::1782820933::1782820933::1::::<><><>0<>0<>639da1a551549f2d22388b5390dc0b0b<>res://.godot/imported/Congratsbell.wav-ef6a367498b22ddf4d2057c0b868b254.sample::
+MechanicalClickandWhir_BLhjR_03.wav::AudioStreamWAV::2002528251412667307::1782820933::1782820933::1::::<><><>0<>0<>2f483de8888a7e4cc2f8c2e3338a6468<>res://.godot/imported/MechanicalClickandWhir_BLhjR_03.wav-2725945f1f9c139fc285160923976a1d.sample::
+Puzzle Game (Faster Version).mp3::AudioStreamMP3::1117395641413108067::1782820933::1782820933::1::::<><><>0<>0<>5669cb4615db29250d38a2d11e5ad22c<>res://.godot/imported/Puzzle Game (Faster Version).mp3-669f538db043eb448b5f8ebdcd5647bb.mp3str::
+Puzzle Game (Faster Version).wav::AudioStreamWAV::708926744369061939::1782820933::1782820933::1::::<><><>0<>0<>ebb0f4452b49cbdbafb4f54542ff0981<>res://.godot/imported/Puzzle Game (Faster Version).wav-ede4e8d04656f237dc83fe3bea7e1ef7.sample::
+Select Click Metallic Tap Slight Scratch.wav::AudioStreamWAV::2271580120398344787::1782820933::1782820933::1::::<><><>0<>0<>1e210898b91d99a14f02d22cb40a4d07<>res://.godot/imported/Select Click Metallic Tap Slight Scratch.wav-cf87f78e9e79739220da4589c5377aa5.sample::
+Source Metal Gears Deep Loosen Tighten Click Rotating Mechanism Short 04.wav::AudioStreamWAV::6966329314228449275::1782820933::1782820933::1::::<><><>0<>0<>13f771151c810c30cb036cb49e39c5d2<>res://.godot/imported/Source Metal Gears Deep Loosen Tighten Click Rotating Mechanism Short 04.wav-4c0438eda9879da0ed69e54226e9c358.sample::
+TimerTick_0000.wav::AudioStreamWAV::6488409259886017290::1782820933::1782820933::1::::<><><>0<>0<>b372e279d050d3b7229e3b380daf60eb<>res://.godot/imported/TimerTick_0000.wav-8ece99303e96e1cd3d18d3eb173bb2e0.sample::
+TimerTick_loop1.ogg::AudioStreamOggVorbis::6335786609895922204::1782820933::1782820933::1::::<><><>0<>0<>3ff3543a6310ad32ed2faafa70c340a5<>res://.godot/imported/TimerTick_loop1.ogg-3e93d78048b09364489d09d9cb914f53.oggvorbisstr::
+Wrong Tension.wav::AudioStreamWAV::9034796352441313403::1782820933::1782820933::1::::<><><>0<>0<>8cc47b666c9cca240f0ce0b9ca3e5794<>res://.godot/imported/Wrong Tension.wav-d8630feb02f46aa4e369fc429dd42700.sample::
+::res://assets/ThinkfinityAsset/Art/buttons/::1782820933
+_2854354882976 (2).png::CompressedTexture2D::8673072624030739568::1782820933::1782820933::1::::<><><>0<>0<>f075e19dd4618299d1457d021bdc82cb<>res://.godot/imported/_2854354882976 (2).png-abb003685fba6844b234fd10ebba5bc5.ctex::
+Component 1.png::CompressedTexture2D::4204418125351506964::1782820933::1782820933::1::::<><><>0<>0<>880bc44b0fbc4680372054d5cb2fad35<>res://.godot/imported/Component 1.png-331e00041f6f037b96287fe02d828f95.ctex::
+Group 2085664501 (1).png::CompressedTexture2D::4172274256819340787::1782820933::1782820933::1::::<><><>0<>0<>16020c90cc87a8d0a1d4da38e141cef1<>res://.godot/imported/Group 2085664501 (1).png-b31f76a4bae554a26d8c05c3b3c54af2.ctex::
+Group 2085664508 (2).png::CompressedTexture2D::2716288562633501887::1782820933::1782820933::1::::<><><>0<>0<>0ec488ef7e9a4465ce7ea2ec6396c6c5<>res://.godot/imported/Group 2085664508 (2).png-13b3e15bff85440e13f8dd4e26dfe226.ctex::
+Group 2085664508.png::CompressedTexture2D::472730474270060642::1782820933::1782820933::1::::<><><>0<>0<>d85fb0653a57bcaeea43e1e9ceaf6ae6<>res://.godot/imported/Group 2085664508.png-76662c1c19dd805dfabd8962b4f57345.ctex::
+Group 2085664542.png::CompressedTexture2D::2333520820572677924::1782820933::1782820933::1::::<><><>0<>0<>21e8fcc20373e38d9f471abc50c2fbde<>res://.godot/imported/Group 2085664542.png-3ebdab78286938fe3e7ba9406b29ecd5.ctex::
+Group 2085664559 (1).png::CompressedTexture2D::1255386461065575363::1782820933::1782820933::1::::<><><>0<>0<>21ba96e546db26331701a8efbf3afc86<>res://.godot/imported/Group 2085664559 (1).png-6076ba0fd2232d7786708264c9c131e0.ctex::
+Group 2085664566 (1).png::CompressedTexture2D::2586095004261706253::1782820933::1782820933::1::::<><><>0<>0<>7780264454a2a23d186dd1ec8566e09d<>res://.godot/imported/Group 2085664566 (1).png-870c70a60de8662c368388c7f120404c.ctex::
+Group 2085664615.png::CompressedTexture2D::6978873824879678202::1782820933::1782820933::1::::<><><>0<>0<>c39994b22c93a3d4b4e7a6ec81ab5498<>res://.godot/imported/Group 2085664615.png-9750c30eca9ccf040564c68938ecc653.ctex::
+Group 2085664622.png::CompressedTexture2D::1068347500916247337::1782820933::1782820933::1::::<><><>0<>0<>b85f86f2b47d23e1c9e96a06bf001b69<>res://.godot/imported/Group 2085664622.png-4c71ce85e08dea3478b3c598b5bc6ecb.ctex::
+Group 2085665042 (1).png::CompressedTexture2D::345720414022801268::1782820933::1782820933::1::::<><><>0<>0<>a73bc5f5c4782cbf9ab880f2460105d1<>res://.godot/imported/Group 2085665042 (1).png-e0f85d0a0bb721bbf8aa21f175957559.ctex::
+Group 2085665042 (2).png::CompressedTexture2D::7260549834383904414::1782820933::1782820933::1::::<><><>0<>0<>5800c99d17d6d21ed7484a12353612eb<>res://.godot/imported/Group 2085665042 (2).png-89e33ea88eff53dfc3b295b441957d82.ctex::
+Group 2085665042 (3).png::CompressedTexture2D::3890516888218296874::1782820933::1782820933::1::::<><><>0<>0<>95ab7bcbca47f86ba077e6ad965d70c4<>res://.godot/imported/Group 2085665042 (3).png-ddf62b00a0d2a3bd07285ec1aa141fb7.ctex::
+Group 2085665042 (4).png::CompressedTexture2D::1579021624460655822::1782820933::1782820933::1::::<><><>0<>0<>6bd93133cc56af0bf111cdcb77faf02c<>res://.godot/imported/Group 2085665042 (4).png-cb203ad8747ade0399f1ab4762bf520a.ctex::
+Group 2085665042 (5).png::CompressedTexture2D::4890098629148622672::1782820933::1782820933::1::::<><><>0<>0<>27698e6a22033cc6c2d677ef1f46aa6b<>res://.godot/imported/Group 2085665042 (5).png-a7ca43c060e4ead21ebb727b8942431d.ctex::
+Group 2085665043 (1).png::CompressedTexture2D::4497339014914958150::1782820933::1782820933::1::::<><><>0<>0<>0be903f6eddb4ae0a91c6a8be3e1e72e<>res://.godot/imported/Group 2085665043 (1).png-6e7e2a94e2a2893cd1bfeb0721557d23.ctex::
+Group 2085665043.png::CompressedTexture2D::9208098164637182864::1782820933::1782820933::1::::<><><>0<>0<>ad992cce28ea00a8a6af3d048588b26b<>res://.godot/imported/Group 2085665043.png-5f83403a7c3c847cacbc3427a89d0f2e.ctex::
+Group 2085665045 (1).png::CompressedTexture2D::7082023754334310300::1782820933::1782820933::1::::<><><>0<>0<>ddc65f67158ceca1d9eeb2426f469adf<>res://.godot/imported/Group 2085665045 (1).png-9532bf5445b9140fbece52d5a31c77a1.ctex::
+Group 2085665045 (2).png::CompressedTexture2D::5179877082081025172::1782820933::1782820933::1::::<><><>0<>0<>0fac34271a4198dd10274069b2764d08<>res://.godot/imported/Group 2085665045 (2).png-6bb0a6c901d7e935682bcf34b10739f8.ctex::
+Group 2085665045 (4).png::CompressedTexture2D::3356492168787828299::1782820933::1782820933::1::::<><><>0<>0<>ad9bee439665c5dd1e9c56491593fd18<>res://.godot/imported/Group 2085665045 (4).png-de64fcf4c78bec365c8311e4f3feb7c7.ctex::
+Group 2085665052.png::CompressedTexture2D::7037202558171888036::1782820933::1782820933::1::::<><><>0<>0<>c4000cd655529d8b220d6f99987b470a<>res://.godot/imported/Group 2085665052.png-675ad7853009ac74de56685a34494953.ctex::
+Group 2085665064.png::CompressedTexture2D::7087024818091465236::1782820933::1782820933::1::::<><><>0<>0<>39de1f48e6589b23a81e9ba9c2813d02<>res://.godot/imported/Group 2085665064.png-6760b4b2f35a210506f8d2a2c66c6b67.ctex::
+Group 2085665065.png::CompressedTexture2D::6847165510929107914::1782820933::1782820933::1::::<><><>0<>0<>d5e0b8ca3fba678af9f31e59c11ca685<>res://.godot/imported/Group 2085665065.png-e09b0bce3e190bef69cf13c12179aaf5.ctex::
+Group 2085665121.png::CompressedTexture2D::3869935274908401574::1782820933::1782820933::1::::<><><>0<>0<>2a1535f614427de50bcc4bf2373e67fd<>res://.godot/imported/Group 2085665121.png-a5aa57552a2783169c4f842588717473.ctex::
+Group 2085665123.png::CompressedTexture2D::91478879203605842::1782820933::1782820933::1::::<><><>0<>0<>7812e3341cff6b3370d4eb595ba31e41<>res://.godot/imported/Group 2085665123.png-297681f2489f7ef8accc9aff40fdd1a9.ctex::
+Group 2085665125.png::CompressedTexture2D::1187617192685137079::1782820933::1782820933::1::::<><><>0<>0<>9a69e1f74ccc93d613996318ab3e5707<>res://.godot/imported/Group 2085665125.png-cb5f8c705c88af1d2b40aba4eb8c0b94.ctex::
+Group 2085666185.png::CompressedTexture2D::6997494254986628136::1782820933::1782820933::1::::<><><>0<>0<>c4ebb7ff2013247cf5dfddb85291d770<>res://.godot/imported/Group 2085666185.png-ee9483a6ac196d91d038a2e7409f9247.ctex::
+Group 2085666205.png::CompressedTexture2D::4303946065709928992::1782820933::1782820933::1::::<><><>0<>0<>f5b91cf3a9cbb12633e7d9b381caa7ea<>res://.godot/imported/Group 2085666205.png-1f4f69866632a33d2549ae956e71db90.ctex::
+Group 2085666221.png::CompressedTexture2D::7727695419114810832::1782820933::1782820933::1::::<><><>0<>0<>037a9428a3eec6f7bc3f84ece47c023d<>res://.godot/imported/Group 2085666221.png-d5d4ae52038ed6bd84d2a2e0985a8ddc.ctex::
+HintButtonImage.png::CompressedTexture2D::7383125041735693509::1782820933::1782820933::1::::<><><>0<>0<>3818dc3ead5dc958656bc5aa1c8afd91<>res://.godot/imported/HintButtonImage.png-c825ec426c6dfcfff708ebea7474e239.ctex::
+PlayButton.png::CompressedTexture2D::5058441458751098358::1782820933::1782820933::1::::<><><>0<>0<>df8e85743bd1a18ab2c0a3370c2327d7<>res://.godot/imported/PlayButton.png-9a65907dd5b556f8c8715a3bed4b9c1c.ctex::
+Rectangle 10398.png::CompressedTexture2D::2570398497928448626::1782820933::1782820933::1::::<><><>0<>0<>79c7d34ac58926bd125da4b321be8c4e<>res://.godot/imported/Rectangle 10398.png-616fb919c33aa48415a6a80b2b9fe436.ctex::
+Rectangle 10415.png::CompressedTexture2D::6610318643768355784::1782820933::1782820933::1::::<><><>0<>0<>1c32971f5d05c0044eaa062f517ba18d<>res://.godot/imported/Rectangle 10415.png-ae472205e8a89dbcf77c0904654bf367.ctex::
+Rectangle 10419 (4).png::CompressedTexture2D::1434932697136728512::1782820933::1782820933::1::::<><><>0<>0<>ec3bcc537dba362b8027d60321779f16<>res://.godot/imported/Rectangle 10419 (4).png-c8f91bb8c7b610c73d62305738d38611.ctex::
+Rectangle 3468859 (1).png::CompressedTexture2D::6151155448354016011::1782820933::1782820933::1::::<><><>0<>0<>70cc1d2ec12a65293908f224595e7ca5<>res://.godot/imported/Rectangle 3468859 (1).png-aa1c2842ddc0b3fc199bb693e9f9e2e6.ctex::
+Rectangle 3468859.png::CompressedTexture2D::1369937778588864156::1782820933::1782820933::1::::<><><>0<>0<>a2b8800ab6b7c3c5397c9448a5333734<>res://.godot/imported/Rectangle 3468859.png-e1a7e209ffba4567bcac036939d07bb0.ctex::
+Rectangle 3469043.png::CompressedTexture2D::6547386002214520602::1782820933::1782820933::1::::<><><>0<>0<>04cfeec2ea7928a71f9b751592a7c246<>res://.godot/imported/Rectangle 3469043.png-a67022cc8e3930579598668d6df3d288.ctex::
+::res://assets/ThinkfinityAsset/Art/DesignMaterial/::1782820934
+circle-removebg-preview.png::CompressedTexture2D::6763671965552994290::1782820933::1782820933::1::::<><><>0<>0<>3eff4d18b8e0cec13c84429cbb14e4a4<>res://.godot/imported/circle-removebg-preview.png-3d7ab7bdd0c96decc74401d13a65023d.ctex::
+Ellipse 168.png::CompressedTexture2D::3096407491736430445::1782820933::1782820933::1::::<><><>0<>0<>58f79a3984862736e4139ad0ca8eae75<>res://.godot/imported/Ellipse 168.png-21c6b19fa5e6b52321cfc932d9c184d9.ctex::
+Ellipse 169.png::CompressedTexture2D::2544847410244580311::1782820933::1782820933::1::::<><><>0<>0<>b42d931770e0f2db0d2f86240438f4ea<>res://.godot/imported/Ellipse 169.png-3275d30d0b72db8fbb5d23ea0729162e.ctex::
+EllipseBg.png::CompressedTexture2D::2193837434809326156::1782820933::1782820933::1::::<><><>0<>0<>05e680d867aa6da1f90bd6883d27a245<>res://.godot/imported/EllipseBg.png-0bb7ad02433adce112ac898b1cf9a9f6.ctex::
+Frame 2085664935.png::CompressedTexture2D::5241195559615752781::1782820933::1782820933::1::::<><><>0<>0<>0ceb0afefc320f0b556158e9edd7559a<>res://.godot/imported/Frame 2085664935.png-08fdd6ce8527653ea6071c01a80eaca7.ctex::
+Group 2085664477.png::CompressedTexture2D::4090888916598884062::1782820933::1782820933::1::::<><><>0<>0<>66ea3371bc40ae320eee3e8dc3f3faaf<>res://.godot/imported/Group 2085664477.png-79e4258322367ef44e864c69fdc7e715.ctex::
+Group 2085664478.png::CompressedTexture2D::7143517708004686774::1782820933::1782820933::1::::<><><>0<>0<>59e8f6f7eb1cc1ad02bf6a22b97d391e<>res://.godot/imported/Group 2085664478.png-a28711329e0eafe3649add0afbe4af6d.ctex::
+Group 2085664561.png::CompressedTexture2D::7562640840084141932::1782820933::1782820933::1::::<><><>0<>0<>4837c77a3ec2b3ae7d5ed5d07364b358<>res://.godot/imported/Group 2085664561.png-35fda70f4bec376bbee47b823f491562.ctex::
+Group 2085664594.png::CompressedTexture2D::4628242285088508967::1782820933::1782820933::1::::<><><>0<>0<>00210e77fb9cc3676119735a37430f7f<>res://.godot/imported/Group 2085664594.png-920483c403412babf2a2224a8fc2428b.ctex::
+Group 2085664652.png::CompressedTexture2D::3662399394694470557::1782820933::1782820933::1::::<><><>0<>0<>89f73f56b5fec018870058550a667221<>res://.godot/imported/Group 2085664652.png-4e9ea701425b6ef903bfe56f81dfeca5.ctex::
+Group 2085664954 (1).png::CompressedTexture2D::380482135938052599::1782820934::1782820934::1::::<><><>0<>0<>011acec88cce0003637b7d24dae57e23<>res://.godot/imported/Group 2085664954 (1).png-141310839cbda5709c8b374727fbc475.ctex::
+Group 2085665101.png::CompressedTexture2D::1648699618850289689::1782820934::1782820934::1::::<><><>0<>0<>6ad820a287df9bb98218fcd85e3c2c10<>res://.godot/imported/Group 2085665101.png-55840891bd6c36fd899e37ee1b67624d.ctex::
+Group 2085665104 (1).png::CompressedTexture2D::3219549003185172246::1782820934::1782820934::1::::<><><>0<>0<>f6524f50f866422171cd3ead9a19e6e4<>res://.godot/imported/Group 2085665104 (1).png-b18ab496cc4699fa74d88e14d4313aa9.ctex::
+Group 2085666184.png::CompressedTexture2D::537993031305239531::1782820934::1782820934::1::::<><><>0<>0<>d176451a21b52b731f31a00ce3ac9f79<>res://.godot/imported/Group 2085666184.png-965c2ca4d1601f07e7b3d2dc117e67cd.ctex::
+Group 2085666220.png::CompressedTexture2D::347973607611639623::1782820934::1782820934::1::::<><><>0<>0<>2fc878c9110dea77c298ac1a396dea29<>res://.godot/imported/Group 2085666220.png-f483ba8842ce28ede3ea0e0ecb538ee6.ctex::
+Group (3).png::CompressedTexture2D::4995599239331948168::1782820933::1782820933::1::::<><><>0<>0<>8264548adea89251a8d1f3fe828af79d<>res://.godot/imported/Group (3).png-007482fa8bb8f81cededcd7823a0ad6f.ctex::
+Group (4).png::CompressedTexture2D::6763762999986849350::1782820933::1782820933::1::::<><><>0<>0<>1519fcb51e6f9a49a978541664dfee93<>res://.godot/imported/Group (4).png-c6e55da9659b52be5335c753a7af7b81.ctex::
+Group (5).png::CompressedTexture2D::4783947615878355075::1782820933::1782820933::1::::<><><>0<>0<>11b539e1fb345d919bd44dcce58a09d5<>res://.godot/imported/Group (5).png-98d56b96976925e854f0e6e23422f3ef.ctex::
+loader.png::CompressedTexture2D::7898275113029736738::1782820934::1782820934::1::::<><><>0<>0<>1d7b58bf574ed49115c38a19e5278de3<>res://.godot/imported/loader.png-4f71fb9f04607ed58ac142b69056f1d2.ctex::
+pointing-up.png::CompressedTexture2D::2276427007112029247::1782820934::1782820934::1::::<><><>0<>0<>5703625a68f28ac1cd251624e7df0887<>res://.godot/imported/pointing-up.png-b405e5bf7bee41ab7fba3160575371bd.ctex::
+Rectangle 10414 (1).png::CompressedTexture2D::2674797036645808386::1782820934::1782820934::1::::<><><>0<>0<>8c10dfeb441022ef3c0e20575c4dab07<>res://.godot/imported/Rectangle 10414 (1).png-382a5d233cba408878dd4eb7d1c9151b.ctex::
+resized-120x120.png::CompressedTexture2D::8930036173419131954::1782820934::1782820934::1::::<><><>0<>0<>f7a3375e3d3a92a90c3976d9b437f7b8<>res://.godot/imported/resized-120x120.png-b3f63e7eaa658ee55a527522b427c3f2.ctex::
+Vector (5).png::CompressedTexture2D::3961839558958536503::1782820934::1782820934::1::::<><><>0<>0<>813d89a23ecbc09943e0bae7cea733fe<>res://.godot/imported/Vector (5).png-833598c0862b25d874c24204146fb0b4.ctex::
+::res://assets/ThinkfinityAsset/Art/Environment/::1782820934
+Frame 2085664877 (1).png::CompressedTexture2D::3617812757289367566::1782820934::1782820934::1::::<><><>0<>0<>739217579fba60a0833c638c447cb53d<>res://.godot/imported/Frame 2085664877 (1).png-cbe4ad4847349df1cce16a3cbe58e1e2.ctex::
+Frame 2085664896.png::CompressedTexture2D::2553996874201050115::1782820934::1782820934::1::::<><><>0<>0<>268bbf8270f2e061a703f57587e07a05<>res://.godot/imported/Frame 2085664896.png-69de5c512a9dbf5983191f9aef73de54.ctex::
+Frame 2085664943.png::CompressedTexture2D::5009786291224750977::1782820934::1782820934::1::::<><><>0<>0<>23d02fee6c5b9c1dd72d7a0f5abfd840<>res://.godot/imported/Frame 2085664943.png-775cadc26c6a0b26e795dcc2dc4a3fb3.ctex::
+Frame 2085664952.png::CompressedTexture2D::184434847016441175::1782820934::1782820934::1::::<><><>0<>0<>3bb4f125101b395826af56aa8354b96a<>res://.godot/imported/Frame 2085664952.png-6c7aed98a836db1b3c61a620351fe040.ctex::
+GameOver.png::CompressedTexture2D::6659753492794988778::1782820934::1782820934::1::::<><><>0<>0<>18fa7d0eb023460a6a6c332b089d50b7<>res://.godot/imported/GameOver.png-06ad4ea8a8d84d58916e49994b756717.ctex::
+Group 2085664593.png::CompressedTexture2D::1848560176559004378::1782820934::1782820934::1::::<><><>0<>0<>1f1e3630060d43f807ae96bb7e8ab92f<>res://.godot/imported/Group 2085664593.png-2af8723fe27e4e5cea70b4b079a24a15.ctex::
+Group 2085664619 (1).png::CompressedTexture2D::2552355007552569613::1782820934::1782820934::1::::<><><>0<>0<>6a515ff40d806b004d80b69e19d6078c<>res://.godot/imported/Group 2085664619 (1).png-b800b286d0da7ff6e793b8fdcb63b188.ctex::
+Group 2085664632 (1).png::CompressedTexture2D::5249799053471119302::1782820934::1782820934::1::::<><><>0<>0<>542cf9b25645191106618cffdc248f05<>res://.godot/imported/Group 2085664632 (1).png-f97517870a709ec4b2af786f9d6911ea.ctex::
+Group 2085665049.png::CompressedTexture2D::1439602216158206458::1782820934::1782820934::1::::<><><>0<>0<>e80e27ee97bc9850a4f33c38da469546<>res://.godot/imported/Group 2085665049.png-54459356e978c4cf1ec5a4443ea603f0.ctex::
+Group 2085665124.png::CompressedTexture2D::2386460915522207522::1782820934::1782820934::1::::<><><>0<>0<>111b92bf75b804b6cab77f7428f5d289<>res://.godot/imported/Group 2085665124.png-874e53ebed49214575c7158cdb01634c.ctex::
+Group 2085666184.png::CompressedTexture2D::7179175396652600314::1782820934::1782820934::1::::<><><>0<>0<>994d879441906cd16b3636267c5cdcdb<>res://.godot/imported/Group 2085666184.png-2fa144a84698d22ac39bf6bb40d1b3bc.ctex::
+Group 2085666219.png::CompressedTexture2D::4081586337239282067::1782820934::1782820934::1::::<><><>0<>0<>ca465a3f54d28d622cce6980054e0a58<>res://.godot/imported/Group 2085666219.png-3c8a54d00bebfd687ad44b9706811592.ctex::
+Hint.png::CompressedTexture2D::1595693379047573346::1782820934::1782820934::1::::<><><>0<>0<>cbdb7fa4731fde822c9e7c525d2141b5<>res://.godot/imported/Hint.png-1fb2629d66daed8430f791972c7fff40.ctex::
+icon.png::CompressedTexture2D::4336187633581548518::1782820934::1782820934::1::::<><><>0<>0<>e1c9160109ea352df3983f35fee4b7d4<>res://.godot/imported/icon.png-7e32dbcce2e1325c89932ad8f707bc77.ctex::
+Language PAnel.png::CompressedTexture2D::5119837680096633139::1782820934::1782820934::1::::<><><>0<>0<>93356004b3ca1a6934f0db7e6d92c8ff<>res://.godot/imported/Language PAnel.png-a242b84092d05820ba4022676d27a30e.ctex::
+MainMenuSceneBG.png::CompressedTexture2D::4539216563925299857::1782820934::1782820934::1::::<><><>0<>0<>06488c178a92b3116d3cebf14046a854<>res://.godot/imported/MainMenuSceneBG.png-d3a32e82e730e1fa2b79cc681d20f025.ctex::
+Pause.png::CompressedTexture2D::3842145553012218095::1782820934::1782820934::1::::<><><>0<>0<>931befd798e86f8665512ed6a702050f<>res://.godot/imported/Pause.png-d34f4d9ddc6598c6a889e05257b05782.ctex::
+Rectangle 10428.png::CompressedTexture2D::8887284586542997431::1782820934::1782820934::1::::<><><>0<>0<>c83cbca199dfb6e0e7cd00f0a833f846<>res://.godot/imported/Rectangle 10428.png-964a0c5fc2fbea64c092ecc0ad336079.ctex::
+Rectangle 3468858.png::CompressedTexture2D::3267290514011064805::1782820934::1782820934::1::::<><><>0<>0<>2aed3e61884a506320de8d23674df9a6<>res://.godot/imported/Rectangle 3468858.png-f9bf40cb5409e08a1b762664fe4d2bd4.ctex::
+Setting.png::CompressedTexture2D::5317863150289688108::1782820934::1782820934::1::::<><><>0<>0<>4753b982f15a6d3b114efba532473c69<>res://.godot/imported/Setting.png-9aab8eb31268b9582fd6976767906e3d.ctex::
+Untitled-2 1.png::CompressedTexture2D::7348455372538616478::1782820934::1782820934::1::::<><><>0<>0<>b33d0a9679d861b6a23ada2e0735a316<>res://.godot/imported/Untitled-2 1.png-45bbc27077475a349629c281950d6868.ctex::
+::res://assets/ThinkfinityAsset/Art/InfoPanelAssets/::1782820934
+Group 2085665085.png::CompressedTexture2D::4618069874448521489::1782820934::1782820934::1::::<><><>0<>0<>867a1e6969ccfc2edebb1b0ef50aef56<>res://.godot/imported/Group 2085665085.png-c2aaa1234430120924080db02d5e55eb.ctex::
+Group 2085666219.png::CompressedTexture2D::5839671461082992650::1782820934::1782820934::1::::<><><>0<>0<>2d17d353296c8150b840ffa98e71e2e2<>res://.godot/imported/Group 2085666219.png-2d316551f8b095e002cdb9050f747be0.ctex::
+::res://assets/ThinkfinityAsset/Art/lEVELdESIGN/::1782820934
+SampleScene_1080p_31.03.2026_18-05-01.png::CompressedTexture2D::7947566238340178939::1782820934::1782820934::1::::<><><>0<>0<>c67bc10c954fa801021d593c93c51725<>res://.godot/imported/SampleScene_1080p_31.03.2026_18-05-01.png-76cb86f2469b8b7c39d95682096fb037.ctex::
+::res://assets/ThinkfinityAsset/Art/LevelFrame/::1782820934
+Frame 2085664895.png::CompressedTexture2D::5130066486034489117::1782820934::1782820934::1::::<><><>0<>0<>c54a1974870f8c9dc7b1af769c5b89f0<>res://.godot/imported/Frame 2085664895.png-1511c74e61f9fc48e73b0f7eebd5d8f2.ctex::
+Frame 2085664936.png::CompressedTexture2D::6232075029459371729::1782820934::1782820934::1::::<><><>0<>0<>972df9a1c5589daf8f1a78b0ea66f4a7<>res://.godot/imported/Frame 2085664936.png-184c11bc72ac1c6caab64576c139beea.ctex::
+Frame 2085664937.png::CompressedTexture2D::7306776231234046894::1782820934::1782820934::1::::<><><>0<>0<>d542f928d88853d5d3fcdb5928582be8<>res://.godot/imported/Frame 2085664937.png-f4b5ce0aca5deeb72c30746d6b38a529.ctex::
+Frame 2085664940.png::CompressedTexture2D::8677130583095170003::1782820934::1782820934::1::::<><><>0<>0<>67ea49dfb94b37d98915040b32b105a3<>res://.godot/imported/Frame 2085664940.png-98b4bbab75fede964cd6caaede4a827b.ctex::
+Frame 2085664941 (1).png::CompressedTexture2D::3360473883196356952::1782820934::1782820934::1::::<><><>0<>0<>08975d0884a6976df1501e748e70ad34<>res://.godot/imported/Frame 2085664941 (1).png-b23798d601f59323e0b221f4a922c891.ctex::
+::res://assets/ThinkfinityAsset/Art/LevelSprite/::1782820934
+Frame 1.png::CompressedTexture2D::1905515564409477739::1782820934::1782820934::1::::<><><>0<>0<>71f3b485edcb755e949584ecffe96522<>res://.godot/imported/Frame 1.png-86d451949abfc2b7ad3c9febc73c3637.ctex::
+Frame 2.png::CompressedTexture2D::4825190542406959723::1782820934::1782820934::1::::<><><>0<>0<>e2ff1bd3e35c961114248c02979f6d84<>res://.godot/imported/Frame 2.png-b9e4591632df60704698cb37e05ed31c.ctex::
+Frame 3.png::CompressedTexture2D::4526885332449937927::1782820934::1782820934::1::::<><><>0<>0<>99ffd9a71713db06a8fb9611a94490eb<>res://.godot/imported/Frame 3.png-8fc6d5cd48d9471b5da48ca3ed6b71cc.ctex::
+Frame 4.png::CompressedTexture2D::5444679055142805225::1782820934::1782820934::1::::<><><>0<>0<>cbab970fc9f2e02954d3b71bc88f3d4e<>res://.godot/imported/Frame 4.png-45754ebbea7a46b450a780a0d4fe7a3c.ctex::
+Frame 5.png::CompressedTexture2D::4392475936130145176::1782820934::1782820934::1::::<><><>0<>0<>39dd639951253ba6fe449adee56cb562<>res://.godot/imported/Frame 5.png-10a86d6362962fdf78caa35bcb851171.ctex::
+Group 2085664553.png::CompressedTexture2D::3211471675754192097::1782820934::1782820934::1::::<><><>0<>0<>668995d36781cbd73472d15164909317<>res://.godot/imported/Group 2085664553.png-9ccc30913f828a445f67434847f9cca4.ctex::
+::res://assets/ThinkfinityAsset/Art/MainTile/::1782820934
+Group 2085664743.png::CompressedTexture2D::7043818320194025478::1782820934::1782820934::1::::<><><>0<>0<>c7bcdf97db8ee9ea4147b071166d3308<>res://.godot/imported/Group 2085664743.png-a27cdcc1b5831ec5e1fc20fc93a2b750.ctex::
+Group 2085664791.png::CompressedTexture2D::3342984190256129544::1782820934::1782820934::1::::<><><>0<>0<>cc1eb5616a8d523f46adf4fce83eceee<>res://.godot/imported/Group 2085664791.png-bcd03b7120869b1638ace629905b21e0.ctex::
+Group 2085664972.png::CompressedTexture2D::8959296851131302222::1782820934::1782820934::1::::<><><>0<>0<>5c842a09c81b4a3bf477891725a0e160<>res://.godot/imported/Group 2085664972.png-a16eefe656c58dd46be0a0d9f810ad04.ctex::
+Group 2085664973.png::CompressedTexture2D::5077763074541644296::1782820934::1782820934::1::::<><><>0<>0<>eef76828a11cee22eb39ad03f95810f9<>res://.godot/imported/Group 2085664973.png-ca0a481f9e62bcaf7daebca697393631.ctex::
+Group 2085664974.png::CompressedTexture2D::4922619041985010956::1782820934::1782820934::1::::<><><>0<>0<>1610f8459ccab9b3f202eaabda30f0d4<>res://.godot/imported/Group 2085664974.png-7d4e5f81fffaf65de0c5c480b29d01be.ctex::
+Group 2085664975.png::CompressedTexture2D::2060227863344105077::1782820934::1782820934::1::::<><><>0<>0<>13d67ab1b296fb7d985ffc4d8d09fa7d<>res://.godot/imported/Group 2085664975.png-9bce02be3bd06190e4ae465b536da637.ctex::
+Group 2085664978.png::CompressedTexture2D::6982412738879621604::1782820934::1782820934::1::::<><><>0<>0<>102bfcfc526f3de44d7ed204b9da2f99<>res://.godot/imported/Group 2085664978.png-1b6059f480bc9761411af0dc6900c54c.ctex::
+Group 2085664980.png::CompressedTexture2D::701327405116543497::1782820934::1782820934::1::::<><><>0<>0<>d7bd4a434b5e7f85d00b1100c2e82a00<>res://.godot/imported/Group 2085664980.png-569c79a60187890b4983271b8357f46f.ctex::
+Group 2085664981.png::CompressedTexture2D::3171468204582742167::1782820934::1782820934::1::::<><><>0<>0<>cac979aeff1599f869b27cb17578443b<>res://.godot/imported/Group 2085664981.png-0b52d303c2842ee3e3b129bce2269df5.ctex::
+Group 2085664982.png::CompressedTexture2D::4582003839335328945::1782820934::1782820934::1::::<><><>0<>0<>faead6c2a2d43ec1a554824312815ca1<>res://.godot/imported/Group 2085664982.png-7807d77aa21698e9624a1ed1ba472d73.ctex::
+Group 2085664984.png::CompressedTexture2D::7763375670292069553::1782820934::1782820934::1::::<><><>0<>0<>a6bc6a051a71efbb761691d38ba7d810<>res://.godot/imported/Group 2085664984.png-59e5a0b2e7be431097ce232a78fab3ad.ctex::
+Group 2085665008.png::CompressedTexture2D::1818932566824968418::1782820934::1782820934::1::::<><><>0<>0<>0eb472f47172ef4ec261808632a02815<>res://.godot/imported/Group 2085665008.png-45060f1bb78a63714edb67a67f25cca7.ctex::
+::res://assets/ThinkfinityAsset/Art/Smoke/::1782820934
+confetti_large.png::CompressedTexture2D::6908656897456631769::1782820934::1782820934::1::::<><><>0<>0<>2747ba720608dc0c4243b5e77d2e21fc<>res://.godot/imported/confetti_large.png-47d78d673f082cfe568b068f8c803271.ctex::
+smoke.tscn::PackedScene::3955867439717348547::1782820934::0::1::::<><><>0<>0<><>::uid://d1ba82xn4q2s0::::res://assets/ThinkfinityAsset/Art/Smoke/smoke_07.png
+smoke_07.png::CompressedTexture2D::6856730476960824687::1782820934::1782820934::1::::<><><>0<>0<>986a69ee5ec64ff8b43b6456d1541a08<>res://.godot/imported/smoke_07.png-247662f621c4dbda87eb8ee52b3c8f53.ctex::
+::res://assets/ThinkfinityAsset/Art/Text_Tile/::1782820934
+Group 2085664470 (2).png::CompressedTexture2D::3011898963245702522::1782820934::1782820934::1::::<><><>0<>0<>d692b673ddc3ebd5ef51aeb4d688d4fc<>res://.godot/imported/Group 2085664470 (2).png-06a16d4a139e529c40647ef9207aee54.ctex::
+Group 2085664589.png::CompressedTexture2D::213364035696071060::1782820934::1782820934::1::::<><><>0<>0<>8a26beced9525266ee5acf64b47ea7bf<>res://.godot/imported/Group 2085664589.png-3adcbdd0767dbbce4100f637d0f009eb.ctex::
+Subtract (1).png::CompressedTexture2D::6734970439595970908::1782820934::1782820934::1::::<><><>0<>0<>a8519d8987521753f915a2e32cd773d4<>res://.godot/imported/Subtract (1).png-a44ad1a56dd1d5e55534cd9d16fc40e7.ctex::
+Subtract (2).png::CompressedTexture2D::1923242980458587816::1782820934::1782820934::1::::<><><>0<>0<>aab3615d3120712b0c49576d173e541a<>res://.godot/imported/Subtract (2).png-8dcc3d604d577e95c39c94003e06164d.ctex::
+::res://assets/ThinkfinityAsset/Art/Vehicle/::1782820934
+Group 2085664475.png::CompressedTexture2D::6386940512826366930::1782820934::1782820934::1::::<><><>0<>0<>1ef3596708c861f0a56b6f421273b299<>res://.godot/imported/Group 2085664475.png-21bc2682c53967084b325a3716920fcb.ctex::
+::res://Data/::1782735054
+::res://Key/::1782820934
+::res://levels/::1782820935
+level_001.json::JSON::-1::1782820934::0::1::::<><><>0<>0<><>::
+level_002.json::JSON::-1::1782820934::0::1::::<><><>0<>0<><>::
+level_003.json::JSON::-1::1782820934::0::1::::<><><>0<>0<><>::
+level_004.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_005.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_006.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_007.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_008.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_009.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_010.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_011.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_012.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_013.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_014.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_015.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_016.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_017.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_018.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_019.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+level_020.json::JSON::-1::1782820935::0::1::::<><><>0<>0<><>::
+::res://Scenes/::1782820935
+::res://Scenes/Main/::1782829998
+MainScene.tscn::PackedScene::3456121000419563362::1782829998::0::1::::<><><>0<>0<><>::uid://cu14mogrqjnun::::res://assets/ThinkfinityAsset/Art/LevelFrame/Frame 2085664936.png<>uid://c1tv8u7lviylp::::res://assets/ThinkfinityAsset/Art/10382282-removebg-preview.png<>uid://32j1a7njl6so::::res://Scripts/Main/Car.gd<>uid://bwmis87abtqgp::::res://assets/ThinkfinityAsset/Art/Smoke/smoke.tscn<>uid://13pvno42m6sr::::res://Scripts/Main/LevelGenerator.gd<>uid://cbmot8wafocy1::::res://tile.tscn<>uid://c15urw73iou2u::::res://Scripts/Main/Hint.gd<>uid://bl0wp7rjr71w4::::res://assets/ThinkfinityAsset/Art/LevelSprite/Group 2085664553.png<>uid://bsy7dxu57gy7v::::res://Scenes/UI/UiMain.tscn<>uid://2fbte1bxv3u2::::res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 1.png<>uid://byi74ed4ag6ib::::res://Scenes/UI/preview_overlay.tscn<>uid://b5q4e05dpu8id::::res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 3.png<>uid://ca0mgh4awlwa2::::res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 2.png<>uid://cde4fwobn5rft::::res://Scenes/UI/confetti_burst.tscn<>uid://vr4ivet3krl4::::res://Scripts/Main/GameManager.gd<>uid://dqweavmudjsuw::::res://Scenes/UI/GameSceneUI.tscn<>uid://cjtpcliybuimb::::res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 4.png<>uid://b3t0o4cw8stsi::::res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 5.png<>uid://bh56gkvpopkkm::::res://Scenes/UI/MainMenuScene.tscn<>uid://dl3egsnnsadmu::::res://Scenes/UI/LevelScene.tscn<>uid://c0qikmuxme82f::::res://Scenes/UI/popup_panelMain.tscn
+::res://Scenes/UI/::1782829355
+confetti_burst.tscn::PackedScene::4993436308281262049::1782820935::0::1::::<><><>0<>0<><>::
+GameSceneUI.tscn::PackedScene::8327943850289300990::1782820935::0::1::::<><><>0<>0<><>::uid://cwkpdw7mkj3y5::::res://Scripts/UI/game_scene_ui.gd<>uid://8im0nrorg48o::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664542.png<>uid://bc3yuvtc6lgfd::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664566 (1).png<>uid://bex141nlpin64::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508 (2).png<>uid://didmaq111715m::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085666221.png<>uid://q6j48gnjof1p::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665125.png<>uid://dnrp71sx1os84::::res://assets/Font/calibri/calibri-bold.ttf
+LevelComponent.tscn::PackedScene::6425994857177715908::1782820935::0::1::::<><><>0<>0<><>::uid://c0juqxpheqswg::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 3469043.png<>uid://qemf8xn1g3xr::::res://Scripts/UI/level_component.gd<>uid://b2k4mlq7dpnf1::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085666205.png
+LevelScene.tscn::PackedScene::7989396457063306808::1782820935::0::1::::<><><>0<>0<><>::uid://h2ovdxfea7we::::res://Scripts/UI/level_scene.gd<>uid://gy82i6xuf1dm::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508.png<>uid://cxs2gxdgxtgqe::::res://Scenes/UI/LevelComponent.tscn<>res://Scripts/UI/ui_popup_animator.gd<>uid://cdm1pihdn3s0x::::res://assets/ThinkfinityAsset/Art/Environment/Frame 2085664943.png<>uid://dnrp71sx1os84::::res://assets/Font/calibri/calibri-bold.ttf
+MainMenuScene.tscn::PackedScene::2941567421695546496::1782820935::0::1::::<><><>0<>0<><>::uid://b1emn8k7obcry::::res://Scripts/UI/main_menu_scene.gd<>uid://b5w3h7cg3g7vx::::res://assets/ThinkfinityAsset/Art/Environment/MainMenuSceneBG.png<>uid://cecl16kbs8de1::::res://assets/ThinkfinityAsset/Art/buttons/PlayButton.png<>uid://bfiw7gb5g67sj::::res://Scripts/UI/ui_popup_animator.gd<>uid://c6xvycqr5el0k::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085666185.png<>uid://bex141nlpin64::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508 (2).png<>uid://bcvec8n1xcd0u::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10398.png<>uid://hwuwwu8opb04::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Group 2085666184.png
+popup_panelMain.tscn::PackedScene::6561096758520685919::1782829355::0::1::::<><><>0<>0<><>::uid://xn7kt7rpdk0v::::res://Scenes/UI/Popups/SettingsPopup.tscn<>uid://chokthyaoh2dt::::res://Scripts/Managers/popup_panel_main.gd<>uid://cucyfpe03a067::::res://Scenes/UI/Popups/pause_popup.tscn<>uid://cl560swqanngt::::res://Scenes/UI/Popups/NoAdsPopup.tscn<>uid://cdi5ai0pi2abu::::res://Scenes/UI/Popups/CreditPopup.tscn<>uid://b0tel3uo40ijw::::res://Scenes/UI/Popups/FailurePopup.tscn<>uid://chdlorp6jhduw::::res://Scenes/UI/Popups/HintPopup.tscn<>uid://bexci25ogfbw1::::res://Scenes/UI/Popups/WinnerPopUp.tscn
+preview_overlay.tscn::PackedScene::4089462900875838365::1782820935::0::1::::<><><>0<>0<><>::uid://bi1s8nmpsbs86::::res://Scripts/UI/preview_overlay.gd<>uid://cu14mogrqjnun::::res://assets/ThinkfinityAsset/Art/LevelFrame/Frame 2085664936.png<>uid://bbqctcubdk8o6::::res://assets/ThinkfinityAsset/Art/Group 2085664595.png<>uid://fokqq45sv8fb::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Group 2085664954 (1).png<>uid://bwpe6ia0j0kxj::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Vector (5).png<>uid://dkr8o4mdr8da5::::res://assets/ThinkfinityAsset/Art/DesignMaterial/loader.png<>uid://didmaq111715m::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085666221.png<>uid://dnrp71sx1os84::::res://assets/Font/calibri/calibri-bold.ttf
+UiMain.tscn::PackedScene::3701314476764591909::1782821519::0::1::::<><><>0<>0<><>::
+win_particle_left.tscn::PackedScene::7032682693966918570::1782820935::0::1::::<><><>0<>0<><>::uid://bbcl502jxm0n2::::res://assets/ThinkfinityAsset/Art/Smoke/confetti_large.png
+win_particle_right.tscn::PackedScene::8262484971209559405::1782820935::0::1::::<><><>0<>0<><>::uid://bbcl502jxm0n2::::res://assets/ThinkfinityAsset/Art/Smoke/confetti_large.png
+::res://Scenes/UI/Popups/::1782820935
+CreditPopup.tscn::PackedScene::5001744889615966254::1782820935::0::1::::<><><>0<>0<><>::res://Scripts/UI/credit_popup.gd<>res://Scripts/UI/ui_popup_animator.gd<>uid://bedxrs7vafb6y::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png<>uid://c1gc8nrwo1sy7::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png<>uid://dnrp71sx1os84::::res://assets/Font/calibri/calibri-bold.ttf<>uid://dkrjae17mgjlv::::res://assets/Font/calibri/calibri-regular.ttf<>uid://r5ebcr8sl1ad::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png<>uid://p5qavy5gmq1::::res://assets/Font/calibri/calibri-bold-italic.ttf<>uid://1f4jy6r2t6i5::::res://assets/Font/calibri/calibri-italic.ttf
+FailurePopup.tscn::PackedScene::4180628965900800320::1782820935::0::1::::<><><>0<>0<><>::uid://c1ns7rrbgo2y4::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png<>uid://cm464qnounnvf::::res://Scripts/UI/lose_popup.gd<>uid://dvjwa7xcsqm47::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png<>uid://bfiw7gb5g67sj::::res://Scripts/UI/ui_popup_animator.gd<>uid://dsqg6knw4gj3i::::res://assets/Font/calibri/calibri-bold.ttf<>uid://bbc5lw6gbs3g0::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png<>uid://bve4f8ctvu54x::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (2).png<>uid://c0umdmlmscrc3::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (1).png<>uid://b1bubi14vhenh::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664622.png
+HintPopup.tscn::PackedScene::5271050211639530930::1782820935::0::1::::<><><>0<>0<><>::uid://bb0k4ajmkgn1s::::res://Scripts/UI/hint_popup.gd<>uid://c1ns7rrbgo2y4::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png<>uid://dvjwa7xcsqm47::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png<>res://Scripts/UI/ui_popup_animator.gd<>uid://dsqg6knw4gj3i::::res://assets/Font/calibri/calibri-bold.ttf<>uid://bbc5lw6gbs3g0::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png<>uid://bubw0k6upg033::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665064.png<>uid://lwniiet8sk2g::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665065.png<>uid://b1bubi14vhenh::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664622.png
+InformationPopup.tscn::PackedScene::8851025151581073422::1782820935::0::1::::<><><>0<>0<><>::uid://bedxrs7vafb6y::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png<>uid://ctqjqidycim1b::::res://Scripts/UI/HowToPlayPopup.gd<>uid://c1gc8nrwo1sy7::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png<>uid://bfiw7gb5g67sj::::res://Scripts/UI/ui_popup_animator.gd<>uid://dnrp71sx1os84::::res://assets/Font/calibri/calibri-bold.ttf<>uid://r5ebcr8sl1ad::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png<>uid://cpg1shmgtp36u::::res://assets/ThinkfinityAsset/Art/InfoPanelAssets/Group 2085666219.png<>uid://c78ai7n16pn45::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665064.png<>uid://c4s22y2vb4sms::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665065.png<>uid://dkrjae17mgjlv::::res://assets/Font/calibri/calibri-regular.ttf<>uid://b62a63fn25dph::::res://assets/ThinkfinityAsset/Art/InfoPanelAssets/Group 2085665085.png<>uid://dbpcgvn803sw1::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (2).png<>uid://e6p72g517q33::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (1).png
+NoAdsPopup.tscn::PackedScene::5608777831783227131::1782820935::0::1::::<><><>0<>0<><>::uid://5tppogbhyfl::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10419 (4).png<>uid://dsqg6knw4gj3i::::res://assets/Font/calibri/calibri-bold.ttf
+pause_popup.tscn::PackedScene::6182213927653691778::1782820935::0::1::::<><><>0<>0<><>::uid://c1ns7rrbgo2y4::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png<>uid://c6242rtsr74lw::::res://Scripts/UI/pause_popup.gd<>uid://dvjwa7xcsqm47::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png<>res://Scripts/UI/ui_popup_animator.gd<>uid://dsqg6knw4gj3i::::res://assets/Font/calibri/calibri-bold.ttf<>uid://bbc5lw6gbs3g0::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png<>uid://mpeuv81x0y3q::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665043.png<>uid://dpy4d2f3xuofb::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (3).png<>uid://c0umdmlmscrc3::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (1).png
+SettingsPopup.tscn::PackedScene::1643142164355069367::1782820935::0::1::::<><><>0<>0<><>::uid://bedxrs7vafb6y::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png<>uid://cjbuwgwpahsqn::::res://Scripts/UI/settings_popup.gd<>uid://c1gc8nrwo1sy7::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png<>res://Scripts/UI/ui_popup_animator.gd<>uid://dnrp71sx1os84::::res://assets/Font/calibri/calibri-bold.ttf<>uid://r5ebcr8sl1ad::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png<>uid://wq5ixkqjq4f7::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (4).png<>uid://b5csrtc03as6a::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665043 (1).png<>uid://cf2f23qiix045::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665045 (2).png<>uid://bkkv5g7bsabq::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665123.png<>uid://bvevjep86wmwk::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665121.png<>uid://ctvwvqca0lw3t::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 3468859 (1).png
+ui_manager.tscn::PackedScene::4559862873273728345::1782820935::0::1::::<><><>0<>0<><>::uid://1exsnp56mqum::::res://Scripts/UI/UIManager.gd<>uid://bxqspo0ueffcb::::res://assets/New Prefab/LoginPanel/Background.png<>uid://cafgysxpn62vg::::res://assets/New Prefab/LoginPanel/Skipbutton.png<>uid://cwlifoend4h1g::::res://assets/New Prefab/LoginPanel/GameText.png<>uid://b7jvnhvmmo6v8::::res://Scripts/UI/SettingPopUpController.gd<>uid://x42l0yo4gyvx::::res://assets/New Prefab/LoginPanel/GameCentre.png<>uid://cwpu2fx4tsgre::::res://assets/New Prefab/LoginPanel/Profile.png<>uid://bs1yf6s5qrew5::::res://assets/New Prefab/LoginPanel/Add.png<>uid://bq73j2g37wts2::::res://Scripts/UI/HomePanelController.gd<>uid://bg4m0akn0sx34::::res://assets/New Prefab/Game Panel/Score Box.png<>uid://4oebck85wurm::::res://assets/New Prefab/Game Panel/Coin.png<>uid://b84y556a3641g::::res://assets/New Prefab/Game Panel/SettingButton.png<>uid://dnxr8xmjli1gf::::res://assets/Sprite/UI/board/main board .png<>uid://8ou7ho4doiin::::res://assets/Sprite/UI/board/board top.png<>uid://bbgraprtuoxbw::::res://assets/Sprite/UI/spund on.png<>uid://b5qmtfk243xjq::::res://assets/New Prefab/Game Panel/ShopButton.png<>uid://u4jtgbuxyilr::::res://assets/Sprite/UI/music on.png<>uid://dkx2e1gpvk3k3::::res://assets/New Prefab/Game Panel/LeftButton.png<>uid://chvc7jj546ft::::res://assets/New Prefab/Game Panel/Bar.png<>uid://ct0to8vqlyqkm::::res://assets/Sprite/UI/Revive panel/button.png<>uid://cwnpp43ys4hux::::res://assets/New Prefab/Game Panel/Hand.png<>uid://bfgtju8kdsjot::::res://assets/Sprite/UI/Delete Logo.png<>uid://masuylmmuqq4::::res://assets/New Prefab/Game Panel/ModeButton.png<>uid://kxdm5bdan0lt::::res://assets/New Prefab/Game Panel/RightButton.png<>uid://dagpjrt0tu5gp::::res://Scripts/UI/GameOverPopUpController.gd<>uid://b3xungg7hqxr0::::res://Scripts/UI/PopUpPanelController.gd<>uid://dql6ri6ktwdaf::::res://assets/Sprite/UI/fileflies board.png<>uid://bei5axbn3qdv5::::res://Scripts/UI/GamePanelController.gd<>uid://d2oog5mu2ykw8::::res://assets/Sprite/New Prefab/PopUps/GameOverPopUp/Rectangle.png<>uid://c17y1i1tagula::::res://assets/Sprite/New Prefab/PopUps/GameOverPopUp/Home.png<>uid://c33uhgvvaocik::::res://assets/Sprite/New Prefab/PopUps/GameOverPopUp/Replay.png<>uid://bxqwvhebwlbbn::::res://assets/New Prefab/PopUp/PopUp Board.png
+WinnerPopUp.tscn::PackedScene::2714793932044276306::1782820935::0::1::::<><><>0<>0<><>::uid://cumhdrma6u630::::res://Scripts/UI/win_pop_up.gd<>uid://bedxrs7vafb6y::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png<>res://Scripts/UI/ui_popup_animator.gd<>uid://c1gc8nrwo1sy7::::res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png<>uid://dnrp71sx1os84::::res://assets/Font/calibri/calibri-bold.ttf<>uid://r5ebcr8sl1ad::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png<>uid://cdf5131wn4p7u::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Group (3).png<>uid://c3mogn2li3j2m::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Group (4).png<>uid://cafm6hsqar88v::::res://assets/ThinkfinityAsset/Art/DesignMaterial/Group (5).png<>uid://e6p72g517q33::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665042 (1).png<>uid://c75t5qnra3fu7::::res://assets/ThinkfinityAsset/Art/buttons/Group 2085665045 (1).png
+::res://Scripts/::1782825741
+MetaAnalytics.gd::GDScript::8900586860336756692::1782820935::0::1::::<>Node<><>0<>0<><>::
+::res://Scripts/Main/::1782820935
+Car.gd::GDScript::2021618754837843830::1782820935::0::1::::CarController<>Node2D<><>0<>0<><>::
+CutSlice.gd::GDScript::1883939479791919616::1782820935::0::1::::CutSlice<>Node2D<><>0<>0<><>::
+GameManager.gd::GDScript::1510836327429837127::1782820935::0::1::::GameManager<>Node<><>0<>0<><>::
+Hint.gd::GDScript::6660928539179451242::1782820935::0::1::::Hint<>Node<><>0<>0<><>::
+LevelData.gd::GDScript::5056593629751804789::1782820935::0::1::::LevelData<>Resource<><>0<>0<><>::
+LevelDataSO.gd::GDScript::6200045062923645929::1782820935::0::1::::LevelDataSO<>Resource<><>0<>0<><>::
+LevelGenerator.gd::GDScript::1883661474051045665::1782820935::0::1::::LevelGenerator<>Node2D<><>0<>0<><>::
+tile.gd::GDScript::5892418180666967615::1782820935::0::1::::Tile<>TextureRect<><>0<>0<><>::
+::res://Scripts/Managers/::1782829922
+AdConsentManager.gd::GDScript::116663951787720775::1782820935::0::1::::AdConsentManager<>Node<><>0<>0<><>::
+AdManager.gd::GDScript::5292399583931969284::1782820935::0::1::::AdManager<>Node<><>0<>0<><>::
+AdMobManager.gd::GDScript::8327211977975028480::1782820935::0::1::::<>Control<><>0<>0<><>::
+FirebaseAnalytics.gd::GDScript::2437068884148500790::1782820935::0::1::::<>Node<><>0<>0<><>::
+FirebaseCraslytics.gd::GDScript::4545208799656244631::1782820935::0::1::::<>Node<><>0<>0<><>::
+NetworkManager.gd::GDScript::4110598470912472644::1782820935::0::1::::<>Node<><>0<>0<><>::
+SoundManager.gd::GDScript::3668296936205794170::1782820935::0::1::::<>Node<><>0<>0<><>::
+::res://Scripts/UI/::1782829962
+credit_popup.gd::GDScript::750079488456218162::1782820935::0::1::::<>BaseScreen<><>0<>0<><>::
+game_scene_ui.gd::GDScript::6338557022743143846::1782820935::0::1::::<>BaseScreen<><>0<>0<><>::
+hint_popup.gd::GDScript::2508877943595614410::1782820935::0::1::::<>BaseScreen<><>0<>0<><>::
+HomePanelController.gd::GDScript::3577219846689259387::1782820935::0::1::::StartPanelController<>Control<><>0<>0<><>::
+HowToPlayPopup.gd::GDScript::6140034892125816773::1782820935::0::1::::<>BaseScreen<><>0<>0<><>::
+level_component.gd::GDScript::1132018311534209855::1782820935::0::1::::LevelBtn<>Control<><>0<>0<><>::
+level_scene.gd::GDScript::547947837729686160::1782820935::0::1::::<>BaseScreen<><>0<>0<><>::
+lose_popup.gd::GDScript::5676909321828735659::1782820935::0::1::::<>BaseScreen<><>0<>0<><>::
+main_menu_scene.gd::GDScript::4220341698723426762::1782820935::0::1::::<>BaseScreen<><>0<>0<><>::
+pause_popup.gd::GDScript::7006243651840562960::1782820935::0::1::::<>BaseScreen<><>0<>0<><>::
+preview_overlay.gd::GDScript::3002757793518423761::1782820935::0::1::::PreviewOverlay<>Control<><>0<>0<><>::
+screen_base.gd::GDScript::5876154347952608656::1782820935::0::1::::BaseScreen<>Control<><>0<>0<><>::
+screen_type.gd::GDScript::3145486454781305185::1782820935::0::1::::ScreenType<>Node<><>0<>0<><>::
+settings_popup.gd::GDScript::5407859315011416205::1782820935::0::1::::<>BaseScreen<><>0<>0<><>::
+UICallBack.gd::GDScript::4963729485526189442::1782820935::0::1::::UICallBack<>RefCounted<><>0<>0<><>::
+ui_controller.gd::GDScript::5521656005776434724::1782820935::0::1::::UIController<>Node2D<><>0<>0<><>::
+ui_popup_animator.gd::GDScript::2755273161218802117::1782820935::0::1::::<>Panel<><>0<>0<><>::
+win_pop_up.gd::GDScript::6201822061003501789::1782820935::0::1::::<>BaseScreen<><>0<>0<><>::
+::res://tools/::1782820935
+::res://translations/::1782821054
+ThinkfinityLabels.ar.translation::OptimizedTranslation::7750862560423087099::1782821054::0::1::::<><><>0<>0<><>::
+ThinkfinityLabels.csv::Translation::678945066897599907::1782820935::1782820990::1::::<><><>0<>0<>cef2fcbf5f25a6be1799bc05364e32ea<>res://translations/ThinkfinityLabels.ar.translation<*>res://translations/ThinkfinityLabels.en.translation<*>res://translations/ThinkfinityLabels.fr.translation<*>res://translations/ThinkfinityLabels.pt_BR.translation<*>res://translations/ThinkfinityLabels.ru.translation<*>res://translations/ThinkfinityLabels.es.translation::
+ThinkfinityLabels.en.translation::OptimizedTranslation::820592015631160075::1782821054::0::1::::<><><>0<>0<><>::
+ThinkfinityLabels.es.translation::OptimizedTranslation::3799449801534277060::1782821054::0::1::::<><><>0<>0<><>::
+ThinkfinityLabels.fr.translation::OptimizedTranslation::3855429936794340511::1782821054::0::1::::<><><>0<>0<><>::
+ThinkfinityLabels.pt_BR.translation::OptimizedTranslation::1771392516572214634::1782821054::0::1::::<><><>0<>0<><>::
+ThinkfinityLabels.ru.translation::OptimizedTranslation::1474684191849418993::1782821054::0::1::::<><><>0<>0<><>::

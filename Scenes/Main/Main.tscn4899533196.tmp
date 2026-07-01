@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cww1y4pjv1xgf"]
+
+[ext_resource type="PackedScene" uid="uid://du154h06wfwm3" path="res://assets/prefab/stairs_0.5.tscn" id="3_w1t8o"]
+[ext_resource type="PackedScene" uid="uid://bopemi0oq6ymr" path="res://assets/scenes/UI/ui_manager.tscn" id="4_62ap5"]
+[ext_resource type="Script" uid="uid://chgsohiuvniys" path="res://assets/Scripts/SpawnManager.gd" id="4_r4yb1"]
+[ext_resource type="Texture2D" uid="uid://diuglywyfycl8" path="res://assets/Sky/kloofendal_48d_partly_cloudy_puresky_4k.exr" id="6_5ye52"]
+[ext_resource type="Script" uid="uid://c81rwu6w51eyl" path="res://assets/Scripts/Main/DataManager.gd" id="6_kkyln"]
+[ext_resource type="Script" uid="uid://vr4ivet3krl4" path="res://assets/Scripts/Main/GameManager.gd" id="7_5ye52"]
+[ext_resource type="Script" uid="uid://csw14krmfsd2p" path="res://assets/scenes/Main/d.gd" id="7_62ap5"]
+[ext_resource type="PackedScene" uid="uid://ctcjj8f1ysf6o" path="res://assets/prefab/frog_23.tscn" id="7_kkyln"]
+[ext_resource type="Script" uid="uid://mv8fv2bt1yeg" path="res://assets/Scripts/PlayerController.gd" id="8_5ye52"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_62ap5"]
+panorama = ExtResource("6_5ye52")
+
+[sub_resource type="Sky" id="Sky_qo42m"]
+sky_material = SubResource("PanoramaSkyMaterial_62ap5")
+
+[sub_resource type="Environment" id="Environment_1nfhg"]
+background_mode = 2
+sky = SubResource("Sky_qo42m")
+
+[node name="Main" type="Node3D" unique_id=1183609172]
+
+[node name="GameManager" type="Node3D" parent="." unique_id=1830538452]
+visible = false
+script = ExtResource("7_5ye52")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1326346819]
+transform = Transform3D(-1, -4.4408918e-16, 8.7422784e-08, -2.6590863e-09, 0.9995373, -0.030416396, -8.738233e-08, -0.030416396, -0.9995373, 0, 66.94737, -97.77009)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=406931596]
+transform = Transform3D(-0.56063896, 0.82806027, 5.6544145e-08, -0.53558093, -0.36261553, 0.76266825, 0.6315355, 0.42758152, 0.64678967, 5.28, 163.699, -75.488)
+
+[node name="SpawnManager" type="Node3D" parent="." unique_id=1752486802]
+script = ExtResource("4_r4yb1")
+
+[node name="StairsHolder" type="Node3D" parent="." unique_id=2005046855]
+
+[node name="stairs_upadated_25_5_26_3" parent="StairsHolder" unique_id=1728773603 instance=ExtResource("3_w1t8o")]
+
+[node name="stairs_upadated_25_5_26_4" parent="StairsHolder" unique_id=472143604 instance=ExtResource("3_w1t8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 31)
+
+[node name="stairs_upadated_25_5_26_5" parent="StairsHolder" unique_id=129346044 instance=ExtResource("3_w1t8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 62)
+
+[node name="stairs_upadated_25_5_26_6" parent="StairsHolder" unique_id=1492934344 instance=ExtResource("3_w1t8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 93)
+
+[node name="stairs_upadated_25_5_26_7" parent="StairsHolder" unique_id=1465380104 instance=ExtResource("3_w1t8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 124)
+
+[node name="stairs_upadated_25_5_26_8" parent="StairsHolder" unique_id=2112930033 instance=ExtResource("3_w1t8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 155)
+
+[node name="stairs_upadated_25_5_26_9" parent="StairsHolder" unique_id=83224104 instance=ExtResource("3_w1t8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48, 186)
+
+[node name="stairs_upadated_25_5_26_10" parent="StairsHolder" unique_id=387065622 instance=ExtResource("3_w1t8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 56, 217)
+
+[node name="DataManager" type="Node3D" parent="." unique_id=1665187937]
+script = ExtResource("6_kkyln")
+
+[node name="UIManager" parent="." unique_id=2038655336 instance=ExtResource("4_62ap5")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=683371371]
+environment = SubResource("Environment_1nfhg")
+
+[node name="PlayerRoot" type="Node3D" parent="." unique_id=108095482]
+script = ExtResource("7_62ap5")
+
+[node name="Frog 23" parent="PlayerRoot" unique_id=1326667776 instance=ExtResource("7_kkyln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.93, 31.278)
+script = ExtResource("8_5ye52")

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cde4fwobn5rft"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eggnd"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_g2kgh"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5fq2g"]
+gradient = SubResource("Gradient_g2kgh")
+
+[sub_resource type="Curve" id="Curve_ao065"]
+_data = [Vector2(0.004098356, 0.15730345), 0.0, 0.0, 0, 0, Vector2(0.29508197, 0.92134833), 0.0, 0.0, 0, 0, Vector2(0.72540987, 0.34831464), 0.0, 0.0, 0, 0, Vector2(0.9795082, 0.8764045), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_weaqv"]
+curve = SubResource("Curve_ao065")
+
+[sub_resource type="Gradient" id="Gradient_806sd"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.14220184, 0.2706422, 0.4174312, 0.5733945, 0.70642203, 0.82568806, 0.9357798, 1)
+colors = PackedColorArray(0.78818816, 0, 0, 1, 0.1428257, 0.35584977, 0.90382373, 1, 0.038668174, 0.59010804, 0.22008595, 1, 0.95008534, 0.42966217, 0.2505847, 1, 0.2983525, 0.7403856, 0.9676823, 1, 0.5168811, 0, 0.9776916, 1, 0.7554169, 0.64529705, 0, 1, 0.63045806, 0.95830816, 0.61650234, 1, 0.57396513, 0.39151636, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_n67vt"]
+gradient = SubResource("Gradient_806sd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_806sd"]
+lifetime_randomness = 0.44
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(1, -1, 0)
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 250.0
+angular_velocity_min = -720.0
+angular_velocity_max = 719.99994
+radial_velocity_min = -0.0100223515
+radial_velocity_max = 99.99998
+gravity = Vector3(0, 900, 0)
+scale_min = 0.04
+scale_max = 0.39999998
+color_initial_ramp = SubResource("GradientTexture1D_n67vt")
+alpha_curve = SubResource("CurveTexture_weaqv")
+
+[node name="ConfettiBurst" type="GPUParticles2D" unique_id=46963208]
+material = SubResource("CanvasItemMaterial_eggnd")
+position = Vector2(339, 819)
+amount = 100
+texture = SubResource("GradientTexture2D_5fq2g")
+lifetime = 1.5
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_806sd")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bsy7dxu57gy7v"]
+
+[node name="UiMain" type="Node2D" unique_id=23609706]
+visible = false
+
+[node name="ScreenLayer" type="Node" parent="." unique_id=2042095185]
+
+[node name="PopupLayer" type="Node" parent="." unique_id=619434707]

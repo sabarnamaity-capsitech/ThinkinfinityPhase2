@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bwmis87abtqgp"]
+
+[ext_resource type="Texture2D" uid="uid://d1ba82xn4q2s0" path="res://assets/ThinkfinityAsset/Art/Smoke/smoke_07.png" id="1_b74vs"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wmfv8"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_uhudp"]
+offsets = PackedFloat32Array(0, 0.4223301, 1)
+colors = PackedColorArray(0.34993863, 0.3520895, 0.3094491, 1, 0.4479714, 0.44903314, 0.4271994, 1, 0.27, 0.27, 0.27, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fsycb"]
+gradient = SubResource("Gradient_uhudp")
+
+[sub_resource type="Curve" id="Curve_j7d8q"]
+_data = [Vector2(0.04310344, 0.15730345), 0.0, 0.0, 0, 0, Vector2(0.512931, 0.59550565), 1.1058898, 1.1058898, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wmfv8"]
+curve = SubResource("Curve_j7d8q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1om3l"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 0.01
+angle_min = 90.000015
+angle_max = 90.000015
+direction = Vector3(0, 1, 0)
+spread = 11.29
+initial_velocity_max = 81.77
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_wmfv8")
+scale_over_velocity_max = 35.09
+color = Color(0.56, 0.56, 0.56, 1)
+color_ramp = SubResource("GradientTexture1D_fsycb")
+
+[node name="Smoke" type="GPUParticles2D" unique_id=439366083]
+material = SubResource("CanvasItemMaterial_wmfv8")
+position = Vector2(425, 699)
+amount = 10
+texture = ExtResource("1_b74vs")
+lifetime = 1.35
+speed_scale = 2.79
+randomness = 0.31
+process_material = SubResource("ParticleProcessMaterial_1om3l")
