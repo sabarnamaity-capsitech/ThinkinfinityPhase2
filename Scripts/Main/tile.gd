@@ -88,6 +88,10 @@ func rotate_clockwise() -> void:
 
 	_update_sprite()
 	rotated.emit()
+	if GameManager.instance.level_generator.check_solved():
+		GameManager.instance.level_generator.timer_started = false
+		GameManager.instance.level_generator.game_finished = true
+		GameManager.instance.level_generator.game_win()
 
 
 func play_reveal_then_scramble(

@@ -39,7 +39,10 @@ var cell_size : float = 64.0
 @export var smoke: GPUParticles2D
 @export var slice_Cut: String
 var actual_size: Vector2
-
+const UP    := 1
+const RIGHT := 2
+const DOWN  := 4
+const LEFT  := 8
 
 
 ## All levels loaded from levels.json at startup
@@ -196,7 +199,7 @@ func update_timer(delta: float) -> void:
 		Analytics.level_failed(level_index)
 		SoundManager.stop_timerPlay()
 		SoundManager.play_game_over()
-		UIController.instance.show_popup(ScreenType.popup.LOSE_POPUP)
+		UiManager.instance.show_popup(PopupManager.PopupType.LOSE)
 
 
 
@@ -206,18 +209,18 @@ func update_timer(delta: float) -> void:
 func pause_game() -> void:
 	# if timer_warning_started:
 		# SoundManager.stop_timerPlay()
-	UIController.instance.show_popup(ScreenType.popup.PAUSE_POPUP)
+	UiManager.instance.show_popup(PopupManager.PopupType.PAUSE)
 	timer_started = false
 
 
 func stop_game() -> void:
 	timer_started = false
-	UIController.instance.close_popup()
+	UiManager.instance.hide_popup()
 	GameManager.instance.save_data()
 
 
 func resume_game() -> void:
-	UIController.instance.close_popup()
+	UiManager.instance.hide_popup()
 	timer_started = true
 	if timer_warning_started:
 		SoundManager.play_timer()
@@ -228,14 +231,14 @@ func resume_game() -> void:
 func restart() -> void:
 	Analytics.level_retry(level_index)
 	#loadLevel(GameManager.instance.current_level)
-	UIController.instance.close_popup()
+	UiManager.instance.hide_popup()
 
 
 func nextLevel() -> void:
 	if level_index + 1 >= all_levels_json.size():
 		print("No next level")
 		SoundManager.play_click()
-		UIController.instance.switch_screen(ScreenType.Screen.MAIN_MENU)
+		
 		stop_game()
 		return
 
@@ -266,7 +269,41 @@ func _load_next_level() -> void:
 	#loadLevel(GameManager.instance.current_level)
 
 
+func check_solved() -> bool:
+	for r in range(rows):
+		for c in range(cols):
+			var tile = grid[r][c]
 
+			if not tile.active:
+				continue
+
+			var conn : int = tile.conn
+
+			if conn & UP and not _neighbor_has(r - 1, c, DOWN):
+				return false
+
+			if conn & RIGHT and not _neighbor_has(r, c + 1, LEFT):
+				return false
+
+			if conn & DOWN and not _neighbor_has(r + 1, c, UP):
+				return false
+
+			if conn & LEFT and not _neighbor_has(r, c - 1, RIGHT):
+				return false
+
+	return true
+
+
+func _neighbor_has(r: int, c: int, bit: int) -> bool:
+	if r < 0 or r >= rows or c < 0 or c >= cols:
+		return false
+
+	var tile = grid[r][c]
+
+	if not tile.active:
+		return false
+
+	return (tile.conn & bit) != 0
 
 
 func is_piece_solved(piece: Node2D) -> bool:
@@ -287,8 +324,8 @@ func game_win() -> void:
 	Analytics.level_complete(level_index, calculate_stars())
 	GameManager.instance.save_level_result(level_index, calculate_stars())
 	SoundManager.play_win()
-	UIController.instance.show_popup(ScreenType.popup.WIN_POPUP, {"star_count": calculate_stars()})
-	nextLevel()
+	UiManager.instance.show_popup(PopupManager.PopupType.WIN)
+	# nextLevel()
 	GameManager.instance.save_data()
 
 
@@ -302,3 +339,27 @@ func calculate_stars() -> int:
 	if time_percent >= 0.8:
 		stars += 2
 	return clamp(stars, 1, 3)
+
+
+
+
+# ## ── Car animation ─────────────────────────────────────────────────────────────
+# func _start_car_animation() -> void:
+# 	# Kill any previous animation
+# 	if _car_anim != null and is_instance_valid(_car_anim):
+# 		_car_anim.queue_free()
+# 		_car_anim = null
+
+# 	var anim = load("res://scripts/CarAnimation.gd").new()
+# 	add_child(anim)
+# 	_car_anim = anim
+# 	# No finished signal needed — car loops forever
+# 	anim.start(grid, rows, cols, grid_area, cell_size)
+
+# 	# Show win panel immediately (car runs behind it)
+# 	win_panel.visible = true
+
+
+# func _on_car_animation_finished() -> void:
+# 	_car_anim = null
+# 	win_panel.visible = true

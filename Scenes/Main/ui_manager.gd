@@ -34,11 +34,61 @@ func _ready():
 	
 
 
-func show_screen(type : Screen_Type):
-	for screen in screen_map.values():
-		screen.hide()
-	current_screen = screen_map[type]
+func show_screen(type: Screen_Type):
+	var new_screen = screen_map[type]
+
+	if current_screen == new_screen:
+		return
+
+	if current_screen:
+		var old_screen = current_screen
+		var tween = create_tween()
+		tween.set_trans(Tween.TRANS_SINE)
+		tween.set_ease(Tween.EASE_IN_OUT)
+
+		tween.tween_property(
+			old_screen,
+			"position:x",
+			-get_viewport().size.x,
+			0.5
+		)
+
+		tween.parallel().tween_property(
+			old_screen,
+			"modulate:a",
+			0.0,
+			0.5
+		)
+
+		await tween.finished
+
+		old_screen.hide()
+		old_screen.position = Vector2.ZERO
+		old_screen.modulate.a = 1.0
+
+	current_screen = new_screen
 	current_screen.show()
+
+	current_screen.position.x = get_viewport().size.x
+	current_screen.modulate.a = 0.0
+
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
+
+	tween.tween_property(
+		current_screen,
+		"position:x",
+		0,
+		0.5
+	)
+
+	tween.parallel().tween_property(
+		current_screen,
+		"modulate:a",
+		1.0,
+		0.5
+	)
 
 func show_popup(type : PopupManager.PopupType):
 	popup_manager.show_popup(type)
