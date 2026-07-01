@@ -1,4 +1,4 @@
-extends BaseScreen
+extends Control
 
 @export var timer : Label
 @onready var _pauseBtn = $PauseButton
@@ -47,7 +47,8 @@ func _onPauseBtnPressed() -> void:
 func _onHintBtnPressed() -> void:
 	SoundManager.play_click()
 	SoundManager.stop_timerPlay()
-	UIController.instance.show_popup(ScreenType.popup.HINT_POPUP)
+	# UIController.instance.show_popup(ScreenType.popup.HINT_POPUP)
+	UiManager.instance.show_popup(PopupManager.PopupType.HINT)
 	if hint_tween and hint_tween.is_valid():
 		hint_tween.kill()
 		hint_tween = null

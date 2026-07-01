@@ -1,4 +1,4 @@
-extends BaseScreen
+extends Control
 
 @onready var _closeBtn = $PopupPanel/Header/CloseButton
 @onready var _languageBtn = $PopupPanel/LanguageButton

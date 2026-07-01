@@ -1,4 +1,4 @@
-extends BaseScreen
+extends Control
 
 @onready var _closeBtn = $PopupPanel/Header/CloseButton
 @onready var popup_panel = $PopupPanel
@@ -8,7 +8,8 @@ extends BaseScreen
 func _onCloseBtnPressed() -> void:
 	SoundManager.play_click()
 	reset_tutorial()
-	UIController.instance.close_popup()
+	# UIController.instance.close_popup()
+	UiManager.instance.hide_popup()
 	pass
 
 # --------------------------

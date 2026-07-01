@@ -1,4 +1,4 @@
-extends BaseScreen
+extends Control
 
 @onready var _closeBtn = $FailurePanel/Header/CloseButton
 @export var restartBtn : Button
@@ -42,7 +42,8 @@ func _on_resume_time_rewarded(_ad_info, _reward_data) -> void:
 
 func _onCloseBtnPressed() -> void:
 	SoundManager.play_click()
-	UIController.instance.switch_screen(ScreenType.Screen.MAIN_MENU)
+	# UIController.instance.switch_screen(ScreenType.Screen.MAIN_MENU)
+	UiManager.instance.show_screen(UiManager.Screen_Type.MAIN_MENU)
 	GameManager.instance.level_generator.stop_game()
 
 

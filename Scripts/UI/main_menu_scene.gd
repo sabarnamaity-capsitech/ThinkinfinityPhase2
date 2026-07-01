@@ -1,4 +1,4 @@
-extends BaseScreen
+extends Control
 
 @onready var _playBtn = $Panel/PlayButton
 @onready var _tutorialBtn = $Panel/TutorialButton

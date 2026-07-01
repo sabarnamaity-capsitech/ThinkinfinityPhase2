@@ -1,4 +1,4 @@
-extends BaseScreen
+extends Control
 
 @onready var _back_to_menu_btn = $Panel/BackButton
 @onready var _grid_container: GridContainer = $Panel/ScrollContainer/GridContainer
@@ -22,7 +22,7 @@ func _on_back_btn_pressed() -> void:
 
 
 func on_show() -> void:
-	super.on_show()
+	# super.on_show()
 	_populate_level_buttons()
 
 

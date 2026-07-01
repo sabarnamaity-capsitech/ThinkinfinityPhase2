@@ -1,4 +1,4 @@
-extends BaseScreen
+extends Control
 
 @onready var _closeBtn = $WinnerPanel/Header/CloseButton
 @export var stars: Array[Node]
@@ -25,7 +25,8 @@ func _onnextBtnPressed() -> void:
 
 func _onCloseBtnPressed() -> void:
 	SoundManager.play_click()
-	UIController.instance.switch_screen(ScreenType.Screen.MAIN_MENU)
+	# UIController.instance.switch_screen(ScreenType.Screen.MAIN_MENU)
+	UiManager.instance.show_screen(UiManager.Screen_Type.MAIN_MENU)
 	GameManager.instance.level_generator.stop_game()
 	pass
 

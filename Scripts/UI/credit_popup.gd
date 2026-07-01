@@ -1,4 +1,4 @@
-extends BaseScreen
+extends Control
 @onready var _closeBtn = $CreditPanel/PanelBG/CloseButton
 
 func _ready() -> void:
@@ -8,5 +8,6 @@ func _ready() -> void:
 
 func _onCloseBtnPressed() -> void:
 	SoundManager.play_click()
-	UIController.instance.close_popup()
+	# UIController.instance.close_popup()
+	UiManager.instance.hide_popup()
 	pass

@@ -1,4 +1,4 @@
-extends BaseScreen
+extends Control
 @onready var _closeBtn = $HintPanel/Header/CloseButton
 var pending_half_hint := false
 var pending_full_hint := false

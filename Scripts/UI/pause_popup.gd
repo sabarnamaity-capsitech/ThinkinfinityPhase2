@@ -1,4 +1,4 @@
-extends BaseScreen
+extends Control
 
 @onready var _closeBtn = $PausePanel/Header/CloseButton
 @onready var _homeBtn = $PausePanel/HomeButton
