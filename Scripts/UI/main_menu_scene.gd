@@ -3,9 +3,12 @@ extends Control
 @onready var _playBtn = $Panel/PlayButton
 @onready var _tutorialBtn = $Panel/TutorialButton
 @onready var _settingsBtn = $Panel/SettingsButton
+@export var _coins:Label
+@export var _shopBtn: TextureButton
 func _ready() -> void:
 	# screen_type = ScreenType.Screen.MAIN_MENU
-	
+	_coins.text=str(GameManager.instance.get_total_coin())
+	_shopBtn.pressed.connect(_onShopBtnPressed)
 	if _playBtn:
 		_playBtn.pressed.connect(_onPlayBtnPressed)
 	if _tutorialBtn:
@@ -19,7 +22,10 @@ func _onPlayBtnPressed() -> void:
 	UiManager.instance.level_scene.on_show()
 	UiManager.instance.show_screen(UiManager.Screen_Type.LEVEL)
 	
-
+func _onShopBtnPressed() -> void:
+	print("Shop button pressed")
+	SoundManager.play_click()
+	UiManager.instance.show_popup(PopupManager.PopupType.SHOP)
 func _onSettingsBtnPressed() -> void:
 	SoundManager.play_click()
 	# UIController.instance.show_popup(ScreenType.popup.SETTINGS_POPUP)

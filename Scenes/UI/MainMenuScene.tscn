@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://bh56gkvpopkkm"]
 
 [ext_resource type="Script" uid="uid://b1emn8k7obcry" path="res://Scripts/UI/main_menu_scene.gd" id="1_42e3r"]
-[ext_resource type="Texture2D" uid="uid://b5w3h7cg3g7vx" path="res://assets/ThinkfinityAsset/Art/Environment/MainMenuSceneBG.png" id="1_i26rj"]
-[ext_resource type="Texture2D" uid="uid://cecl16kbs8de1" path="res://assets/ThinkfinityAsset/Art/buttons/PlayButton.png" id="2_eiy7p"]
+[ext_resource type="Texture2D" uid="uid://v5keanlhakox" path="res://assets/ThinkfinityAsset/Art/Environment/MainMenuSceneBG.png" id="1_i26rj"]
+[ext_resource type="Texture2D" uid="uid://d4iyha45dir0s" path="res://assets/ThinkfinityAsset/Art/buttons/PlayButton.png" id="2_eiy7p"]
 [ext_resource type="Script" uid="uid://bfiw7gb5g67sj" path="res://Scripts/UI/ui_popup_animator.gd" id="2_f5lav"]
-[ext_resource type="Texture2D" uid="uid://c6xvycqr5el0k" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666185.png" id="3_h7a2f"]
-[ext_resource type="Texture2D" uid="uid://bex141nlpin64" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508 (2).png" id="4_qoqlk"]
-[ext_resource type="Texture2D" uid="uid://bcvec8n1xcd0u" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10398.png" id="5_1mf5a"]
-[ext_resource type="Texture2D" uid="uid://hwuwwu8opb04" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Group 2085666184.png" id="5_iwfq2"]
+[ext_resource type="Texture2D" uid="uid://dev0ra4eg323e" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666185.png" id="3_h7a2f"]
+[ext_resource type="Texture2D" uid="uid://pque4tokg670" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508 (2).png" id="4_qoqlk"]
+[ext_resource type="Texture2D" uid="uid://d36vlhnfp0sbl" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10398.png" id="5_1mf5a"]
+[ext_resource type="Texture2D" uid="uid://173y83pcfded" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Group 2085666184.png" id="5_iwfq2"]
+[ext_resource type="Texture2D" uid="uid://qhxmiby6lo6p" path="res://assets/ThinkfinityAsset/Art/buttons/HintButtonImage.png" id="9_h0gkc"]
+[ext_resource type="Texture2D" uid="uid://dw3hxt1objnru" path="res://assets/ThinkfinityAsset/Art/Vehicle/coinnew-removebg-preview.png" id="10_oergy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7a2f"]
 texture = ExtResource("2_eiy7p")
@@ -81,7 +83,7 @@ texture = ExtResource("4_qoqlk")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xxvoy"]
 texture = ExtResource("4_qoqlk")
 
-[node name="MainMenu" type="Control" unique_id=60258633]
+[node name="MainMenu" type="Control" unique_id=60258633 node_paths=PackedStringArray("_coins", "_shopBtn")]
 layout_direction = 4
 layout_mode = 3
 anchors_preset = 15
@@ -90,14 +92,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_42e3r")
+_coins = NodePath("Panel/Coin/Label")
+_shopBtn = NodePath("Panel/TextureButton")
 
 [node name="Panel" type="Panel" parent="." unique_id=357878651]
+z_index = -2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("2_f5lav")
 animation_duration = 0.3
 
@@ -108,6 +114,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("1_i26rj")
 expand_mode = 1
 
@@ -199,3 +206,70 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_iwfq2")
 expand_mode = 1
+
+[node name="Coin" type="TextureRect" parent="Panel" unique_id=1476738009]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 136.0
+offset_right = 542.6977
+offset_bottom = 232.0
+texture = ExtResource("9_h0gkc")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Coin" unique_id=1191556643]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -40.0
+offset_right = 88.0
+offset_bottom = 24.0
+grow_vertical = 2
+texture = ExtResource("10_oergy")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Panel/Coin" unique_id=353380289]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.348846
+offset_top = -40.0
+offset_right = 108.65115
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "0000"
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Panel" unique_id=1963305842]
+z_index = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 20.0
+offset_top = 136.0
+offset_right = 280.0
+offset_bottom = 216.0
+grow_horizontal = 2
+texture_normal = ExtResource("9_h0gkc")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Panel/TextureButton" unique_id=188419783]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "shop"
+horizontal_alignment = 1

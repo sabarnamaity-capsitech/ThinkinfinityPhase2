@@ -126,14 +126,19 @@ func initialize_default_data():
 			"name": "",
 			"uid": "",
 			"user_rank": 0,
-			"total_coin": 0,
+			"total_coin": 5000,
 			"total_score": 0,
 			"game_won_counter": 0,
 			"max_unlocked_level_index": 150,
 			"is_FirstTime" : true,
 			"is_FirstTime_hint" : true,
 			"home_return_count" : 0,
-			"level_progressions": _create_level_list(50)
+			"level_progressions": _create_level_list(50),
+			"owned_cars": {
+                "0": true
+            },
+            "selected_car": 0,
+            "bought_coin_packs": {}
 		},
 
 		"settings_data": {
@@ -228,6 +233,9 @@ func get_player_rank() -> int:
 func get_level_stars(level_index: int) -> int:
 	var levels = game_data["player_data"]["level_progressions"]
 	return levels[level_index - 1]
+
+func get_total_coin() -> int:
+	return game_data["player_data"]["total_coin"]
 # =========================
 # SETTERS
 # =========================
@@ -263,7 +271,9 @@ func set_player_uid(uid:String):
 func set_player_rank(rank:int):
 	game_data["player_data"]["user_rank"] = rank
 	save_data()
-
+func set_total_coin(coin:int):
+	game_data["player_data"]["total_coin"] = coin
+	save_data()
 # =========================
 # LEVEL STAR SAVE
 # =========================
@@ -322,4 +332,26 @@ func unlock_level(level_index:int):
 		print("new level")
 		save_data()
 
-				
+func is_car_owned(car_id:int) -> bool:
+	return game_data["player_data"]["owned_cars"].get(str(car_id), false)
+ 
+ 
+func buy_car(car_id:int):
+	game_data["player_data"]["owned_cars"][str(car_id)] = true
+	save_data()
+ 
+ 
+func get_selected_car() -> int:
+	return game_data["player_data"]["selected_car"]
+ 
+ 
+func set_selected_car(car_id:int):
+	game_data["player_data"]["selected_car"] = car_id
+	save_data()
+   
+func is_coin_pack_bought(id:int) -> bool:
+	return game_data["player_data"]["bought_coin_packs"].get(str(id), false)
+ 
+func buy_coin_pack(id:int):
+	game_data["player_data"]["bought_coin_packs"][str(id)] = true
+	save_data()				

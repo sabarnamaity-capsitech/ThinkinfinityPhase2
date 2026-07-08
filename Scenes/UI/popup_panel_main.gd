@@ -8,7 +8,10 @@ enum PopupType {
 	SETTINGS,
 	TUTORIAL,
 	HINT,
-	CREDIT
+	CREDIT,
+	SHOP,
+    CAR_SHOP,
+    COIN_SHOP
 }
  
 @export var pause_popup : Control
@@ -18,7 +21,9 @@ enum PopupType {
 @export var tutorial_popup : Control
 @export var hint_popup : Control
 @export var credit_popup : Control
-
+@export var shop_popup : Control
+@export var car_shop_popup : Control
+@export var coin_shop_popup : Control
 var popup_map : Dictionary = {}
 
 var current_popup : Control = null
@@ -38,7 +43,10 @@ func _ready():
 
 		PopupType.HINT : hint_popup,
 
-		PopupType.CREDIT : credit_popup
+		PopupType.CREDIT : credit_popup,
+		PopupType.SHOP : shop_popup,
+        PopupType.CAR_SHOP : car_shop_popup,
+        PopupType.COIN_SHOP : coin_shop_popup
 
 	}
  
@@ -49,6 +57,9 @@ func show_popup(type : PopupType):
 	current_popup = popup_map.get(type)
 	if current_popup:
 		_toggle_popup(current_popup, true)
+		await get_tree().process_frame
+		if current_popup.has_method("play_shop_animation"):
+			current_popup.play_shop_animation()
  
 func hide_popup():
 	if current_popup:

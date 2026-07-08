@@ -7,6 +7,7 @@ extends Control
 @export var top_text : Label
 @export var bg : TextureRect
 @export var levelBox : Label
+# @export var _shopBtn: TextureButton
 
 var hint_tween: Tween
 
@@ -28,6 +29,8 @@ func _ready() -> void:
 	UiManager.instance.ui_callback.previewbtn_pressed.connect(btnOff_preview)
 	_pauseBtn.pressed.connect(_onPauseBtnPressed)
 	_hintBtn.pressed.connect(_onHintBtnPressed)
+	_hintBtn.pressed.connect(_onHintBtnPressed)
+	# _shopBtn.pressed.connect(_onShopBtnPressed)
 	# UIController.instance.ui_callback.update_color.connect(sprite_changer)
 	#top_text.text=str("level : ",GameManager.instance.current_level+1)
 	# update_Toptext()
@@ -43,7 +46,9 @@ func _onPauseBtnPressed() -> void:
 	SoundManager.play_click()
 	GameManager.instance.level_generator.pause_game()
 	
-
+# func _onShopBtnPressed() -> void:
+# 	SoundManager.play_click()
+# 	UiManager.instance.show_popup(PopupManager.PopupType.SHOP)
 func _onHintBtnPressed() -> void:
 	UiManager.instance.click_animation(_hintBtn)
 	GameManager.instance.level_generator.solve_level()

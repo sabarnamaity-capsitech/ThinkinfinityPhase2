@@ -60,9 +60,9 @@ func _ready():
 
 	# PLAY MUSIC
 	
-	var _is_music_on = GameManager.instance.get_music_on()
-	if _is_music_on:
-		play_music()
+	# var _is_music_on = GameManager.instance.get_music_on()
+	# if _is_music_on:
+	# 	play_music()
 
 # =========================================================
 # CONNECT BUTTON GROUP

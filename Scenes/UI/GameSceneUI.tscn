@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://dqweavmudjsuw"]
 
 [ext_resource type="Script" uid="uid://cwkpdw7mkj3y5" path="res://Scripts/UI/game_scene_ui.gd" id="1_tkcnv"]
-[ext_resource type="Texture2D" uid="uid://8im0nrorg48o" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664542.png" id="2_4ek86"]
-[ext_resource type="Texture2D" uid="uid://bc3yuvtc6lgfd" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664566 (1).png" id="3_aknwl"]
-[ext_resource type="Texture2D" uid="uid://bex141nlpin64" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508 (2).png" id="4_6pmpd"]
-[ext_resource type="Texture2D" uid="uid://didmaq111715m" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666221.png" id="4_sdejy"]
-[ext_resource type="Texture2D" uid="uid://q6j48gnjof1p" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665125.png" id="5_i6gcw"]
-[ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="5_tkcnv"]
+[ext_resource type="Texture2D" uid="uid://s23his6nrgpb" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664542.png" id="2_4ek86"]
+[ext_resource type="Texture2D" uid="uid://rtp7eyi2pcn4" path="res://assets/ThinkfinityAsset/Art/Environment/Frame 2085664952.png" id="2_eearb"]
+[ext_resource type="Texture2D" uid="uid://et5pfot2rt4y" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664566 (1).png" id="3_aknwl"]
+[ext_resource type="Texture2D" uid="uid://pque4tokg670" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508 (2).png" id="4_6pmpd"]
+[ext_resource type="Texture2D" uid="uid://bvxg2eijoka0e" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666221.png" id="4_sdejy"]
+[ext_resource type="Texture2D" uid="uid://b0c7mjatf2g3x" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665125.png" id="5_i6gcw"]
+[ext_resource type="FontFile" uid="uid://da4ibekmk54mj" path="res://assets/Font/calibri/calibri-bold.ttf" id="5_tkcnv"]
+[ext_resource type="Texture2D" uid="uid://qhxmiby6lo6p" path="res://assets/ThinkfinityAsset/Art/buttons/HintButtonImage.png" id="9_b3l41"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afec1"]
 texture = ExtResource("2_4ek86")
@@ -71,7 +73,7 @@ texture = ExtResource("2_4ek86")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tkcnv"]
 texture = ExtResource("2_4ek86")
 
-[node name="GameSceneUI" type="Control" unique_id=60258633 node_paths=PackedStringArray("timer", "_hintBtn", "_timerBox", "top_text", "levelBox")]
+[node name="GameSceneUI" type="Control" unique_id=60258633 node_paths=PackedStringArray("timer", "_hintBtn", "_timerBox", "top_text", "bg", "levelBox")]
 layout_direction = 4
 layout_mode = 3
 anchors_preset = 15
@@ -85,7 +87,19 @@ timer = NodePath("Timerlabel/Label")
 _hintBtn = NodePath("HintButton")
 _timerBox = NodePath("Timerlabel")
 top_text = NodePath("Level/Label")
+bg = NodePath("Bg")
 levelBox = NodePath("Level")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=638895709]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eearb")
+expand_mode = 1
 
 [node name="SettingsButton" type="Button" parent="." unique_id=358707857]
 visible = false
@@ -243,6 +257,29 @@ theme_override_font_sizes/font_size = 48
 text = "Hint"
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="ShopBtn" type="TextureButton" parent="." unique_id=146802985]
+visible = false
+layout_mode = 0
+offset_left = 63.0
+offset_top = 100.0
+offset_right = 320.14285
+offset_bottom = 190.0
+texture_normal = ExtResource("9_b3l41")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ShopBtn" unique_id=1831055257]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "shop"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Control" type="Control" parent="." unique_id=60885549]
 layout_mode = 1

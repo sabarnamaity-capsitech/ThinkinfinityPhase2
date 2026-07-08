@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://ggpxymv4a2pa"]
+
+[ext_resource type="Script" uid="uid://bmn0eaok3auay" path="res://Scenes/UI/shop_panel.gd" id="1_1x7ag"]
+[ext_resource type="Texture2D" uid="uid://c8w8glt6033h8" path="res://assets/ThinkfinityAsset/Art/Vehicle/car1-removebg-preview.png" id="2_1x7ag"]
+[ext_resource type="Texture2D" uid="uid://dw3hxt1objnru" path="res://assets/ThinkfinityAsset/Art/Vehicle/coinnew-removebg-preview.png" id="2_6gpe3"]
+[ext_resource type="Texture2D" uid="uid://qhxmiby6lo6p" path="res://assets/ThinkfinityAsset/Art/buttons/HintButtonImage.png" id="4_cranx"]
+[ext_resource type="Texture2D" uid="uid://h605t4b71coj" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="12_fnnle"]
+
+[node name="ShopPanel" type="Control" unique_id=688369357 node_paths=PackedStringArray("closeBtn", "coinshopBtn", "carshopBtn")]
+z_index = 15
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1x7ag")
+closeBtn = NodePath("TextureRect/TextureButton")
+coinshopBtn = NodePath("TextureRect/HBoxContainer/ColorRect/CoinButton")
+carshopBtn = NodePath("TextureRect/HBoxContainer/ColorRect2/CARButton")
+
+[node name="TextureRect" type="Panel" parent="." unique_id=199465087]
+z_index = 18
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1168689325]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 96.0
+offset_right = 239.33325
+offset_bottom = 248.0
+grow_horizontal = 2
+texture = ExtResource("4_cranx")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureRect/TextureRect" unique_id=1983787263]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect" unique_id=1937364415]
+z_index = 7
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect/HBoxContainer" unique_id=784243896]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+color = Color(0.34635913, 0.7038555, 0.9999984, 1)
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/HBoxContainer/ColorRect" unique_id=1700382270]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6gpe3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CoinButton" type="TextureButton" parent="TextureRect/HBoxContainer/ColorRect" unique_id=1296462788]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.16373
+offset_top = -124.0
+offset_right = 192.16373
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_cranx")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureRect/HBoxContainer/ColorRect/CoinButton" unique_id=1362059573]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 47
+text = "Gofor buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="TextureRect/HBoxContainer" unique_id=1486331274]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+color = Color(0.34635913, 0.7038555, 0.9999984, 1)
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/HBoxContainer/ColorRect2" unique_id=260722393]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1x7ag")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CARButton" type="TextureButton" parent="TextureRect/HBoxContainer/ColorRect2" unique_id=466322412]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.16373
+offset_top = -124.0
+offset_right = 192.16373
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_cranx")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureRect/HBoxContainer/ColorRect2/CARButton" unique_id=808911082]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 47
+text = "Gofor buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect" unique_id=1093178767]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 80.0
+offset_right = 248.0
+offset_bottom = 280.0
+texture_normal = ExtResource("12_fnnle")
+ignore_texture_size = true
+stretch_mode = 4

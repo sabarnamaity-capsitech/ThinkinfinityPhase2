@@ -1,0 +1,1161 @@
+[gd_scene format=3 uid="uid://buy1nkiq5lnu6"]
+
+[ext_resource type="Script" uid="uid://cdlnwusqwmdq2" path="res://Scenes/UI/CarShopPanelController.gd" id="1_kgxmt"]
+[ext_resource type="Texture2D" uid="uid://dw3hxt1objnru" path="res://assets/ThinkfinityAsset/Art/Vehicle/coinnew-removebg-preview.png" id="3_ew8j3"]
+[ext_resource type="Texture2D" uid="uid://c8w8glt6033h8" path="res://assets/ThinkfinityAsset/Art/Vehicle/car1-removebg-preview.png" id="4_vx8g5"]
+[ext_resource type="Texture2D" uid="uid://qhxmiby6lo6p" path="res://assets/ThinkfinityAsset/Art/buttons/HintButtonImage.png" id="5_ybxur"]
+[ext_resource type="Texture2D" uid="uid://dr6ana28ntrst" path="res://assets/ThinkfinityAsset/Art/Environment/GameOver.png" id="6_h6bme"]
+[ext_resource type="Script" uid="uid://8jtjrkdorp12" path="res://Scenes/UI/car.gd" id="7_0fotj"]
+[ext_resource type="Texture2D" uid="uid://c1tlsiedktp8e" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666205.png" id="7_6eeqb"]
+[ext_resource type="Texture2D" uid="uid://ctsdukixfhe5g" path="res://assets/ThinkfinityAsset/Art/buttons/tick-removebg-preview.png" id="8_dqb7q"]
+[ext_resource type="Texture2D" uid="uid://xf604m8p0e01" path="res://assets/ThinkfinityAsset/Art/Vehicle/car3-removebg-preview.png" id="9_uoqwt"]
+[ext_resource type="Texture2D" uid="uid://c2f38414rlnqa" path="res://assets/ThinkfinityAsset/Art/Vehicle/car2-removebg-preview.png" id="10_0qmfy"]
+[ext_resource type="Texture2D" uid="uid://cn80pdtoo087k" path="res://assets/ThinkfinityAsset/Art/Vehicle/car4-removebg-preview.png" id="11_knpbi"]
+[ext_resource type="Texture2D" uid="uid://h605t4b71coj" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="12_cfwpv"]
+[ext_resource type="Texture2D" uid="uid://cwkrck7ltx8ai" path="res://assets/ThinkfinityAsset/Art/Vehicle/COINHEAP-removebg-preview.png" id="13_ew8j3"]
+[ext_resource type="Script" uid="uid://lnlitdmhelr" path="res://Scenes/UI/CoinPrice.gd" id="14_vx8g5"]
+
+[node name="CarShopPanel" type="Control" unique_id=1031610266 node_paths=PackedStringArray("selected_image", "selectedCoinImage", "carSelection_grid", "coinSelection_grid", "closeBtn", "_coins", "buyBtn", "btnlabel", "priceLabel", "coinpriceLabel", "coinsTabBtn", "carsTabBtn", "carSelectionPanel", "coinSelectionPanel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kgxmt")
+selected_image = NodePath("VBoxContainer/SelectedImage")
+selectedCoinImage = NodePath("VBoxContainer/SelectedImageCoin")
+carSelection_grid = NodePath("VBoxContainer/CarSelection/CarGridContainer")
+coinSelection_grid = NodePath("VBoxContainer/CoinSelection/GridContainer")
+closeBtn = NodePath("CrossButton")
+_coins = NodePath("Coins")
+buyBtn = NodePath("VBoxContainer/SelectedImage/TextureButton")
+btnlabel = NodePath("VBoxContainer/SelectedImage/TextureButton/Label")
+priceLabel = NodePath("VBoxContainer/SelectedImage/Cost")
+coinpriceLabel = NodePath("VBoxContainer/SelectedImageCoin/Cost")
+coinsTabBtn = NodePath("CoinShopButton")
+carsTabBtn = NodePath("CarShopButton")
+carSelectionPanel = NodePath("VBoxContainer/CarSelection")
+coinSelectionPanel = NodePath("VBoxContainer/CoinSelection")
+
+[node name="TextureRect" type="Panel" parent="." unique_id=471710095]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CarShopButton" type="TextureButton" parent="." unique_id=132217083]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -308.0
+offset_top = 96.0
+offset_right = -28.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture_normal = ExtResource("5_ybxur")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="CarShopButton" unique_id=2048706616]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = "Cars"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinShopButton" type="TextureButton" parent="." unique_id=1657131226]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 96.0
+offset_right = 270.56604
+offset_bottom = 184.0
+grow_horizontal = 2
+texture_normal = ExtResource("5_ybxur")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="CoinShopButton" unique_id=1743922004]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = "Coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coinimg" type="TextureRect" parent="." unique_id=1204888195]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_top = 56.0
+offset_right = -28.0
+offset_bottom = 156.0
+grow_horizontal = 0
+texture = ExtResource("3_ew8j3")
+expand_mode = 1
+
+[node name="Coins" type="Label" parent="." unique_id=2017917315]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -360.0
+offset_top = 64.0
+offset_right = -136.0
+offset_bottom = 164.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "10"
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=474643960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 203.0
+offset_bottom = -272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 90
+
+[node name="SelectedImage" type="TextureRect" parent="VBoxContainer" unique_id=73962815]
+visible = false
+custom_minimum_size = Vector2(900, 900)
+layout_mode = 2
+texture = ExtResource("4_vx8g5")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/SelectedImage" unique_id=1477663971]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -306.0
+offset_top = -140.0
+offset_right = 118.61536
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_ybxur")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/SelectedImage/TextureButton" unique_id=1680934131]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 86
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coin" type="TextureRect" parent="VBoxContainer/SelectedImage" unique_id=1800629938]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -139.0
+offset_right = -16.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_ew8j3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Cost" type="Label" parent="VBoxContainer/SelectedImage" unique_id=897569481]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -131.0
+offset_right = -128.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "5000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SelectedImageCoin" type="TextureRect" parent="VBoxContainer" unique_id=933285716]
+custom_minimum_size = Vector2(900, 900)
+layout_mode = 2
+texture = ExtResource("13_ew8j3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/SelectedImageCoin" unique_id=1834023680]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -306.0
+offset_top = -140.0
+offset_right = 118.61536
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_ybxur")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/SelectedImageCoin/TextureButton" unique_id=713519518]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 86
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coin" type="TextureRect" parent="VBoxContainer/SelectedImageCoin" unique_id=533260539]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -139.0
+offset_right = -16.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_ew8j3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Cost" type="Label" parent="VBoxContainer/SelectedImageCoin" unique_id=1728582651]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -131.0
+offset_right = -128.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "5000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CarSelection" type="TextureRect" parent="VBoxContainer" unique_id=1434830703]
+visible = false
+custom_minimum_size = Vector2(0, 915.9)
+layout_mode = 2
+expand_mode = 1
+
+[node name="CarGridContainer" type="GridContainer" parent="VBoxContainer/CarSelection" unique_id=70495036]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -18.0
+offset_right = -8.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 33
+theme_override_constants/v_separation = 18
+columns = 3
+
+[node name="Car" type="TextureButton" parent="VBoxContainer/CarSelection/CarGridContainer" unique_id=743038356]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("7_0fotj")
+car_price = 100
+
+[node name="Lock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car" unique_id=263843340]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("7_6eeqb")
+expand_mode = 1
+
+[node name="Unlock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car" unique_id=46351393]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("8_dqb7q")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car" unique_id=578243028]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vx8g5")
+expand_mode = 1
+
+[node name="Car2" type="TextureButton" parent="VBoxContainer/CarSelection/CarGridContainer" unique_id=455183395]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("7_0fotj")
+car_id = 1
+car_price = 200
+
+[node name="Lock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car2" unique_id=1680341360]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("7_6eeqb")
+expand_mode = 1
+
+[node name="Unlock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car2" unique_id=16869732]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("8_dqb7q")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car2" unique_id=848848177]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_uoqwt")
+expand_mode = 1
+
+[node name="Car3" type="TextureButton" parent="VBoxContainer/CarSelection/CarGridContainer" unique_id=848333517]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("7_0fotj")
+car_id = 2
+car_price = 100
+
+[node name="Lock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car3" unique_id=1217716983]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("7_6eeqb")
+expand_mode = 1
+
+[node name="Unlock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car3" unique_id=2129654711]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("8_dqb7q")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car3" unique_id=2085708105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_0qmfy")
+expand_mode = 1
+
+[node name="Car4" type="TextureButton" parent="VBoxContainer/CarSelection/CarGridContainer" unique_id=1525457910]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("7_0fotj")
+car_id = 3
+car_price = 200
+
+[node name="Lock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car4" unique_id=1897897004]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("7_6eeqb")
+expand_mode = 1
+
+[node name="Unlock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car4" unique_id=192038584]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("8_dqb7q")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car4" unique_id=830235766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_uoqwt")
+expand_mode = 1
+
+[node name="Car5" type="TextureButton" parent="VBoxContainer/CarSelection/CarGridContainer" unique_id=307048043]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("7_0fotj")
+car_id = 4
+car_price = 200
+
+[node name="Lock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car5" unique_id=672965580]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("7_6eeqb")
+expand_mode = 1
+
+[node name="Unlock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car5" unique_id=1780323391]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("8_dqb7q")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car5" unique_id=584004758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vx8g5")
+expand_mode = 1
+
+[node name="Car6" type="TextureButton" parent="VBoxContainer/CarSelection/CarGridContainer" unique_id=1448206831]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("7_0fotj")
+car_id = 5
+car_price = 300
+
+[node name="Lock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car6" unique_id=1492736806]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("7_6eeqb")
+expand_mode = 1
+
+[node name="Unlock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car6" unique_id=625438462]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("8_dqb7q")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car6" unique_id=1687535526]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_0qmfy")
+expand_mode = 1
+
+[node name="Car7" type="TextureButton" parent="VBoxContainer/CarSelection/CarGridContainer" unique_id=1094117261]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("7_0fotj")
+car_id = 6
+car_price = 100
+
+[node name="Lock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car7" unique_id=238126444]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("7_6eeqb")
+expand_mode = 1
+
+[node name="Unlock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car7" unique_id=1912649183]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("8_dqb7q")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car7" unique_id=995841290]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_knpbi")
+expand_mode = 1
+
+[node name="Car8" type="TextureButton" parent="VBoxContainer/CarSelection/CarGridContainer" unique_id=1745077977]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("7_0fotj")
+car_id = 7
+car_price = 200
+
+[node name="Lock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car8" unique_id=462976280]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("7_6eeqb")
+expand_mode = 1
+
+[node name="Unlock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car8" unique_id=177618626]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("8_dqb7q")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car8" unique_id=1358111964]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_uoqwt")
+expand_mode = 1
+
+[node name="Car9" type="TextureButton" parent="VBoxContainer/CarSelection/CarGridContainer" unique_id=852853475]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("7_0fotj")
+car_id = 8
+car_price = 500
+
+[node name="Lock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car9" unique_id=51009640]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("7_6eeqb")
+expand_mode = 1
+
+[node name="Unlock" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car9" unique_id=1712254508]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture = ExtResource("8_dqb7q")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/CarSelection/CarGridContainer/Car9" unique_id=3830696]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vx8g5")
+expand_mode = 1
+
+[node name="CoinSelection" type="TextureRect" parent="VBoxContainer" unique_id=232228148]
+custom_minimum_size = Vector2(0, 915.9)
+layout_mode = 2
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CoinSelection" unique_id=1085374760]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -18.0
+offset_right = -8.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 33
+theme_override_constants/v_separation = 18
+columns = 3
+
+[node name="Coin" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer" unique_id=1392010316 node_paths=PackedStringArray("coinBuyBtn", "_coins", "coinpriceLabel")]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("14_vx8g5")
+coinBuyBtn = NodePath("BuyButton")
+_coins = NodePath("../../../../Coins")
+coinpriceLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CoinSelection/GridContainer/Coin" unique_id=1063644160]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -61.63954
+offset_right = 114.0
+offset_bottom = 61.63954
+grow_vertical = 2
+texture = ExtResource("13_ew8j3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BuyButton" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer/Coin" unique_id=260343319]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -83.0
+offset_right = 96.17651
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_ybxur")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin/BuyButton" unique_id=1965602371]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin" unique_id=1271951579]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -29.0
+offset_right = 89.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "1000"
+
+[node name="Coin2" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer" unique_id=1484999363 node_paths=PackedStringArray("coinBuyBtn", "_coins", "coinpriceLabel")]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("14_vx8g5")
+coin_id = 1
+coinBuyBtn = NodePath("BuyButton")
+_coins = NodePath("../../../../Coins")
+coinpriceLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CoinSelection/GridContainer/Coin2" unique_id=972035348]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -61.63954
+offset_right = 114.0
+offset_bottom = 61.63954
+grow_vertical = 2
+texture = ExtResource("13_ew8j3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BuyButton" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer/Coin2" unique_id=623556065]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -83.0
+offset_right = 96.17651
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_ybxur")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin2/BuyButton" unique_id=2142288189]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin2" unique_id=912515218]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -29.0
+offset_right = 89.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+
+[node name="Coin3" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer" unique_id=1242006019 node_paths=PackedStringArray("coinBuyBtn", "_coins", "coinpriceLabel")]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("14_vx8g5")
+coin_id = 2
+coinBuyBtn = NodePath("BuyButton")
+_coins = NodePath("../../../../Coins")
+coinpriceLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CoinSelection/GridContainer/Coin3" unique_id=869378705]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -61.63954
+offset_right = 114.0
+offset_bottom = 61.63954
+grow_vertical = 2
+texture = ExtResource("13_ew8j3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BuyButton" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer/Coin3" unique_id=831967414]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -83.0
+offset_right = 96.17651
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_ybxur")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin3/BuyButton" unique_id=356082597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin3" unique_id=264462102]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -29.0
+offset_right = 89.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "100000"
+
+[node name="Coin4" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer" unique_id=649893539 node_paths=PackedStringArray("coinBuyBtn", "_coins", "coinpriceLabel")]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("14_vx8g5")
+coin_id = 3
+coinBuyBtn = NodePath("BuyButton")
+_coins = NodePath("../../../../Coins")
+coinpriceLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CoinSelection/GridContainer/Coin4" unique_id=1932141114]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -61.63954
+offset_right = 114.0
+offset_bottom = 61.63954
+grow_vertical = 2
+texture = ExtResource("13_ew8j3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BuyButton" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer/Coin4" unique_id=1325075603]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -83.0
+offset_right = 96.17651
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_ybxur")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin4/BuyButton" unique_id=1604637737]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin4" unique_id=1057181115]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -29.0
+offset_right = 89.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "100000"
+
+[node name="Coin5" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer" unique_id=1754251051 node_paths=PackedStringArray("coinBuyBtn", "_coins", "coinpriceLabel")]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("14_vx8g5")
+coin_id = 4
+coinBuyBtn = NodePath("BuyButton")
+_coins = NodePath("../../../../Coins")
+coinpriceLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CoinSelection/GridContainer/Coin5" unique_id=504927210]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -61.63954
+offset_right = 114.0
+offset_bottom = 61.63954
+grow_vertical = 2
+texture = ExtResource("13_ew8j3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BuyButton" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer/Coin5" unique_id=1029071762]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -83.0
+offset_right = 96.17651
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_ybxur")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin5/BuyButton" unique_id=1771387720]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin5" unique_id=1699656612]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -29.0
+offset_right = 89.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "100000"
+
+[node name="Coin6" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer" unique_id=1026840253 node_paths=PackedStringArray("coinBuyBtn", "_coins", "coinpriceLabel")]
+custom_minimum_size = Vector2(330, 300)
+layout_mode = 2
+texture_normal = ExtResource("6_h6bme")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("14_vx8g5")
+coin_id = 5
+coinBuyBtn = NodePath("BuyButton")
+_coins = NodePath("../../../../Coins")
+coinpriceLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CoinSelection/GridContainer/Coin6" unique_id=907260988]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -61.63954
+offset_right = 114.0
+offset_bottom = 61.63954
+grow_vertical = 2
+texture = ExtResource("13_ew8j3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="BuyButton" type="TextureButton" parent="VBoxContainer/CoinSelection/GridContainer/Coin6" unique_id=323338037]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -83.0
+offset_right = 96.17651
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_ybxur")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin6/BuyButton" unique_id=526751257]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/CoinSelection/GridContainer/Coin6" unique_id=1782747698]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -29.0
+offset_right = 89.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "100000"
+
+[node name="CrossButton" type="TextureButton" parent="." unique_id=371244257]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 40.0
+offset_right = 184.0
+offset_bottom = 192.0
+texture_normal = ExtResource("12_cfwpv")
+ignore_texture_size = true
+stretch_mode = 4
