@@ -23,7 +23,8 @@ func _on_back_btn_pressed() -> void:
 
 func on_show() -> void:
 	# super.on_show()
-	_populate_level_buttons()
+	_update_level_buttons()
+	pass
 
 
 func _populate_level_buttons() -> void:
@@ -43,11 +44,17 @@ func _create_level_button(level_number: int) -> void:
 	_level_components.append(level_button)
 	var unlocked = GameManager.instance.is_level_unlocked(level_number)
 	level_button.setup(level_number, unlocked)
+	
 
 
 	
-	
-	
+func _update_level_buttons() -> void:
+	for button in _level_components:
+		if !is_instance_valid(button):
+			continue
+
+		var unlocked = GameManager.instance.is_level_unlocked(button._level_index)
+		button.update_state(unlocked)
 
 
 func _clear_level_buttons() -> void:

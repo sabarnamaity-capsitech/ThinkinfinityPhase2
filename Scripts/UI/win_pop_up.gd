@@ -10,21 +10,27 @@ func _ready() -> void:
 	_closeBtn.pressed.connect(_onCloseBtnPressed)
 	restartBtn.pressed.connect(_onRestartBtnPressed)
 	nextLevel.pressed.connect(_onnextBtnPressed)
-	levelTxt.text=tr("Level")+ ":"+str(GameManager.instance.current_level+1)
+	levelTxt.text=tr("Level")+ ":"+str(GameManager.instance.current_level)
 
 	
 
 func _onRestartBtnPressed() -> void:
 	SoundManager.play_click()
+	UiManager.instance.click_animation(restartBtn)
 	GameManager.instance.level_generator.restart()
+
 
 
 func _onnextBtnPressed() -> void:
 	SoundManager.play_click()
-	GameManager.instance.level_generator._load_next_level()
+	UiManager.instance.click_animation(nextLevel)
+	UiManager.instance.hide_popup()
+	GameManager.instance.level_generator.nextLevel()
+
 
 func _onCloseBtnPressed() -> void:
 	SoundManager.play_click()
+	UiManager.instance.click_animation(_closeBtn)
 	# UIController.instance.switch_screen(ScreenType.Screen.MAIN_MENU)
 	UiManager.instance.show_screen(UiManager.Screen_Type.MAIN_MENU)
 	GameManager.instance.level_generator.stop_game()

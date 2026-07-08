@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://didmaq111715m" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666221.png" id="4_sdejy"]
 [ext_resource type="Texture2D" uid="uid://q6j48gnjof1p" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665125.png" id="5_i6gcw"]
 [ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="5_tkcnv"]
-[ext_resource type="Texture2D" uid="uid://cgw4ywicd2orl" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Frame 2085664935.png" id="8_dqeh6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afec1"]
 texture = ExtResource("2_4ek86")
@@ -72,7 +71,7 @@ texture = ExtResource("2_4ek86")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tkcnv"]
 texture = ExtResource("2_4ek86")
 
-[node name="GameSceneUI" type="Control" unique_id=60258633 node_paths=PackedStringArray("timer", "_timerBox", "top_text", "bg", "levelBox")]
+[node name="GameSceneUI" type="Control" unique_id=60258633 node_paths=PackedStringArray("timer", "_hintBtn", "_timerBox", "top_text", "levelBox")]
 layout_direction = 4
 layout_mode = 3
 anchors_preset = 15
@@ -83,11 +82,10 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_tkcnv")
 timer = NodePath("Timerlabel/Label")
+_hintBtn = NodePath("HintButton")
 _timerBox = NodePath("Timerlabel")
 top_text = NodePath("Level/Label")
-bg = NodePath("Bg")
 levelBox = NodePath("Level")
-screen_type = 3
 
 [node name="SettingsButton" type="Button" parent="." unique_id=358707857]
 visible = false
@@ -246,22 +244,13 @@ text = "Hint"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Bg" type="TextureRect" parent="." unique_id=1230218033]
-z_index = -2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("8_dqeh6")
-expand_mode = 1
-
 [node name="Control" type="Control" parent="." unique_id=60885549]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 336.0
+offset_bottom = -384.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2

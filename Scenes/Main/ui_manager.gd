@@ -98,3 +98,14 @@ func hide_popup():
 
 func has_popup() -> bool:
 	return popup_manager.is_popup_open()
+
+
+func click_animation(btn: Control) -> void:
+	# btn.pivot_offset = btn.size / 2.0
+	var original_scale = btn.scale
+	var tween = btn.create_tween()
+	tween.parallel().tween_property(btn, "scale", original_scale * 0.95, 0.1)
+	tween.parallel().tween_property(btn, "modulate", Color(0.4, 0.4, 0.4), 0.1)
+	tween.tween_property(btn, "scale", original_scale, 0.1)
+	tween.parallel().tween_property(btn, "modulate", Color.WHITE, 0.1)
+	await tween.finished

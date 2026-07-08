@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d3376oqol5wht"]
+
+[ext_resource type="Texture2D" uid="uid://dsgxahcmy278o" path="res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 8.png" id="1_ortn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rk0o"]
+size = Vector2(497.22217, 519.4444)
+
+[sub_resource type="Curve2D" id="Curve2D_ortn3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3, -244, 0, 0, 0, 0, -2, -154, 0, 0, 0, 0, -23, -80, 0, 0, 0, 0, -113, -16, 0, 0, 0, 0, -250, 0)
+}
+point_count = 5
+
+[node name="Circle" type="Sprite2D" unique_id=1672097867]
+texture = ExtResource("1_ortn3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1042354560]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=17120777]
+position = Vector2(1.3888732, -1.3889108)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_7rk0o")
+debug_color = Color(0.38865814, 0.12172047, 0.06940614, 0.41960785)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=582340412]
+curve = SubResource("Curve2D_ortn3")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1001585770]
+position = Vector2(-3, -244)
+rotation = 1.5596857

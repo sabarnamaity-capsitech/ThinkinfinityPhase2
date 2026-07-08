@@ -9,6 +9,7 @@ class_name LevelBtn
 var _level_index: int
 
 func setup(level_index: int, is_unlocked: bool) -> void:
+	print("Setup:", level_index)
 	_level_index = level_index
 
 	_unlocked_sprite.visible = is_unlocked
@@ -30,3 +31,13 @@ func _on_level_selected() -> void:
 	print("Level Selected: ", _level_index)
 
 	GameManager.instance.level_generator.load_level(_level_index)
+
+
+func update_state(is_unlocked: bool) -> void:
+	
+	_unlocked_sprite.visible = is_unlocked
+	_locked_sprite.visible = !is_unlocked
+	_level_number_label.visible = is_unlocked
+	_select_btn.disabled = !is_unlocked
+	if is_unlocked:
+		_level_number_label.text = str(_level_index)

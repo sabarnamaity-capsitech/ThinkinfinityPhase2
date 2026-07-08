@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dnsgaf8130mav"]
+
+[ext_resource type="Shader" uid="uid://bnq2pb3m2evnp" path="res://SpotLight/new_shader_material.gdshader" id="1_bmr8i"]
+
+[resource]
+shader = ExtResource("1_bmr8i")

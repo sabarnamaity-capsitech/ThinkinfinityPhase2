@@ -1,303 +1,536 @@
-"""
-Thinkfinity — Procedural Level Generator (500 levels)
-======================================================
-
-This extends the original 100-level prototype script into a full
-500-level generator that matches the difficulty arc described in the
-Thinkfinity PRD (Easy 1-20 / Medium 21-40 / Hard 41-50 on a 50-level
-scale -> proportionally scaled to 1-200 / 201-400 / 401-500 on 500).
-
-ALGORITHM OVERVIEW
--------------------
-1. CREATE BOARD
-   Build an NxN grid of cells. Each cell has:
-     - active: whether it's part of the puzzle (False = empty/hole,
-       used to create non-square "image-shaped" boards)
-     - conn:   a 4-bit bitmask of which sides have a road segment
-               (UP=1, RIGHT=2, DOWN=4, LEFT=8)
-
-2. MASK (carve holes)
-   Randomly deactivate a percentage of cells (never the center) to
-   create irregular board shapes, similar to how a split city image
-   would not always be a perfect rectangle of usable tiles.
-
-3. FIX CONNECTIVITY (bug fix vs. the original prototype)
-   Masking can accidentally cut the board into disconnected islands.
-   We flood-fill from the center over active cells and turn any
-   unreachable active cell into a hole too. This guarantees that
-   every active cell that remains is reachable, so the spanning-tree
-   step below can never leave an active cell with conn == 0
-   (a tile with no road on it at all).
-
-4. SPANNING TREE (dfs)
-   Depth-first search from the center cell. Every time we step from
-   cell A to neighbour B, we set the matching bits on both cells
-   (e.g. A gets RIGHT, B gets LEFT). This guarantees a single fully
-   connected road network with no dead ends pointing off the board.
-
-5. ADD EXTRA LOOPS
-   With some probability per cell, add one extra connection to a
-   neighbour that isn't already connected. This turns parts of the
-   tree into actual loops/cycles, which is what makes the puzzle
-   visually "Infinity-Loop"-like and creates multiple plausible (but
-   wrong) rotations — i.e. real difficulty instead of just a maze.
-
-6. SCRAMBLE
-   Rotate each active tile's bitmask by 1-3 random 90° turns. Since
-   rotation is reversible and bounded (4 possible states), every
-   generated puzzle is guaranteed solvable by construction — you can
-   always rotate any tile back to its original, correct orientation.
-
-7. DIFFICULTY SCALING (new)
-   grid size, hole %, extra-loop probability, and time limit are all
-   interpolated smoothly across three phases (easy/medium/hard) so
-   that level 1 and level 500 sit at opposite ends of a continuous
-   difficulty curve instead of jumping in steps.
-
-8. EXPORT
-   Each level is written as its own JSON file (rows, cols, per-cell
-   bitmask, time_limit, theme, phase) plus a manifest.json index of
-   all 500 levels for a level-select screen.
-
-WIN CONDITION (used by the game, not the generator):
-   A board is "solved" when, for every active cell and every bit set
-   in its conn mask, the neighbour in that direction exists, is
-   active, and has the matching reciprocal bit set. This is checked
-   live in Godot after every tap — see scripts/GameManager.gd.
-"""
-
-import random
-import json
-import os
+import json, math, random
+from collections import deque
 
 UP, RIGHT, DOWN, LEFT = 1, 2, 4, 8
+OPP = {UP: DOWN, DOWN: UP, LEFT: RIGHT, RIGHT: LEFT}
+DIRS = [(-1, 0, UP, DOWN), (0, 1, RIGHT, LEFT), (1, 0, DOWN, UP), (0, -1, LEFT, RIGHT)]
 
-DIRS = [
-    (-1, 0, UP, DOWN),
-    (0, 1, RIGHT, LEFT),
-    (1, 0, DOWN, UP),
-    (0, -1, LEFT, RIGHT),
+
+def rotate90(v):
+    return ((v << 1) | (v >> 3)) & 15
+
+
+def popcount(v):
+    return bin(v).count("1")
+
+
+PATTERNS = [
+    "winding", "hLanes", "zigzag", "spiral", "concentric",
+    "ring", "diagonal", "checkerboard", "gridLoops", "braid", "denseMaze",
+    "staircase", "pinwheel", "waves", "herringbone", "cross",
 ]
 
-TOTAL_LEVELS = 20
-OUTPUT_DIR = "levels"
+# ---------------------------------------------------------------------------
+# Mask (holes) generation — interior holes only, never a fully-emptied
+# row or column.
+# ---------------------------------------------------------------------------
 
-# Difficulty phases, scaled from the original 50-level arc (40% / 40% / 20%)
-PHASE_EASY_END = int(TOTAL_LEVELS * 0.40)     # levels 1-200
-PHASE_MEDIUM_END = int(TOTAL_LEVELS * 0.80)   # levels 201-400
-# remaining levels (401-500) are HARD
+def build_mask(rows, cols, pct, rng, pattern):
+    active = [[True] * cols for _ in range(rows)]
+    if pct <= 0:
+        return active
+    total = rows * cols
+    target_remove = int(total * pct)
+    cr, cc = (rows - 1) / 2.0, (cols - 1) / 2.0
+    max_d = math.hypot(cr, cc) or 1.0
+
+    # A row/column may never be fully punched out — keep at least 40%
+    # (min 2) of its cells active, so holes always sit "in the middle"
+    # of a row/column rather than wiping it out.
+    row_cap = max(1, cols - max(2, math.ceil(cols * 0.4)))
+    col_cap = max(1, rows - max(2, math.ceil(rows * 0.4)))
+    row_removed = [0] * rows
+    col_removed = [0] * cols
+
+    cells = []
+    for r in range(rows):
+        for c in range(cols):
+            d = math.hypot(r - cr, c - cc) / max_d
+            interior = not (r in (0, rows - 1) or c in (0, cols - 1))
+            w = (1.0 - d) * 0.4
+            if interior:
+                w += 0.3   # bias holes toward the middle of rows/columns
+            if pattern in ("concentric", "ring"):
+                ring = min(r, c, rows - 1 - r, cols - 1 - c)
+                w += 0.15 if ring % 2 == 1 else -0.05
+            elif pattern == "checkerboard":
+                w += 0.15 if (r + c) % 2 == 0 else -0.05
+            elif pattern == "diagonal":
+                w += 0.15 if abs(r - c) % 3 == 0 else 0.0
+            elif pattern == "cross":
+                on_axis = (r == round(cr)) or (c == round(cc))
+                w -= 0.3 if on_axis else 0.0
+            cells.append((w + rng.random() * 0.4, r, c))
+    cells.sort(key=lambda t: -t[0])
+
+    removed = 0
+    for _, r, c in cells:
+        if removed >= target_remove:
+            break
+        if abs(r - cr) < 0.6 and abs(c - cc) < 0.6:
+            continue  # keep the exact center open
+        if row_removed[r] >= row_cap or col_removed[c] >= col_cap:
+            continue
+        active[r][c] = False
+        row_removed[r] += 1
+        col_removed[c] += 1
+        removed += 1
+    return active
+
+
+# ---------------------------------------------------------------------------
+# Connected components of the active mask
+# ---------------------------------------------------------------------------
+
+def find_components(rows, cols, active):
+    seen = [[False] * cols for _ in range(rows)]
+    comps = []
+    for r in range(rows):
+        for c in range(cols):
+            if not active[r][c] or seen[r][c]:
+                continue
+            stack = [(r, c)]
+            seen[r][c] = True
+            comp = []
+            while stack:
+                cr, cc = stack.pop()
+                comp.append((cr, cc))
+                for dr, dc, _, _ in DIRS:
+                    nr, nc = cr + dr, cc + dc
+                    if 0 <= nr < rows and 0 <= nc < cols and active[nr][nc] and not seen[nr][nc]:
+                        seen[nr][nc] = True
+                        stack.append((nr, nc))
+            comps.append(comp)
+    return comps
+
+
+# ---------------------------------------------------------------------------
+# Neighbor ordering strategies (gives each pattern a distinct visual identity)
+# ---------------------------------------------------------------------------
+
+def ordered_dirs(pattern, r, c, last_dir, rng, rows, cols):
+    dirs = list(DIRS)
+    if pattern == "winding":
+        rng.shuffle(dirs)
+    elif pattern == "hLanes":
+        dirs.sort(key=lambda d: (0 if d[1] != 0 else 1) + rng.random() * 0.3)
+    elif pattern == "zigzag":
+        if last_dir is not None:
+            dirs.sort(key=lambda d: 0 if (d[0], d[1]) == last_dir else 1 + rng.random())
+        else:
+            rng.shuffle(dirs)
+    elif pattern == "spiral":
+        order = [RIGHT, DOWN, LEFT, UP]
+        idx = (r + c) % 4
+        order = order[idx:] + order[:idx]
+        dirs.sort(key=lambda d: order.index(d[2]) + rng.random() * 0.2)
+    elif pattern in ("concentric", "ring"):
+        ring = min(r, c, rows - 1 - r, cols - 1 - c)
+
+        def ring_of(d):
+            nr, nc = r + d[0], c + d[1]
+            if 0 <= nr < rows and 0 <= nc < cols:
+                return min(nr, nc, rows - 1 - nr, cols - 1 - nc)
+            return -99
+        dirs.sort(key=lambda d: (abs(ring_of(d) - ring), rng.random()))
+    elif pattern == "diagonal":
+        pref = [RIGHT, DOWN] if (r + c) % 2 == 0 else [LEFT, UP]
+        dirs.sort(key=lambda d: (0 if d[2] in pref else 1) + rng.random() * 0.3)
+    elif pattern == "checkerboard":
+        pref = [DOWN, RIGHT] if (r % 2 == c % 2) else [UP, LEFT]
+        dirs.sort(key=lambda d: (0 if d[2] in pref else 1) + rng.random() * 0.3)
+    elif pattern == "staircase":
+        pref = [RIGHT, DOWN, LEFT, UP] if r % 2 == 0 else [DOWN, RIGHT, UP, LEFT]
+        dirs.sort(key=lambda d: (0 if d[2] in pref[:2] else 1) + pref.index(d[2]) * 0.05 + rng.random() * 0.25)
+    elif pattern == "pinwheel":
+        cr, cc = (rows - 1) / 2.0, (cols - 1) / 2.0
+        ang = math.atan2(r - cr, c - cc)
+        quad = int(((ang + math.pi) / (math.pi / 2)) % 4)
+        order = [[RIGHT, DOWN, LEFT, UP], [DOWN, LEFT, UP, RIGHT],
+                 [LEFT, UP, RIGHT, DOWN], [UP, RIGHT, DOWN, LEFT]][quad]
+        dirs.sort(key=lambda d: order.index(d[2]) + rng.random() * 0.2)
+    elif pattern == "waves":
+        wave = math.sin(c * 0.9)
+        pref = [DOWN, RIGHT] if wave >= 0 else [UP, RIGHT]
+        dirs.sort(key=lambda d: (0 if d[2] in pref else 1) + rng.random() * 0.3)
+    elif pattern == "herringbone":
+        block = (r // 1 + c) % 4
+        pref = [RIGHT, UP] if block < 2 else [DOWN, LEFT]
+        dirs.sort(key=lambda d: (0 if d[2] in pref else 1) + rng.random() * 0.3)
+    elif pattern == "cross":
+        cr, cc = round((rows - 1) / 2.0), round((cols - 1) / 2.0)
+        pref = [DOWN, RIGHT] if abs(r - cr) > abs(c - cc) else [RIGHT, DOWN]
+        dirs.sort(key=lambda d: (0 if d[2] in pref else 1) + rng.random() * 0.3)
+    else:  # gridLoops, braid, denseMaze -> used mainly with Prim's, order barely matters
+        rng.shuffle(dirs)
+    return dirs
+
+
+USE_PRIM = {"gridLoops", "braid", "denseMaze"}
+
+# ---------------------------------------------------------------------------
+# Spanning-tree carving over one connected component
+# ---------------------------------------------------------------------------
+
+def carve_dfs(comp_set, conn, pattern, rng, rows, cols):
+    start = next(iter(comp_set))
+    visited = {start}
+    stack = [start]
+    last_dir_map = {}
+    while stack:
+        r, c = stack[-1]
+        last_dir = last_dir_map.get((r, c))
+        moved = False
+        for dr, dc, bit, obit in ordered_dirs(pattern, r, c, last_dir, rng, rows, cols):
+            nr, nc = r + dr, c + dc
+            if (nr, nc) in comp_set and (nr, nc) not in visited:
+                conn[r][c] |= bit
+                conn[nr][nc] |= obit
+                visited.add((nr, nc))
+                last_dir_map[(nr, nc)] = (dr, dc)
+                stack.append((nr, nc))
+                moved = True
+                break
+        if not moved:
+            stack.pop()
+
+
+def carve_prim(comp_set, conn, rng):
+    start = next(iter(comp_set))
+    in_tree = {start}
+    frontier = []
+
+    def add_frontier(cell):
+        r, c = cell
+        for dr, dc, bit, obit in DIRS:
+            nb = (r + dr, c + dc)
+            if nb in comp_set and nb not in in_tree:
+                frontier.append((cell, (dr, dc, bit, obit), nb))
+    add_frontier(start)
+    while frontier:
+        idx = rng.randrange(len(frontier))
+        cell, (dr, dc, bit, obit), nb = frontier.pop(idx)
+        if nb in in_tree:
+            continue
+        r, c = cell
+        nr, nc = nb
+        conn[r][c] |= bit
+        conn[nr][nc] |= obit
+        in_tree.add(nb)
+        add_frontier(nb)
+
+
+def add_extra_edges(comp_set, conn, rng, prob, exempt):
+    """Thicken the tree into a braid — never touching an exempt (start/end) cell,
+    so its degree stays at exactly 1."""
+    for (r, c) in comp_set:
+        if (r, c) in exempt:
+            continue
+        for dr, dc, bit, obit in DIRS:
+            if bit in (DOWN, RIGHT):
+                nr, nc = r + dr, c + dc
+                if (nr, nc) in comp_set and (nr, nc) not in exempt:
+                    if not (conn[r][c] & bit) and rng.random() < prob:
+                        conn[r][c] |= bit
+                        conn[nr][nc] |= obit
+
+
+def fix_dead_ends(comp_set, conn, rng, rows, cols, active, exempt):
+    """Repeatedly: any non-exempt active cell with degree 1 gets an extra edge
+    to a neighbor. If none is available (without touching an exempt cell),
+    it's excised entirely. Exempt cells (start/end) are never touched, and
+    are never used as a target to fix another cell's degree."""
+    changed = True
+    active_set = set(comp_set)
+    while changed:
+        changed = False
+        for (r, c) in list(active_set):
+            if (r, c) in exempt:
+                continue
+            deg = popcount(conn[r][c])
+            if deg != 1:
+                continue
+            candidates = []
+            for dr, dc, bit, obit in DIRS:
+                if conn[r][c] & bit:
+                    continue
+                nr, nc = r + dr, c + dc
+                if (nr, nc) in active_set and (nr, nc) not in exempt and not (conn[nr][nc] & obit):
+                    candidates.append((dr, dc, bit, obit, nr, nc))
+            if candidates:
+                dr, dc, bit, obit, nr, nc = candidates[rng.randrange(len(candidates))]
+                conn[r][c] |= bit
+                conn[nr][nc] |= obit
+                changed = True
+                continue
+            # No safe fix — would we have to touch an exempt cell to excise?
+            old = conn[r][c]
+            touches_exempt = False
+            for dr, dc, bit, obit in DIRS:
+                if old & bit:
+                    nr, nc = r + dr, c + dc
+                    if (nr, nc) in exempt:
+                        touches_exempt = True
+            if touches_exempt:
+                continue  # leave it — outer validation will catch & retry
+            conn[r][c] = 0
+            for dr, dc, bit, obit in DIRS:
+                if old & bit:
+                    nr, nc = r + dr, c + dc
+                    conn[nr][nc] &= ~obit
+            active_set.discard((r, c))
+            active[r][c] = False
+            changed = True
+    return active_set
+
+
+# ---------------------------------------------------------------------------
+# Tree-diameter endpoints -> chosen as the start / end dead ends
+# ---------------------------------------------------------------------------
+
+def bfs_farthest(comp_set, conn, start):
+    dist = {start: 0}
+    q = deque([start])
+    far = start
+    while q:
+        cur = q.popleft()
+        if dist[cur] > dist[far]:
+            far = cur
+        r, c = cur
+        for dr, dc, bit, obit in DIRS:
+            if conn[r][c] & bit:
+                nb = (r + dr, c + dc)
+                if nb in comp_set and nb not in dist:
+                    dist[nb] = dist[cur] + 1
+                    q.append(nb)
+    return far
+
+
+def tree_diameter_endpoints(comp_set, conn):
+    start = next(iter(comp_set))
+    a = bfs_farthest(comp_set, conn, start)
+    b = bfs_farthest(comp_set, conn, a)
+    return a, b
+
+
+# ---------------------------------------------------------------------------
+# Full solution generator for one level — single connected network with
+# exactly two dead ends: start & end.
+# ---------------------------------------------------------------------------
+
+def generate_solution(rows, cols, active, pattern, rng, loop_density):
+    comps = find_components(rows, cols, active)
+    comps = [c for c in comps if len(c) >= 4]
+    if not comps:
+        return None, None, None
+    comps.sort(key=len, reverse=True)
+    main_comp = comps[0]
+    for comp in comps[1:]:
+        for (r, c) in comp:
+            active[r][c] = False
+    for r in range(rows):
+        for c in range(cols):
+            if active[r][c] and (r, c) not in main_comp:
+                active[r][c] = False
+
+    comp_set = set(main_comp)
+    conn = [[0] * cols for _ in range(rows)]
+    if pattern in USE_PRIM:
+        carve_prim(comp_set, conn, rng)
+    else:
+        carve_dfs(comp_set, conn, pattern, rng, rows, cols)
+
+    a, b = tree_diameter_endpoints(comp_set, conn)
+    exempt = {a, b}
+    add_extra_edges(comp_set, conn, rng, loop_density, exempt)
+    fix_dead_ends(comp_set, conn, rng, rows, cols, active, exempt)
+    return conn, a, b
+
+
+def validate_solution(rows, cols, conn, active, a, b):
+    active_cells = [(r, c) for r in range(rows) for c in range(cols)
+                    if active[r][c] and conn[r][c] > 0]
+    if len(active_cells) < 4:
+        return False
+    deg1 = [cell for cell in active_cells if popcount(conn[cell[0]][cell[1]]) == 1]
+    if set(deg1) != {a, b}:
+        return False
+    comp_set = set(active_cells)
+    seen = {active_cells[0]}
+    stack = [active_cells[0]]
+    while stack:
+        r, c = stack.pop()
+        for dr, dc, bit, obit in DIRS:
+            if conn[r][c] & bit:
+                nb = (r + dr, c + dc)
+                if nb in comp_set and nb not in seen:
+                    seen.add(nb)
+                    stack.append(nb)
+    if len(seen) != len(comp_set):
+        return False
+    for r in range(rows):
+        if not any(active[r][c] for c in range(cols)):
+            return False
+    for c in range(cols):
+        if not any(active[r][c] for r in range(rows)):
+            return False
+    return True
+
+
+# ---------------------------------------------------------------------------
+# Scrambling
+# ---------------------------------------------------------------------------
+
+def is_symmetric(v):
+    t = rotate90(v)
+    for _ in range(3):
+        if t != v:
+            return False
+        t = rotate90(t)
+    return True
+
+
+def scramble(rows, cols, conn, active, min_rot, max_rot, rng):
+    cells = [[-1] * cols for _ in range(rows)]
+    solution = [[-1] * cols for _ in range(rows)]
+    for r in range(rows):
+        for c in range(cols):
+            if not active[r][c] or conn[r][c] == 0:
+                continue
+            orig = conn[r][c]
+            solution[r][c] = orig
+            sym = is_symmetric(orig)
+            k = rng.randint(min_rot, max_rot)
+            v = orig
+            for _ in range(k):
+                v = rotate90(v)
+            if not sym:
+                safety = 0
+                while v == orig and safety < 4:
+                    v = rotate90(v)
+                    safety += 1
+            cells[r][c] = v
+    return cells, solution
+
+
+# ---------------------------------------------------------------------------
+# Difficulty curve — grid size ramps 4x4 (level 1) up to 8x8 (level 500)
+# ---------------------------------------------------------------------------
+
+TOTAL = 500
+EASY_END = 175
+MED_END = 375
 
 
 def lerp(a, b, t):
     return a + (b - a) * t
 
 
-def get_phase(level):
-    """Returns (phase_name, t) where t in [0,1] is progress within the phase."""
-    if level <= PHASE_EASY_END:
-        return "easy", (level - 1) / max(PHASE_EASY_END - 1, 1)
-    elif level <= PHASE_MEDIUM_END:
-        return "medium", (level - PHASE_EASY_END - 1) / max(PHASE_MEDIUM_END - PHASE_EASY_END - 1, 1)
+def difficulty_for_level(level):
+    if level <= EASY_END:
+        t = (level - 1) / max(EASY_END - 1, 1)
+        phase = "easy"
+        size = round(lerp(4, 5, t))
+        mask_pct = lerp(0.0, 0.10, t)
+        min_rot, max_rot = 1, 3
+        loop_density = lerp(0.05, 0.12, t)
+    elif level <= MED_END:
+        t = (level - EASY_END - 1) / max(MED_END - EASY_END - 1, 1)
+        phase = "medium"
+        size = round(lerp(5, 7, t))
+        mask_pct = lerp(0.14, 0.26, t)
+        min_rot, max_rot = 1, 4
+        loop_density = lerp(0.14, 0.22, t)
     else:
-        return "hard", (level - PHASE_MEDIUM_END - 1) / max(TOTAL_LEVELS - PHASE_MEDIUM_END - 1, 1)
+        t = (level - MED_END - 1) / max(TOTAL - MED_END - 1, 1)
+        phase = "hard"
+        size = round(lerp(7, 8, t))
+        mask_pct = lerp(0.26, 0.36, t)
+        min_rot, max_rot = 2, 4
+        loop_density = lerp(0.22, 0.32, t)
+    return phase, size, mask_pct, min_rot, max_rot, loop_density
 
 
-def get_difficulty_params(level):
-    """grid_size, hole percentage, extra-loop probability, and the two
-    time-limit coefficients (flat base + per-active-cell), interpolated
-    smoothly inside each phase."""
-    phase, t = get_phase(level)
-
-    if phase == "easy":
-        size = round(lerp(4, 7, t))
-        mask_pct = lerp(0.05, 0.12, t)
-        loop_prob = lerp(0.05, 0.15, t)
-        time_base, time_per_cell = lerp(15, 12, t), lerp(1.6, 1.3, t)
-    elif phase == "medium":
-        size = round(lerp(7, 9, t))
-        mask_pct = lerp(0.12, 0.20, t)
-        loop_prob = lerp(0.15, 0.30, t)
-        time_base, time_per_cell = lerp(12, 10, t), lerp(1.3, 1.0, t)
-    else:  # hard
-        size = round(lerp(9, 11, t))
-        mask_pct = lerp(0.20, 0.30, t)
-        loop_prob = lerp(0.30, 0.45, t)
-        time_base, time_per_cell = lerp(10, 8, t), lerp(1.0, 0.8, t)
-
-    return size, mask_pct, loop_prob, time_base, time_per_cell, phase
+def pattern_for_level(level):
+    idx = (level - 1) % len(PATTERNS)
+    shift = ((level - 1) // len(PATTERNS)) % len(PATTERNS)
+    return PATTERNS[(idx + shift) % len(PATTERNS)]
 
 
-def create_board(rows, cols):
-    return [[{"active": True, "conn": 0} for _ in range(cols)] for _ in range(rows)]
+# ---------------------------------------------------------------------------
+# Level building with automatic retry to guarantee a valid, unique result
+# ---------------------------------------------------------------------------
 
+def build_level(level, seed_salt=0):
+    phase, size, mask_pct, min_rot, max_rot, loop_density = difficulty_for_level(level)
+    pattern = pattern_for_level(level)
 
-def create_mask(board, percentage):
-    rows, cols = len(board), len(board[0])
-    total = rows * cols
-    remove_count = int(total * percentage)
-    center = (rows // 2, cols // 2)
-    removed = 0
-    attempts = 0
-    while removed < remove_count and attempts < total * 10:
-        attempts += 1
-        r = random.randint(0, rows - 1)
-        c = random.randint(0, cols - 1)
-        if (r, c) == center:
+    for attempt in range(60):
+        rng = random.Random(level * 1000003 + attempt * 97 + 13 + seed_salt * 7919)
+        rows = size
+        cols = size
+        if size >= 5:
+            skew = rng.choice([-1, 0, 0, 0, 1])
+            cols = max(4, min(8, size + skew))
+        rows = min(8, max(4, rows))
+        cols = min(8, max(4, cols))
+
+        this_mask_pct = mask_pct * (0.9 ** (attempt // 10))
+        this_loop_density = loop_density * (0.92 ** (attempt // 10))
+
+        active = build_mask(rows, cols, this_mask_pct, rng, pattern)
+        total_cells = rows * cols
+        if sum(row.count(True) for row in active) < max(8, int(total_cells * 0.55)):
+            this_mask_pct *= 0.5
+            active = build_mask(rows, cols, this_mask_pct, rng, pattern)
+
+        conn, a, b = generate_solution(rows, cols, active, pattern, rng, this_loop_density)
+        if conn is None:
             continue
-        if board[r][c]["active"]:
-            board[r][c]["active"] = False
-            removed += 1
-
-
-def flood_fill_reachable(board, start):
-    rows, cols = len(board), len(board[0])
-    visited = set()
-    stack = [start]
-    while stack:
-        r, c = stack.pop()
-        if (r, c) in visited or not board[r][c]["active"]:
+        if not validate_solution(rows, cols, conn, active, a, b):
             continue
-        visited.add((r, c))
-        for dr, dc, _, _ in DIRS:
-            nr, nc = r + dr, c + dc
-            if 0 <= nr < rows and 0 <= nc < cols and (nr, nc) not in visited:
-                if board[nr][nc]["active"]:
-                    stack.append((nr, nc))
-    return visited
 
-
-def remove_unreachable_islands(board, center):
-    """Any active cell the mask disconnected from the center becomes a
-    hole. Guarantees every remaining active cell is reachable, so dfs()
-    below can never leave an active tile with conn == 0."""
-    reachable = flood_fill_reachable(board, center)
-    rows, cols = len(board), len(board[0])
-    for r in range(rows):
-        for c in range(cols):
-            if board[r][c]["active"] and (r, c) not in reachable:
-                board[r][c]["active"] = False
-    return reachable
-
-
-def dfs(board, r, c, visited):
-    visited.add((r, c))
-    neighbours = DIRS[:]
-    random.shuffle(neighbours)
-    rows, cols = len(board), len(board[0])
-    for dr, dc, current_dir, neighbour_dir in neighbours:
-        nr, nc = r + dr, c + dc
-        if nr < 0 or nr >= rows or nc < 0 or nc >= cols:
+        active_count = sum(1 for r in range(rows) for c in range(cols)
+                            if active[r][c] and conn[r][c] > 0)
+        if active_count < max(4, int(rows * cols * 0.35)):
             continue
-        if not board[nr][nc]["active"] or (nr, nc) in visited:
-            continue
-        board[r][c]["conn"] |= current_dir
-        board[nr][nc]["conn"] |= neighbour_dir
-        dfs(board, nr, nc, visited)
+
+        cells, solution = scramble(rows, cols, conn, active, min_rot, max_rot, rng)
+        return {
+            "level": level,
+            "phase": phase,
+            "pattern": pattern,
+            "rows": rows,
+            "cols": cols,
+            "start": [a[0], a[1]],
+            "end": [b[0], b[1]],
+            "cells": cells,
+            "solution": solution,
+        }
+    raise RuntimeError(f"Failed to build level {level} after retries")
 
 
-def add_extra_loops(board, probability):
-    rows, cols = len(board), len(board[0])
-    for r in range(rows):
-        for c in range(cols):
-            if not board[r][c]["active"] or random.random() > probability:
-                continue
-            dirs = DIRS[:]
-            random.shuffle(dirs)
-            for dr, dc, current_dir, neighbour_dir in dirs:
-                nr, nc = r + dr, c + dc
-                if nr < 0 or nr >= rows or nc < 0 or nc >= cols:
-                    continue
-                if not board[nr][nc]["active"]:
-                    continue
-                if board[r][c]["conn"] & current_dir:
-                    continue
-                board[r][c]["conn"] |= current_dir
-                board[nr][nc]["conn"] |= neighbour_dir
-                break
-
-
-def rotate90(value):
-    return ((value << 1) | (value >> 3)) & 15
-
-
-def scramble(board):
-    """Scramble tiles 1–3 rotations. Returns solution grid (pre-scramble conn values)."""
-    rows, cols = len(board), len(board[0])
-    solution = [[0] * cols for _ in range(rows)]
-    for r in range(rows):
-        for c in range(cols):
-            if not board[r][c]["active"]:
-                continue
-            solution[r][c] = board[r][c]["conn"]   # save correct orientation
-            times = random.randint(1, 3)  # never 0, so a level never starts pre-solved
-            value = board[r][c]["conn"]
-            for _ in range(times):
-                value = rotate90(value)
-            board[r][c]["conn"] = value
-    return solution
-
-
-def export_level(board, level_number, time_limit, theme, phase, active_cells, solution_cells):
-    rows, cols = len(board), len(board[0])
-    cells = [[board[r][c]["conn"] if board[r][c]["active"] else 0 for c in range(cols)] for r in range(rows)]
-    data = {
-        "level": level_number,
-        "phase": phase,
-        "rows": rows,
-        "cols": cols,
-        "active_cells": active_cells,
-        "time_limit": round(time_limit, 1),
-        "theme": theme,
-        "cells": cells,
-        "solution": solution_cells,
-    }
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    filename = os.path.join(OUTPUT_DIR, f"level_{level_number:03}.json")
-    with open(filename, "w") as f:
-        json.dump(data, f, indent=2)
-    return data
-
-
-def generate_level(level_number):
-    size, mask_pct, loop_prob, time_base, time_per_cell, phase = get_difficulty_params(level_number)
-    rows = cols = size
-
-    board = create_board(rows, cols)
-    create_mask(board, mask_pct)
-
-    center = (rows // 2, cols // 2)
-    reachable = remove_unreachable_islands(board, center)
-
-    visited = set()
-    dfs(board, center[0], center[1], visited)
-    add_extra_loops(board, loop_prob)
-    solution = scramble(board)
-
-    active_cells = len(reachable)
-    time_limit = time_base + active_cells * time_per_cell
-    theme = ((level_number - 1) % 5) + 1  # cycle through the 5 PRD sub-themes
-
-    return export_level(board, level_number, time_limit, theme, phase, active_cells, solution)
-
-
-def generate_all_levels(total=TOTAL_LEVELS, seed=None):
-    if seed is not None:
-        random.seed(seed)
-    manifest = []
-    for level in range(1, total + 1):
-        data = generate_level(level)
-        manifest.append({
-            "level": data["level"],
-            "phase": data["phase"],
-            "grid": f'{data["rows"]}x{data["cols"]}',
-            "active_cells": data["active_cells"],
-            "time_limit": data["time_limit"],
-            "theme": data["theme"],
-        })
-    with open(os.path.join(OUTPUT_DIR, "manifest.json"), "w") as f:
-        json.dump(manifest, f, indent=2)
-    print(f"{total} levels generated in '{OUTPUT_DIR}/'")
+def main():
+    levels = []
+    seen_layouts = set()
+    for lvl in range(1, TOTAL + 1):
+        data = build_level(lvl)
+        key = (data["rows"], data["cols"], tuple(tuple(row) for row in data["solution"]))
+        tries = 0
+        while key in seen_layouts and tries < 40:
+            # extremely rare duplicate -> rebuild with a different salt
+            data = build_level(lvl, seed_salt=tries + 1)
+            key = (data["rows"], data["cols"], tuple(tuple(row) for row in data["solution"]))
+            tries += 1
+        if key in seen_layouts:
+            raise RuntimeError(f"Could not de-duplicate level {lvl}")
+        seen_layouts.add(key)
+        levels.append(data)
+    with open("C:\\SUBHADIP MANNA\\Godot\\ThinkinfinityPhase2\\tools\\levels.json", "w") as f:
+        json.dump({"levels": levels}, f)
+    print("done", len(levels))
 
 
 if __name__ == "__main__":
-    generate_all_levels()
+    main()
+ 

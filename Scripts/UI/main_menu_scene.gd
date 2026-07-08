@@ -16,9 +16,9 @@ func _ready() -> void:
 
 func _onPlayBtnPressed() -> void:
 	SoundManager.play_click()
-	# UIController.instance.switch_screen(ScreenType.Screen.LEVEL_SCREEN)
+	UiManager.instance.level_scene.on_show()
 	UiManager.instance.show_screen(UiManager.Screen_Type.LEVEL)
-	pass
+	
 
 func _onSettingsBtnPressed() -> void:
 	SoundManager.play_click()

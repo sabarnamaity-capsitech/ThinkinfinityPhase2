@@ -10,7 +10,7 @@ func _ready() -> void:
 	_closeBtn.pressed.connect(_onCloseBtnPressed)
 	restartBtn.pressed.connect(_onRestartBtnPressed)
 	resumetimer.pressed.connect(_onResumetimeBtnPressed)
-	levelTxt.text=tr("Level")+ ":"+str(GameManager.instance.current_level+1)
+	# levelTxt.text=tr("Level")+ ":"+str(GameManager.instance.current_level+1)
 
 	
 

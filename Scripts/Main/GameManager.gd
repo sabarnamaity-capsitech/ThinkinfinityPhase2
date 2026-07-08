@@ -18,7 +18,6 @@ var car_moving := false
 var scale_factor := 1.0
 var all_levels : Dictionary = {}
 var current_level;
-var max_level;
 var tutorial_open_count := 0
 # =========================
 # FILE PATH
@@ -46,10 +45,6 @@ func _enter_tree():
 	
 	create_path()
 	load_data()
-	if not game_data["player_data"].has("home_return_count"):
-		game_data["player_data"]["home_return_count"] = 0
-		save_data()
-	current_level=game_data["player_data"]["max_unlocked_level_index"]
 	preload_levels()
 
 
@@ -61,34 +56,31 @@ func _ready():
 
 
 
-
 func preload_levels() -> void:
-	var dir = DirAccess.open("res://levels/")
-	if dir == null:
+	all_levels.clear()
+
+	var file = FileAccess.open("res://levels.json", FileAccess.READ)
+
+	if file == null:
+		push_error("Failed to open levels.json")
 		return
 
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
+	var json = JSON.parse_string(file.get_as_text())
+	file.close()
 
-	while file_name != "":
-		if file_name.ends_with(".json"):
-			var path = "res://levels/" + file_name
+	if json == null:
+		push_error("Invalid JSON")
+		return
 
-			var f = FileAccess.open(path, FileAccess.READ)
-			if f:
-				var data = JSON.parse_string(f.get_as_text())
-				f.close()
+	if not json.has("levels"):
+		push_error("No 'levels' array found in JSON")
+		return
 
-				var level_num = int(file_name.get_basename().replace("level_", ""))
-				all_levels[level_num] = data
+	for level_data in json["levels"]:
+		var level_id : int = int(level_data["level"])
+		all_levels[level_id] = level_data
 
-		file_name = dir.get_next()
-
-	dir.list_dir_end()
-
-	print("Loaded ", all_levels.size(), " levels")
-
-
+	
 
 
 func create_path():
@@ -137,7 +129,7 @@ func initialize_default_data():
 			"total_coin": 0,
 			"total_score": 0,
 			"game_won_counter": 0,
-			"max_unlocked_level_index": 1,
+			"max_unlocked_level_index": 150,
 			"is_FirstTime" : true,
 			"is_FirstTime_hint" : true,
 			"home_return_count" : 0,
@@ -195,6 +187,8 @@ var is_setMaxUnlock: int:
 	set(value):
 		game_data["player_data"]["max_unlocked_level_index"] = value
 		save_data()
+
+
 var home_return_count: int:
 	get:
 		return game_data["player_data"]["home_return_count"]
@@ -286,14 +280,14 @@ func save_level_stars(level_index: int, stars: int):
 
 
 func save_level_result(level_index:int,stars:int):
-	var levels = game_data["player_data"]["level_progressions"]
+	# var levels = game_data["player_data"]["level_progressions"]
 
-	var level = levels[level_index - 1]
+	# var level = levels[level_index - 1]
 
-	level["completed"] = true
+	# level["completed"] = true
 
-	if stars > level["stars"]:
-		level["stars"] = stars
+	# if stars > level["stars"]:
+	# 	level["stars"] = stars
 
 	save_data()
 

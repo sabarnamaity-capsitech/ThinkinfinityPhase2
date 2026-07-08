@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://cbmot8wafocy1"]
 
-[ext_resource type="Script" uid="uid://cp7ljcegmfy28" path="res://Scripts/Main/tile.gd" id="1_n3f48"]
-[ext_resource type="Texture2D" uid="uid://2fbte1bxv3u2" path="res://assets/ThinkfinityAsset/Art/LevelSprite/Frame 1.png" id="1_vx4y2"]
+[ext_resource type="Script" uid="uid://b4kxdegbr8xat" path="res://Scripts/TileRenderer.gd" id="2_vx4y2"]
 
-[node name="tile" type="TextureRect" unique_id=906648351]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_vx4y2")
-expand_mode = 1
-script = ExtResource("1_n3f48")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx4y2"]
+size = Vector2(497.22217, 519.4444)
+
+[node name="Straigth" type="Sprite2D" unique_id=509526102]
+scale = Vector2(0.36, 0.36)
+script = ExtResource("2_vx4y2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=645253545]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=769215800]
+position = Vector2(1.3888732, -1.3889108)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_vx4y2")
+debug_color = Color(0.38865814, 0.12172047, 0.06940614, 0.41960785)

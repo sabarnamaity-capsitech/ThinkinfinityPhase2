@@ -18,6 +18,7 @@ enum PopupType {
 @export var tutorial_popup : Control
 @export var hint_popup : Control
 @export var credit_popup : Control
+
 var popup_map : Dictionary = {}
 
 var current_popup : Control = null
@@ -67,55 +68,163 @@ func is_popup_open() -> bool:
 func get_current_popup() -> Control:
 	return current_popup
  
-func _toggle_popup(popup : Control, show : bool, delay := 0.0):
+
+
+
+
+# func _toggle_popup(popup : Control, show : bool, delay := 0.0):
  
-	popup.pivot_offset = popup.size * 0.5
+# 	popup.pivot_offset = popup.size * 0.5
  
-	var tween = create_tween()
+# 	var tween = create_tween()
  
+# 	if show:
+ 
+# 		popup.visible = true
+
+# 		popup.scale = Vector2.ZERO
+ 
+# 		tween.tween_property(
+
+# 			popup,
+
+# 			"scale",
+
+# 			Vector2.ONE,
+
+# 			0.25
+
+# 		).set_trans(Tween.TRANS_BACK)\
+
+# 		.set_ease(Tween.EASE_OUT)\
+
+# 		.set_delay(delay)
+ 
+# 	else:
+ 
+# 		tween.tween_property(
+
+# 			popup,
+
+# 			"scale",
+
+# 			Vector2.ZERO,
+
+# 			0.20
+
+# 		).set_trans(Tween.TRANS_BACK)\
+
+# 		.set_ease(Tween.EASE_IN)\
+
+# 		.set_delay(delay)
+ 
+# 		tween.tween_callback(func():
+
+# 			popup.visible = false
+
+# 		)
+func _toggle_popup(popup: Control, show: bool):
+	var panel: Panel = null
+
+	for child in popup.get_children():
+		if child is Panel:
+			panel = child
+			break
+
+	if panel == null:
+		return
+
+	panel.pivot_offset = panel.size * 0.5
+
+	var start_pos := panel.position
+	var start_scale := panel.scale
+
 	if show:
- 
 		popup.visible = true
 
-		popup.scale = Vector2.ZERO
- 
-		tween.tween_property(
+		# Initial state
+		panel.position = start_pos + Vector2(0, -300)
+		panel.scale = start_scale * 0.2
+		panel.rotation_degrees = -8
+		panel.modulate.a = 0.0
 
-			popup,
+		var tween = create_tween()
 
-			"scale",
+		# Stage 1
+		tween.set_parallel(true)
 
-			Vector2.ONE,
+		tween.tween_property(panel, "position", start_pos + Vector2(0, 25), 0.20)\
+			.set_trans(Tween.TRANS_EXPO)\
+			.set_ease(Tween.EASE_OUT)
 
-			0.25
+		tween.tween_property(panel, "scale", start_scale * 1.12, 0.20)\
+			.set_trans(Tween.TRANS_BACK)\
+			.set_ease(Tween.EASE_OUT)
 
-		).set_trans(Tween.TRANS_BACK)\
+		tween.tween_property(panel, "rotation_degrees", 2.0, 0.20)
 
-		.set_ease(Tween.EASE_OUT)\
+		tween.tween_property(panel, "modulate:a", 1.0, 0.12)
 
-		.set_delay(delay)
- 
+		# Stage 2
+		tween.chain()
+
+		tween.tween_property(panel, "position", start_pos - Vector2(0, 10), 0.10)\
+			.set_trans(Tween.TRANS_SPRING)\
+			.set_ease(Tween.EASE_OUT)
+
+		tween.parallel().tween_property(panel, "scale", start_scale * 0.97, 0.10)
+
+		tween.parallel().tween_property(panel, "rotation_degrees", -1.0, 0.10)
+
+		# Stage 3
+		tween.chain()
+
+		tween.tween_property(panel, "position", start_pos, 0.08)
+
+		tween.parallel().tween_property(panel, "scale", start_scale, 0.08)
+
+		tween.parallel().tween_property(panel, "rotation_degrees", 0.0, 0.08)
+		animate_buttons(panel)
 	else:
- 
-		tween.tween_property(
+		var tween = create_tween()
 
-			popup,
+		tween.set_parallel(true)
 
-			"scale",
+		tween.tween_property(panel, "position", start_pos + Vector2(0, -180), 0.18)\
+			.set_trans(Tween.TRANS_EXPO)\
+			.set_ease(Tween.EASE_IN)
 
-			Vector2.ZERO,
+		tween.tween_property(panel, "scale", start_scale * 0.5, 0.18)
 
-			0.20
+		tween.tween_property(panel, "rotation_degrees", 6.0, 0.18)
 
-		).set_trans(Tween.TRANS_BACK)\
+		tween.tween_property(panel, "modulate:a", 0.0, 0.15)
 
-		.set_ease(Tween.EASE_IN)\
+		await tween.finished
 
-		.set_delay(delay)
- 
-		tween.tween_callback(func():
+		panel.position = start_pos
+		panel.scale = start_scale
+		panel.rotation_degrees = 0
+		panel.modulate.a = 1.0
 
-			popup.visible = false
+		popup.visible = false
 
-		)
- 
+func animate_buttons(panel: Control):
+	var tween = create_tween()
+
+	for child in panel.get_children():
+		if child is Button:
+			var btn := child as Button
+			var original := btn.scale
+
+			btn.scale = Vector2.ZERO
+
+			tween.tween_property(btn, "scale", original * 1.15, 0.12)\
+				.set_trans(Tween.TRANS_BACK)\
+				.set_ease(Tween.EASE_OUT)
+
+			tween.tween_property(btn, "scale", original, 0.08)\
+				.set_trans(Tween.TRANS_BOUNCE)\
+				.set_ease(Tween.EASE_OUT)
+
+			tween.tween_interval(0.03)	

@@ -2,7 +2,7 @@ extends Control
 
 @export var timer : Label
 @onready var _pauseBtn = $PauseButton
-@onready var _hintBtn = $HintButton
+@export var _hintBtn  : Button
 @export var _timerBox : Label
 @export var top_text : Label
 @export var bg : TextureRect
@@ -45,19 +45,23 @@ func _onPauseBtnPressed() -> void:
 	
 
 func _onHintBtnPressed() -> void:
-	SoundManager.play_click()
-	SoundManager.stop_timerPlay()
-	# UIController.instance.show_popup(ScreenType.popup.HINT_POPUP)
-	UiManager.instance.show_popup(PopupManager.PopupType.HINT)
-	if hint_tween and hint_tween.is_valid():
-		hint_tween.kill()
-		hint_tween = null
+	UiManager.instance.click_animation(_hintBtn)
+	GameManager.instance.level_generator.solve_level()
+	print("kjdkhkfdshkdfhshfdhsdhfjhdsf")
+	# SoundManager.play_click()
+	# GameManager.instance.level_generator.force_solve()
+	# SoundManager.stop_timerPlay()
+	# # UIController.instance.show_popup(ScreenType.popup.HINT_POPUP)
+	# UiManager.instance.show_popup(PopupManager.PopupType.HINT)
+	# if hint_tween and hint_tween.is_valid():
+	# 	hint_tween.kill()
+	# 	hint_tween = null
 
-	_hintBtn.scale = Vector2.ONE
-	GameManager.instance.level_generator.timer_started=false
-	_pauseBtn.mouse_filter = Control.MOUSE_FILTER_STOP
-	GameManager.instance.level_generator.set_pieces_interactable(true)
-	GameManager.instance.is_First_Time_hint=false
+	# _hintBtn.scale = Vector2.ONE
+	# GameManager.instance.level_generator.timer_started=false
+	# _pauseBtn.mouse_filter = Control.MOUSE_FILTER_STOP
+	# GameManager.instance.level_generator.set_pieces_interactable(true)
+	# GameManager.instance.is_First_Time_hint=false
 
 
 

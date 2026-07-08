@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cumhdrma6u630" path="res://Scripts/UI/win_pop_up.gd" id="1_skcjh"]
 [ext_resource type="Texture2D" uid="uid://bedxrs7vafb6y" path="res://assets/ThinkfinityAsset/Art/DesignMaterial/Rectangle 10414 (1).png" id="1_y7g28"]
-[ext_resource type="Script" path="res://Scripts/UI/ui_popup_animator.gd" id="2_8b1kx"]
+[ext_resource type="Script" uid="uid://bfiw7gb5g67sj" path="res://Scripts/UI/ui_popup_animator.gd" id="2_8b1kx"]
 [ext_resource type="Texture2D" uid="uid://c1gc8nrwo1sy7" path="res://assets/ThinkfinityAsset/Art/buttons/Rectangle 10415.png" id="2_e56vy"]
 [ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="3_o5xo1"]
 [ext_resource type="Texture2D" uid="uid://r5ebcr8sl1ad" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="4_fsrcf"]
@@ -69,7 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.69803923, 0.6901961, 0.69411767, 0.5921569)
+color = Color(0.69803923, 0.6901961, 0.69411767, 0.49411765)
 
 [node name="WinnerPanel" type="Panel" parent="." unique_id=1133062442]
 layout_mode = 1
@@ -86,8 +86,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_g8nnl")
 script = ExtResource("2_8b1kx")
-animation_style = 1
-animation_duration = 0.3
 
 [node name="Header" type="TextureRect" parent="WinnerPanel" unique_id=2004095405]
 layout_mode = 1
@@ -259,3 +257,8 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_hmdoq")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_rcoyv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qivlv")
 icon = ExtResource("9_obfep")
+
+[node name="Control" type="Control" parent="." unique_id=2012992513]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
