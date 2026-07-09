@@ -25,6 +25,11 @@ var skin_variant: int = 0
 var skin_rot: int = 0
 var active: bool = false
 
+# FIX: Start/End tiles are locked into place from the beginning as part of
+# the solution — they must NEVER accept a tap/touch, even if they have a
+# non-zero connection value (which would otherwise make `active` true).
+var is_start_end: bool = false
+
 signal tapped(tile: TileRenderer)
 
 @onready var _area: Area2D = $Area2D
@@ -41,6 +46,9 @@ func _ready() -> void:
 
 func _on_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if not active:
+		return
+	# FIX: start/end tiles are locked — ignore all taps/touches on them.
+	if is_start_end:
 		return
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		tapped.emit(self)
@@ -78,13 +86,15 @@ func assign(
 	p_visual_level: int,
 	disp_tile: float,
 	offset_x: float,
-	offset_y: float
+	offset_y: float,
+	p_is_start_end: bool = false
 ) -> void:
 	row = r
 	col = c
 	conn = connection
 	active = connection != 0
 	_disp_tile = disp_tile
+	is_start_end = p_is_start_end
 
 	
 	var hv = r * 97 + c * 53 + p_visual_level * 17
@@ -93,7 +103,7 @@ func assign(
 
 
 	if _area:
-		_area.input_pickable = active
+		_area.input_pickable = active and not is_start_end
 
 	position = Vector2(
 		offset_x + c * disp_tile + disp_tile * 0.5,
@@ -111,7 +121,7 @@ func set_connection_instant(new_conn: int) -> void:
 	active = new_conn != 0
 
 	if _area:
-		_area.input_pickable = active
+		_area.input_pickable = active and not is_start_end
 
 	_apply_visual()
 
@@ -119,6 +129,9 @@ func set_connection_instant(new_conn: int) -> void:
 
 func rotate_clockwise() -> void:
 	if not active:
+		return
+	# FIX: start/end tiles must never rotate, even if called programmatically.
+	if is_start_end:
 		return
 	conn = rotate_bits(conn, 1)
 	_animate_to(_get_visual(conn, skin_variant, skin_rot))
@@ -174,7 +187,7 @@ static func rotate_bits(v: int, times: int) -> int:
 	return r
 
 
-func _popcount(v: int) -> int: #returns the number of bits set to 1 in v for rotation detection
+func _popcount(v: int) -> int: 
 	var c := 0
 	var vv := v
 	while vv > 0:
@@ -285,7 +298,8 @@ func animate_to_connection(target_conn: int) -> void:
 	active = target_conn != 0
 
 	if _area:
-		_area.input_pickable = active
+		# FIX: keep start/end tiles non-interactive here too.
+		_area.input_pickable = active and not is_start_end
 
 	var end_visual := _get_visual(target_conn, skin_variant, skin_rot)
 

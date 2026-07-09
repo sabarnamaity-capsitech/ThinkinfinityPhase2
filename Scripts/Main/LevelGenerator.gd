@@ -71,6 +71,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	update_timer(delta)
+	
 
 
 
@@ -104,9 +105,86 @@ func load_level(level_number: int) -> void:
 	_spawn_car()
 
 	print("Grid Ready:", rows, "x", cols, " Cell:", disp_tile)
+	
+	UiManager.instance.show_screen(UiManager.Screen_Type.GAME)
+		
 	_callAfterFullLoad1()
+
+
+
+func _check_tutorial() -> void:
+	if GameManager.instance.is_first_time == 0 and move_count == 1:
+		var tile = get_random_wrong_tile()
+		if tile:
+			tutorial.focus_tile(tile)
+		GameManager.instance.is_first_time = 1
+		# tutorial.hide_tutorial()
+
+	elif GameManager.instance.is_first_time == 1 and move_count == 2:
+		var tile = get_random_wrong_tile()
+		if tile:
+			tutorial.focus_tile(tile)
+		GameManager.instance.is_first_time = 2
+		# tutorial.hide_tutorial()
+
+	elif GameManager.instance.is_first_time == 2 and move_count == 3:
+		var tile = get_random_wrong_tile()
+		if tile:
+			tutorial.focus_tile(tile)
+		GameManager.instance.is_first_time = 3
+		# tutorial.hide_tutorial()
+	elif GameManager.instance.is_first_time == 3 and move_count == 4:
+		var tile = get_random_wrong_tile()
+		if tile:
+			tutorial.focus_tile(tile)
+		GameManager.instance.is_first_time = 4
+	elif GameManager.instance.is_first_time == 4 and move_count == 5:
+		var tile = get_random_wrong_tile()
+		if tile:
+			tutorial.focus_tile(tile)
+		GameManager.instance.is_first_time = 4
+		# tutorial.hide_tutorial()
+
+	else:
+		tutorial.hide_tutorial()
+	
+	
+		
+
+		
+	# elif move_count == 4:
+	# 	var end = _end_cell()
+	# 	tutorial.focus_tile(grid_sprites[end.x][end.y])
+	# else:
+	# 	tutorial.hide_tutorial()
+
 	
 
+
+var last_hint_tile: TileRenderer = null
+
+func get_random_wrong_tile():
+	var candidates: Array = []
+
+	for r in range(rows):
+		for c in range(cols):
+			if current_grid[r][c] != solution_grid[r][c]:
+				var tile = grid_sprites[r][c]
+
+				if tile == last_hint_tile:
+					continue
+
+				candidates.append(tile)
+
+	if candidates.is_empty():
+		if last_hint_tile \
+		and current_grid[last_hint_tile.row][last_hint_tile.col] != solution_grid[last_hint_tile.row][last_hint_tile.col]:
+			return last_hint_tile
+		return null
+
+	var tile = candidates.pick_random()
+	last_hint_tile = tile
+	return tile
 
 func _clear_grid() -> void:
 	for row in grid_sprites:
@@ -178,6 +256,9 @@ func _layout_and_spawn_sprites() -> void:
 
 	grid_sprites.clear()
 
+	var start_cell := _start_cell()
+	var end_cell := _end_cell()
+
 	for r in range(rows):
 		var srow: Array = []
 
@@ -198,16 +279,26 @@ func _layout_and_spawn_sprites() -> void:
 				_tex_deadend
 			)
 
+		
+			var is_start_or_end := (r == start_cell.x and c == start_cell.y) \
+				or (r == end_cell.x and c == end_cell.y)
+
+			var conn_to_use: int = current_grid[r][c]
+			if is_start_or_end:
+				conn_to_use = solution_grid[r][c]
+				current_grid[r][c] = solution_grid[r][c]
+
 			tile.assign(
 				r,
 				c,
-				current_grid[r][c],
+				conn_to_use,
 				0,
 				0,
 				current_level_json["old_level"],
 				disp_tile,
 				offset_x,
-				offset_y
+				offset_y,
+				is_start_or_end
 			)
 
 			tile.tapped.connect(_on_tile_tapped)
@@ -221,14 +312,14 @@ func _callAfterFullLoad1() -> void:
 
 	timer_started = false
 
-	# Show solved board
+	
 	for r in range(rows):
 		for c in range(cols):
 			grid_sprites[r][c].set_connection_instant(solution_grid[r][c])
 
 	await get_tree().create_timer(1.2).timeout
 
-	# Collect all tiles
+	
 	var all_tiles: Array[TileRenderer] = []
 
 	for r in range(rows):
@@ -260,14 +351,28 @@ func _callAfterFullLoad1() -> void:
 		await get_tree().create_timer(0.05).timeout
 
 	# Wait for last animations
-	await get_tree().create_timer(1.4).timeout
+	await get_tree().create_timer(0.5).timeout
 
 	start_level_timer()
 	_animate_grid_wave()
-	var start = _start_cell()
-	tutorial.focus_tile(grid_sprites[start.x][start.y])
-
+	_check_tutorial()    
 	
+	
+
+
+func  move_tile(tile: TileRenderer) -> void:
+	if completed or driving or not timer_started:
+		return
+
+	move_count += 1
+	
+	SoundManager.play_click()
+	tile.rotate_clockwise()
+	current_grid[tile.row][tile.col] = tile.conn
+	if _check_win():
+		game_win() 
+
+
 func _callAfterFullLoad() -> void:
 	UiManager.instance.show_screen(UiManager.Screen_Type.GAME)
 	# _animate_grid_wave()
@@ -379,6 +484,8 @@ func _animate_grid_wave() -> void:
 				Color.WHITE,
 				0.20
 			)
+			
+	_check_tutorial()
 
 func _spawn_car() -> void:
 	car_sprite = Sprite2D.new()
@@ -513,6 +620,10 @@ func _drive_car_then_finish() -> void:
 		_on_win_sequence_finished()
 	)
 
+
+
+
+
 func _on_tile_tapped(tile: TileRenderer) -> void:
 	if completed or driving or not timer_started:
 		return
@@ -521,6 +632,9 @@ func _on_tile_tapped(tile: TileRenderer) -> void:
 	SoundManager.play_click()
 	tile.rotate_clockwise()
 	current_grid[tile.row][tile.col] = tile.conn
+
+	_check_tutorial()
+
 	if _check_win():
 		game_win()
 
