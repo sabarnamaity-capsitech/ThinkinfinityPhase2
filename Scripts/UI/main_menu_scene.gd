@@ -1,12 +1,16 @@
 extends Control
+# var ui_callback = UICallBack.new()
 
+# func _init():
+# 	ui_callback = UICallBack.new()
 @onready var _playBtn = $Panel/PlayButton
 @onready var _tutorialBtn = $Panel/TutorialButton
 @onready var _settingsBtn = $Panel/SettingsButton
 @export var _coins:Label
 @export var _shopBtn: TextureButton
 func _ready() -> void:
-	# screen_type = ScreenType.Screen.MAIN_MENU
+	
+	UiManager.instance.ui_callback.update_coins.connect(_on_update_coins)
 	_coins.text=str(GameManager.instance.get_total_coin())
 	_shopBtn.pressed.connect(_onShopBtnPressed)
 	if _playBtn:
@@ -37,3 +41,5 @@ func _onTutorialBtnPressed() -> void:
 	# UIController.instance.show_popup(ScreenType.popup.TUTORIAL_POPUP)
 	UiManager.instance.show_popup(PopupManager.PopupType.TUTORIAL)
 	pass
+func _on_update_coins(coins):
+	_coins.text=str(coins)

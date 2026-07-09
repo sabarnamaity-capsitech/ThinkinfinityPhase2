@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://b0c7mjatf2g3x" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665125.png" id="5_i6gcw"]
 [ext_resource type="FontFile" uid="uid://da4ibekmk54mj" path="res://assets/Font/calibri/calibri-bold.ttf" id="5_tkcnv"]
 [ext_resource type="Texture2D" uid="uid://qhxmiby6lo6p" path="res://assets/ThinkfinityAsset/Art/buttons/HintButtonImage.png" id="9_b3l41"]
+[ext_resource type="Texture2D" uid="uid://cr5pkgp2tjkw8" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665064.png" id="10_nvgh2"]
+[ext_resource type="Texture2D" uid="uid://ca2vref0c5mpb" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665065.png" id="11_bm1xd"]
+[ext_resource type="Texture2D" uid="uid://c67uab04ydt0s" path="res://icon.svg" id="12_g052b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afec1"]
 texture = ExtResource("2_4ek86")
@@ -73,7 +76,7 @@ texture = ExtResource("2_4ek86")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tkcnv"]
 texture = ExtResource("2_4ek86")
 
-[node name="GameSceneUI" type="Control" unique_id=60258633 node_paths=PackedStringArray("timer", "_hintBtn", "_timerBox", "top_text", "bg", "levelBox")]
+[node name="GameSceneUI" type="Control" unique_id=60258633 node_paths=PackedStringArray("timer", "_hintBtn", "_timerBox", "top_text", "bg", "levelBox", "_previewPowerupbtn", "_hintPowerupbtn", "_freezePowerupbtn", "_previewcount", "_hintcount", "_freezecount")]
 layout_direction = 4
 layout_mode = 3
 anchors_preset = 15
@@ -89,6 +92,12 @@ _timerBox = NodePath("Timerlabel")
 top_text = NodePath("Level/Label")
 bg = NodePath("Bg")
 levelBox = NodePath("Level")
+_previewPowerupbtn = NodePath("previewbtn")
+_hintPowerupbtn = NodePath("halfhint")
+_freezePowerupbtn = NodePath("FreezeTime")
+_previewcount = NodePath("previewbtn/colorect/Label")
+_hintcount = NodePath("halfhint/ColorRect/Label")
+_freezecount = NodePath("FreezeTime/ColorRect/Label2")
 
 [node name="Bg" type="TextureRect" parent="." unique_id=638895709]
 visible = false
@@ -291,3 +300,132 @@ offset_bottom = -384.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="previewbtn" type="TextureButton" parent="." unique_id=39499767]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 252.0
+offset_top = -592.0
+offset_right = 447.0
+offset_bottom = -397.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("10_nvgh2")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="colorect" type="ColorRect" parent="previewbtn" unique_id=1365227425]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -66.0
+offset_right = 25.0
+offset_bottom = 14.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="previewbtn/colorect" unique_id=2117146958]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="halfhint" type="TextureButton" parent="." unique_id=2102194208]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_top = -589.0
+offset_right = 240.0
+offset_bottom = -394.0
+grow_vertical = 0
+texture_normal = ExtResource("11_bm1xd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="halfhint" unique_id=1111907933]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -63.0
+offset_right = 17.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="halfhint/ColorRect" unique_id=174760347]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FreezeTime" type="TextureButton" parent="." unique_id=607662085]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -592.0
+offset_right = 111.0
+offset_bottom = -397.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("12_g052b")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="FreezeTime" unique_id=732380686]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -67.0
+offset_right = 13.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label2" type="Label" parent="FreezeTime/ColorRect" unique_id=2063709764]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1

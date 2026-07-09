@@ -17,6 +17,7 @@ signal game_win(start_indexValue)
 signal show_lose_screen
 signal hideallBtn(type)
 
+signal update_coins(coins)
 
 func update_score_ui(score: int) -> void:
 	update_score.emit(score)
@@ -55,4 +56,7 @@ func  win_done(type : bool) -> void :
 
 
 func  preview_pressed(type : bool) -> void :
-	previewbtn_pressed.emit(type)	
+	previewbtn_pressed.emit(type)
+		
+func update_coins_ui(coins: int) -> void:
+	update_coins.emit(coins)

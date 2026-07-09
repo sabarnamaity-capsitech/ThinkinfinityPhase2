@@ -31,6 +31,8 @@ func _ready():
 		Screen_Type.LEVEL : level_scene
 	}
 	show_screen(Screen_Type.MAIN_MENU)
+	# UiManager.instance.show_screen(UiManager.Screen_Type.MAIN_MENU)
+	# UiManager.instance.ui_callback.update_coins_ui(GameManager.instance.get_total_coin())
 	
 
 

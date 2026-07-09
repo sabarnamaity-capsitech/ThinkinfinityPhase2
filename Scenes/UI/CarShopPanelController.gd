@@ -22,6 +22,7 @@ var selected_coin
 
 
 func _ready():
+	UiManager.instance.ui_callback.update_coins.connect(_on_update_coins)
 	_coins.text=str(GameManager.instance.get_total_coin())
 	closeBtn.pressed.connect(_onCloseBtnPressed)
 	buyBtn.pressed.connect(_on_buy_pressed)
@@ -59,7 +60,8 @@ func _on_coin_pressed(coin):
 	coinpriceLabel.text = str(selected_coin.coin_price)
 	# update_buy_button()
 
-
+func _on_update_coins(coins):
+	_coins.text=str(coins)
 
 func _onCloseBtnPressed() -> void:
 	SoundManager.play_click()

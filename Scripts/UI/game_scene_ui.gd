@@ -7,6 +7,12 @@ extends Control
 @export var top_text : Label
 @export var bg : TextureRect
 @export var levelBox : Label
+@export var _previewPowerupbtn:TextureButton
+@export var _hintPowerupbtn:TextureButton
+@export var _freezePowerupbtn:TextureButton
+@export var _previewcount:Label
+@export var _hintcount:Label
+@export var _freezecount:Label
 # @export var _shopBtn: TextureButton
 
 var hint_tween: Tween
@@ -21,6 +27,10 @@ func _ready() -> void:
 	# UIController.instance.ui_callback.update_color.connect(sprite_changer)
 	# UIController.instance.ui_callback.update_wintime.connect(winsprite_changer)
 	# UIController.instance.ui_callback.previewbtn_pressed.connect(btnOff_preview)
+	_hintcount.text = str(GameManager.instance.get_powerup("hint"))
+	_previewcount.text = str(GameManager.instance.get_powerup("preview"))
+	_freezecount.text = str(GameManager.instance.get_powerup("freeze"))
+
 	UiManager.instance.ui_callback.update_timer.connect(update_time)
 	UiManager.instance.ui_callback.hideallBtn.connect(btnOff)
 	UiManager.instance.ui_callback.update_level.connect(update_Toptext)
@@ -29,7 +39,9 @@ func _ready() -> void:
 	UiManager.instance.ui_callback.previewbtn_pressed.connect(btnOff_preview)
 	_pauseBtn.pressed.connect(_onPauseBtnPressed)
 	_hintBtn.pressed.connect(_onHintBtnPressed)
-	_hintBtn.pressed.connect(_onHintBtnPressed)
+	_hintPowerupbtn.pressed.connect(_onHintPowerupBtnPressed)
+	_previewPowerupbtn.pressed.connect(_onPreviewPowerupBtnPressed)
+	_freezePowerupbtn.pressed.connect(_onFreezePowerupBtnPressed)
 	# _shopBtn.pressed.connect(_onShopBtnPressed)
 	# UIController.instance.ui_callback.update_color.connect(sprite_changer)
 	#top_text.text=str("level : ",GameManager.instance.current_level+1)
@@ -167,8 +179,31 @@ func winsprite_changer(type : bool) ->void:
 		# RenderingServer.set_default_clear_color(Color.BLACK)
 		bg.visible=type
 		
-		
+func _onHintPowerupBtnPressed():
+	var count = GameManager.instance.get_powerup("hint")
+	if count <= 0:
+		_hintcount.text="+"
+		return
+	GameManager.instance.set_powerup("hint", count - 1)
+	_hintcount.text = str(GameManager.instance.get_powerup("hint"))
 
+	GameManager.instance.level_generator.solve_level()
+func _onPreviewPowerupBtnPressed():
+	var count = GameManager.instance.get_powerup("preview")
+	if count <= 0:
+		_previewcount.text="+"
+		return
+	GameManager.instance.set_powerup("preview",count - 1)
+	_previewcount.text = str(GameManager.instance.get_powerup("preview"))
+	#preview logic
+func _onFreezePowerupBtnPressed():
+	var count = GameManager.instance.get_powerup("freeze")
+	if count <= 0:
+		_freezecount.text="+"
+		return
+	GameManager.instance.set_powerup("freeze",count - 1)
+	_freezecount.text = str(GameManager.instance.get_powerup("freeze"))
+	# Freeze Logic
 
 # func fit_background() -> void:
 # 	var viewport_size = get_viewport_rect().size

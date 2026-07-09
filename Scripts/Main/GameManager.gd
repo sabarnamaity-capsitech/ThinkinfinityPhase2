@@ -46,12 +46,17 @@ func _enter_tree():
 	create_path()
 	load_data()
 	preload_levels()
+	
+
 
 
 func _ready():
+	
+	print("GameManager ready",get_total_coin())
 	print("Max Unlocked Level: ", game_data["player_data"]["max_unlocked_level_index"])
 	TranslationServer.set_locale(get_language())
 	#apply_sound_settings()
+	
 	
 
 
@@ -130,15 +135,20 @@ func initialize_default_data():
 			"total_score": 0,
 			"game_won_counter": 0,
 			"max_unlocked_level_index": 150,
-			"is_FirstTime" : true,
+			"is_FirstTime" : 0,
 			"is_FirstTime_hint" : true,
 			"home_return_count" : 0,
 			"level_progressions": _create_level_list(50),
 			"owned_cars": {
-                "0": true
-            },
-            "selected_car": 0,
-            "bought_coin_packs": {}
+				"0": true
+			},
+			"selected_car": 0,
+			"bought_coin_packs": {},
+			"powerups": {
+				"hint": 5,
+				"preview": 3,
+				"freeze": 2
+			}
 		},
 
 		"settings_data": {
@@ -151,6 +161,15 @@ func initialize_default_data():
 			"language": "en",
 			"is_login_mode_guest": true,
 			"is_zyro_mode": true
+		},
+		"daily_rewards":{
+			"current_day": 1.0,
+			"claimed_today": true,
+			"last_claim_date": "2026-07-09",
+			"total_claims": 15,
+			"streak": 3,
+			"reward_version": 1,
+			"last_sync_time": 1752059000
 		}
 	}
 
@@ -171,11 +190,16 @@ func _create_level_list(count:int) -> Array:
 # GETTERS
 # =========================
 
-var is_first_time: bool:
+var is_first_time: int:
+ 
 	get:
+ 
 		return game_data["player_data"]["is_FirstTime"]
+ 
 	set(value):
+ 
 		game_data["player_data"]["is_FirstTime"] = value
+ 
 		save_data()
 		
 var is_First_Time_hint: bool:
@@ -236,6 +260,10 @@ func get_level_stars(level_index: int) -> int:
 
 func get_total_coin() -> int:
 	return game_data["player_data"]["total_coin"]
+
+
+func get_powerup(type:String) -> int:
+	return game_data["player_data"]["powerups"].get(type, 0)
 # =========================
 # SETTERS
 # =========================
@@ -271,9 +299,15 @@ func set_player_uid(uid:String):
 func set_player_rank(rank:int):
 	game_data["player_data"]["user_rank"] = rank
 	save_data()
+
+func set_powerup(type:String, count:int):
+	game_data["player_data"]["powerups"][type] = count
+	save_data()
+
 func set_total_coin(coin:int):
 	game_data["player_data"]["total_coin"] = coin
 	save_data()
+	UiManager.instance.ui_callback.update_coins_ui(coin)
 # =========================
 # LEVEL STAR SAVE
 # =========================
