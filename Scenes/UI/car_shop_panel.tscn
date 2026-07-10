@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://buy1nkiq5lnu6"]
 
-[ext_resource type="Script" uid="uid://cdlnwusqwmdq2" path="res://Scenes/UI/CarShopPanelController.gd" id="1_kgxmt"]
+[ext_resource type="Script" uid="uid://cdlnwusqwmdq2" path="res://Scripts/CarShopPanelController.gd" id="1_kgxmt"]
 [ext_resource type="Texture2D" uid="uid://dw3hxt1objnru" path="res://assets/ThinkfinityAsset/Art/Vehicle/coinnew-removebg-preview.png" id="3_ew8j3"]
 [ext_resource type="Texture2D" uid="uid://c8w8glt6033h8" path="res://assets/ThinkfinityAsset/Art/Vehicle/car1-removebg-preview.png" id="4_vx8g5"]
-[ext_resource type="Texture2D" uid="uid://qhxmiby6lo6p" path="res://assets/ThinkfinityAsset/Art/buttons/HintButtonImage.png" id="5_ybxur"]
-[ext_resource type="Texture2D" uid="uid://dr6ana28ntrst" path="res://assets/ThinkfinityAsset/Art/Environment/GameOver.png" id="6_h6bme"]
-[ext_resource type="Script" uid="uid://8jtjrkdorp12" path="res://Scenes/UI/car.gd" id="7_0fotj"]
-[ext_resource type="Texture2D" uid="uid://c1tlsiedktp8e" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666205.png" id="7_6eeqb"]
+[ext_resource type="Texture2D" uid="uid://ddgo8xkn8ml5n" path="res://assets/ThinkfinityAsset/Art/buttons/HintButtonImage.png" id="5_ybxur"]
+[ext_resource type="Texture2D" uid="uid://c15bfxcyobad3" path="res://assets/ThinkfinityAsset/Art/Environment/GameOver.png" id="6_h6bme"]
+[ext_resource type="Script" uid="uid://8jtjrkdorp12" path="res://Scripts/car.gd" id="7_0fotj"]
+[ext_resource type="Texture2D" uid="uid://b2k4mlq7dpnf1" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666205.png" id="7_6eeqb"]
 [ext_resource type="Texture2D" uid="uid://ctsdukixfhe5g" path="res://assets/ThinkfinityAsset/Art/buttons/tick-removebg-preview.png" id="8_dqb7q"]
 [ext_resource type="Texture2D" uid="uid://xf604m8p0e01" path="res://assets/ThinkfinityAsset/Art/Vehicle/car3-removebg-preview.png" id="9_uoqwt"]
 [ext_resource type="Texture2D" uid="uid://c2f38414rlnqa" path="res://assets/ThinkfinityAsset/Art/Vehicle/car2-removebg-preview.png" id="10_0qmfy"]
 [ext_resource type="Texture2D" uid="uid://cn80pdtoo087k" path="res://assets/ThinkfinityAsset/Art/Vehicle/car4-removebg-preview.png" id="11_knpbi"]
-[ext_resource type="Texture2D" uid="uid://h605t4b71coj" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="12_cfwpv"]
+[ext_resource type="Texture2D" uid="uid://r5ebcr8sl1ad" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664559 (1).png" id="12_cfwpv"]
 [ext_resource type="Texture2D" uid="uid://cwkrck7ltx8ai" path="res://assets/ThinkfinityAsset/Art/Vehicle/COINHEAP-removebg-preview.png" id="13_ew8j3"]
-[ext_resource type="Script" uid="uid://lnlitdmhelr" path="res://Scenes/UI/CoinPrice.gd" id="14_vx8g5"]
+[ext_resource type="Script" uid="uid://lnlitdmhelr" path="res://Scripts/UI/CoinPrice.gd" id="14_vx8g5"]
+
 
 [node name="CarShopPanel" type="Control" unique_id=1031610266 node_paths=PackedStringArray("selected_image", "selectedCoinImage", "carSelection_grid", "coinSelection_grid", "closeBtn", "_coins", "buyBtn", "btnlabel", "priceLabel", "coinpriceLabel", "coinsTabBtn", "carsTabBtn", "carSelectionPanel", "coinSelectionPanel")]
 layout_mode = 3

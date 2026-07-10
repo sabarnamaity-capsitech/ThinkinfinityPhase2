@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bwmis87abtqgp" path="res://assets/ThinkfinityAsset/Art/Smoke/smoke.tscn" id="4_60yff"]
 [ext_resource type="Script" uid="uid://13pvno42m6sr" path="res://Scripts/Main/LevelGenerator.gd" id="5_e1a1m"]
 [ext_resource type="Texture2D" uid="uid://cw848hsblijio" path="res://assets/ThinkfinityAsset/Art/Vehicle/Group 2085664475.png" id="6_vxa78"]
-[ext_resource type="PackedScene" uid="uid://cbmot8wafocy1" path="res://tile.tscn" id="7_6epw3"]
+[ext_resource type="PackedScene" uid="uid://cbmot8wafocy1" path="res://Scenes/Main/tile.tscn" id="7_6epw3"]
 [ext_resource type="Script" uid="uid://c15urw73iou2u" path="res://Scripts/Main/Hint.gd" id="7_y53yf"]
 [ext_resource type="Texture2D" uid="uid://2pcwo0q47dhu" path="res://assets/Frame 1sss2 (1).png" id="8_y53yf"]
 [ext_resource type="Texture2D" uid="uid://dvgtjwp6cguhk" path="res://assets/Frame 11.png" id="9_4sg3s"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dfxkkejuab4js" path="res://assets/Frame 14.png" id="12_yp3fl"]
 [ext_resource type="Texture2D" uid="uid://dn8gsynphfqbl" path="res://assets/Frame 13.png" id="13_2rprw"]
 [ext_resource type="Texture2D" uid="uid://dder5jt01fsoc" path="res://assets/Frame_6.png" id="15_akirb"]
-[ext_resource type="PackedScene" uid="uid://3iwrtqrlv28l" path="res://UI new/ui_manager.tscn" id="18_vxa78"]
+[ext_resource type="PackedScene" uid="uid://3iwrtqrlv28l" path="res://Scenes/UI/ui_manager.tscn" id="18_vxa78"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vxa78"]
 
@@ -74,6 +74,9 @@ script = ExtResource("12_e1a1m")
 level_generator = NodePath("../LevelGenerator")
 
 [node name="UIManager" parent="." unique_id=27950492 instance=ExtResource("18_vxa78")]
+
+[node name="GameSceneUI" parent="UIManager/Panel" parent_id_path=PackedInt32Array(27950492, 824829922) index="0" unique_id=60258633]
+visible = true
 
 [node name="TutorialPopUp" parent="UIManager/PopUpManager" parent_id_path=PackedInt32Array(27950492, 1277735982) index="0" unique_id=1821078524 node_paths=PackedStringArray("grid_area")]
 grid_area = NodePath("../../Panel/GameSceneUI/GridArea")
