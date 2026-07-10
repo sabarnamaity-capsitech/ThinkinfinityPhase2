@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cui2pn3c2mila"]
+
+[ext_resource type="Script" uid="uid://cw4lq67xqtlwn" path="res://Scripts/UI/UiManager.gd" id="1_vhw8f"]
+[ext_resource type="PackedScene" uid="uid://bh56gkvpopkkm" path="res://Scenes/UI/MainMenuScene.tscn" id="2_2aacu"]
+[ext_resource type="PackedScene" uid="uid://dqweavmudjsuw" path="res://Scenes/UI/GameSceneUI.tscn" id="3_h3fbl"]
+[ext_resource type="PackedScene" uid="uid://dl3egsnnsadmu" path="res://Scenes/UI/LevelScene.tscn" id="4_k06vt"]
+[ext_resource type="PackedScene" uid="uid://cucyfpe03a067" path="res://Scenes/UI/Popups/pause_popup.tscn" id="5_lgdt0"]
+[ext_resource type="PackedScene" uid="uid://xn7kt7rpdk0v" path="res://Scenes/UI/Popups/SettingsPopup.tscn" id="6_55eee"]
+[ext_resource type="PackedScene" uid="uid://bexci25ogfbw1" path="res://Scenes/UI/Popups/WinnerPopUp.tscn" id="7_r8rdu"]
+[ext_resource type="PackedScene" uid="uid://b0tel3uo40ijw" path="res://Scenes/UI/Popups/FailurePopup.tscn" id="8_rwqx8"]
+[ext_resource type="PackedScene" uid="uid://c5pqxd56kymtw" path="res://Scenes/UI/Popups/tutorial_pop_up.tscn" id="9_yc6yp"]
+[ext_resource type="PackedScene" uid="uid://chdlorp6jhduw" path="res://Scenes/UI/Popups/HintPopup.tscn" id="10_psa4h"]
+
+[node name="UIManager" type="CanvasLayer" unique_id=27950492 node_paths=PackedStringArray("screen_layer", "popup_layer")]
+layer = 0
+script = ExtResource("1_vhw8f")
+main_menu_scene = ExtResource("2_2aacu")
+level_screen_scene = ExtResource("4_k06vt")
+pause_popup_scene = ExtResource("5_lgdt0")
+settings_popup_scene = ExtResource("6_55eee")
+win_popup_scene = ExtResource("7_r8rdu")
+lose_popup_scene = ExtResource("8_rwqx8")
+tutorial_popup_scene = ExtResource("9_yc6yp")
+hint_popup_scene = ExtResource("10_psa4h")
+screen_layer = NodePath("Panel")
+popup_layer = NodePath("PopUpManager")
+
+[node name="Panel" type="Control" parent="." unique_id=824829922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GameSceneUI" parent="Panel" unique_id=60258633 instance=ExtResource("3_h3fbl")]
+visible = false
+layout_mode = 1
+
+[node name="PopUpManager" type="Control" parent="." unique_id=1277735982]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TutorialPopUp" parent="PopUpManager" unique_id=1821078524 instance=ExtResource("9_yc6yp")]
+layout_mode = 1
+
+[node name="Top" parent="PopUpManager/TutorialPopUp" index="0" unique_id=711702836]
+mouse_filter = 2
+
+[editable path="PopUpManager/TutorialPopUp"]

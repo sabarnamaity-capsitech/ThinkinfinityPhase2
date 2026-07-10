@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bwmis87abtqgp" path="res://assets/ThinkfinityAsset/Art/Smoke/smoke.tscn" id="4_60yff"]
 [ext_resource type="Script" uid="uid://13pvno42m6sr" path="res://Scripts/Main/LevelGenerator.gd" id="5_e1a1m"]
 [ext_resource type="Texture2D" uid="uid://cw848hsblijio" path="res://assets/ThinkfinityAsset/Art/Vehicle/Group 2085664475.png" id="6_vxa78"]
-[ext_resource type="PackedScene" uid="uid://cbmot8wafocy1" path="res://Scenes/Main/tile.tscn" id="7_6epw3"]
+[ext_resource type="PackedScene" path="res://Scenes/Main/tile.tscn" id="7_4sg3s"]
 [ext_resource type="Script" uid="uid://c15urw73iou2u" path="res://Scripts/Main/Hint.gd" id="7_y53yf"]
 [ext_resource type="Texture2D" uid="uid://2pcwo0q47dhu" path="res://assets/Frame 1sss2 (1).png" id="8_y53yf"]
 [ext_resource type="Texture2D" uid="uid://dvgtjwp6cguhk" path="res://assets/Frame 11.png" id="9_4sg3s"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dfxkkejuab4js" path="res://assets/Frame 14.png" id="12_yp3fl"]
 [ext_resource type="Texture2D" uid="uid://dn8gsynphfqbl" path="res://assets/Frame 13.png" id="13_2rprw"]
 [ext_resource type="Texture2D" uid="uid://dder5jt01fsoc" path="res://assets/Frame_6.png" id="15_akirb"]
-[ext_resource type="PackedScene" uid="uid://3iwrtqrlv28l" path="res://Scenes/UI/ui_manager.tscn" id="18_vxa78"]
+[ext_resource type="PackedScene" uid="uid://cui2pn3c2mila" path="res://UI new/ui_manager.tscn" id="18_vxa78"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vxa78"]
 
@@ -51,7 +51,7 @@ speed_scale = 0.6
 z_index = 18
 script = ExtResource("5_e1a1m")
 TEX_CAR = ExtResource("6_vxa78")
-tile_scene = ExtResource("7_6epw3")
+tile_scene = ExtResource("7_4sg3s")
 grid_area = NodePath("../UIManager/Panel/GameSceneUI/GridArea")
 car_controller = NodePath("../Car")
 _tex_straight = ExtResource("8_y53yf")
