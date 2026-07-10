@@ -18,8 +18,8 @@ func _on_hint_for_preview_pressed() -> void:
 	if OS.has_feature("editor"):
 		GameManager.instance.level_generator.timer_started = false
 		GameManager.instance.hint_powerup.use_full_hint()
-		UIController.instance.ui_callback.preview_pressed(false)
-		UIController.instance.close_popup()
+		# UIController.instance.ui_callback.preview_pressed(false)
+		# UIController.instance.close_popup()
 		return
 
 	if AdMob.is_rewarded_available():
@@ -49,17 +49,17 @@ func _on_full_hint_ad_closed() -> void:
 		GameManager.instance.current_level
 	)
 	GameManager.instance.hint_powerup.use_full_hint()
-	UIController.instance.ui_callback.preview_pressed(false)
+	UiManager.instance.ui_callback.preview_pressed(false)
 	# GameManager.instance.level_generator.timer_started = true
 
-	UIController.instance.close_popup()
+	UiManager.instance.close_popup()
 
 
 func _on_hint_for_path_solve_pressed() -> void:
 	if OS.has_feature("editor"):
 		await GameManager.instance.hint_powerup.use_half_hint()
 		GameManager.instance.hint_powerup.reset_hints()
-		UIController.instance.close_popup()
+		UiManager.instance.close_popup()
 		return
 	if AdMob.is_rewarded_available():
 
@@ -85,7 +85,7 @@ func _on_half_hint_ad_closed() -> void:
 	await GameManager.instance.hint_powerup.use_half_hint()
 
 	GameManager.instance.hint_powerup.reset_hints()
-	UIController.instance.close_popup()
+	UiManager.instance.close_popup()
 #func show_no_ads_popup():
 #
 	#no_ads_popup.visible = true

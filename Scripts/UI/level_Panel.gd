@@ -10,21 +10,18 @@ var _level_components: Array[LevelBtn] = []
 
 
 func _ready() -> void:
-	
+	UiManager.instance.ui_callback.allLevelBtn.connect(on_show)
 	_back_to_menu_btn.pressed.connect(_on_back_btn_pressed)
 	_populate_level_buttons()
 
 
 func _on_back_btn_pressed() -> void:
 	SoundManager.play_click()
-	# UIController.instance.switch_screen(ScreenType.Screen.MAIN_MENU)
-	UiManager.instance.show_screen(UiManager.Screen_Type.MAIN_MENU)
+	UiManager.instance.show_screen(ScreenType.Screen.MAIN_MENU)
 
 
 func on_show() -> void:
-	# super.on_show()
 	_update_level_buttons()
-	pass
 
 
 func _populate_level_buttons() -> void:

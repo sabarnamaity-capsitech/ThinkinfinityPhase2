@@ -25,7 +25,7 @@ func _onCloseBtnPressed() -> void:
 
 func _onHomeBtnPressed() -> void:
 	SoundManager.play_click()
-	UIController.instance.switch_screen(ScreenType.Screen.MAIN_MENU)
+	UiManager.instance.switch_screen(ScreenType.Screen.MAIN_MENU)
 	GameManager.instance.level_generator.stop_game()
 	pass
 

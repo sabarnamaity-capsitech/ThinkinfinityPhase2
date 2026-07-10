@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://dl3egsnnsadmu"]
 
-[ext_resource type="Script" uid="uid://h2ovdxfea7we" path="res://Scripts/UI/level_scene.gd" id="1_h211i"]
+[ext_resource type="Script" uid="uid://5yhji1ip15j4" path="res://Scripts/UI/level_Panel.gd" id="1_h211i"]
 [ext_resource type="Texture2D" uid="uid://gy82i6xuf1dm" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508.png" id="2_hxhy7"]
 [ext_resource type="PackedScene" uid="uid://cxs2gxdgxtgqe" path="res://Scenes/UI/LevelComponent.tscn" id="3_klrs3"]
-[ext_resource type="Script" path="res://Scripts/UI/ui_popup_animator.gd" id="4_vvyfw"]
+[ext_resource type="Script" uid="uid://dqfyjqsasej2o" path="res://Scripts/UI/ui_popup_animator.gd" id="4_vvyfw"]
 [ext_resource type="Texture2D" uid="uid://cdm1pihdn3s0x" path="res://assets/ThinkfinityAsset/Art/Environment/Frame 2085664943.png" id="5_h7ko0"]
 [ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="7_h7ko0"]
+
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afec1"]
 texture = ExtResource("2_hxhy7")

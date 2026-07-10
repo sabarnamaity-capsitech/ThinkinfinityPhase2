@@ -1,8 +1,5 @@
 extends Control
-# var ui_callback = UICallBack.new()
 
-# func _init():
-# 	ui_callback = UICallBack.new()
 @onready var _playBtn = $Panel/PlayButton
 @onready var _tutorialBtn = $Panel/TutorialButton
 @onready var _settingsBtn = $Panel/SettingsButton
@@ -23,23 +20,23 @@ func _ready() -> void:
 
 func _onPlayBtnPressed() -> void:
 	SoundManager.play_click()
-	UiManager.instance.level_scene.on_show()
-	UiManager.instance.show_screen(UiManager.Screen_Type.LEVEL)
+	UiManager.instance.switch_screen(ScreenType.Screen.LEVEL_SCREEN)
+	UiManager.instance.ui_callback.update_btn_alllevel()
 	
 func _onShopBtnPressed() -> void:
 	print("Shop button pressed")
 	SoundManager.play_click()
-	UiManager.instance.show_popup(PopupManager.PopupType.SHOP)
+	# UiManager.instance.show_popup(ScreenType.popup.Shop)
 func _onSettingsBtnPressed() -> void:
 	SoundManager.play_click()
 	# UIController.instance.show_popup(ScreenType.popup.SETTINGS_POPUP)
-	UiManager.instance.show_popup(PopupManager.PopupType.SETTINGS)
+	UiManager.instance.show_popup(ScreenType.popup.SETTINGS_POPUP)
 	pass
 
 func _onTutorialBtnPressed() -> void:
 	SoundManager.play_click()
 	# UIController.instance.show_popup(ScreenType.popup.TUTORIAL_POPUP)
-	UiManager.instance.show_popup(PopupManager.PopupType.TUTORIAL)
+	# UiManager.instance.show_popup(PopupManager.PopupType.TUTORIAL)
 	pass
 func _on_update_coins(coins):
 	_coins.text=str(coins)

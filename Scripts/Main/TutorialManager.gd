@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 class_name TutorialManager
 
 @export var grid_area: Control

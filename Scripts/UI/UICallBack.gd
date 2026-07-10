@@ -6,7 +6,7 @@ signal update_score(score)
 signal update_timer(time_left)
 signal update_wintime(type)
 signal previewbtn_pressed(type)
-
+signal allLevelBtn
 signal level_start(level_index)
 signal update_level
 
@@ -60,3 +60,7 @@ func  preview_pressed(type : bool) -> void :
 		
 func update_coins_ui(coins: int) -> void:
 	update_coins.emit(coins)
+
+
+func update_btn_alllevel() ->void:
+	allLevelBtn.emit()

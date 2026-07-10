@@ -29,7 +29,6 @@ func setup(level_index: int, is_unlocked: bool) -> void:
 func _on_level_selected() -> void:
 	SoundManager.play_click()
 	print("Level Selected: ", _level_index)
-
 	GameManager.instance.level_generator.load_level(_level_index)
 
 

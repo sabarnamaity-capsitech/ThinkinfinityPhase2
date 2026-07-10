@@ -57,5 +57,5 @@ func show_preview(texture: Texture2D, duration := 5.0):
  
 	visible = false
  
-	GameManager.instance.level_generator.timer_started = true
-	UIController.instance.ui_callback.preview_pressed(true)
+	# GameManager.instance.level_generator.timer_started = true
+	# UIController.instance.ui_callback.preview_pressed(true)

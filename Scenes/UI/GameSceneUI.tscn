@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://dqweavmudjsuw"]
 
 [ext_resource type="Script" uid="uid://cwkpdw7mkj3y5" path="res://Scripts/UI/game_scene_ui.gd" id="1_tkcnv"]
-[ext_resource type="Texture2D" uid="uid://s23his6nrgpb" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664542.png" id="2_4ek86"]
-[ext_resource type="Texture2D" uid="uid://rtp7eyi2pcn4" path="res://assets/ThinkfinityAsset/Art/Environment/Frame 2085664952.png" id="2_eearb"]
-[ext_resource type="Texture2D" uid="uid://et5pfot2rt4y" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664566 (1).png" id="3_aknwl"]
-[ext_resource type="Texture2D" uid="uid://pque4tokg670" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508 (2).png" id="4_6pmpd"]
-[ext_resource type="Texture2D" uid="uid://bvxg2eijoka0e" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666221.png" id="4_sdejy"]
-[ext_resource type="Texture2D" uid="uid://b0c7mjatf2g3x" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665125.png" id="5_i6gcw"]
-[ext_resource type="FontFile" uid="uid://da4ibekmk54mj" path="res://assets/Font/calibri/calibri-bold.ttf" id="5_tkcnv"]
-[ext_resource type="Texture2D" uid="uid://qhxmiby6lo6p" path="res://assets/ThinkfinityAsset/Art/buttons/HintButtonImage.png" id="9_b3l41"]
-[ext_resource type="Texture2D" uid="uid://cr5pkgp2tjkw8" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665064.png" id="10_nvgh2"]
-[ext_resource type="Texture2D" uid="uid://ca2vref0c5mpb" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665065.png" id="11_bm1xd"]
-[ext_resource type="Texture2D" uid="uid://c67uab04ydt0s" path="res://icon.svg" id="12_g052b"]
+[ext_resource type="Texture2D" uid="uid://8im0nrorg48o" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664542.png" id="2_4ek86"]
+[ext_resource type="Texture2D" uid="uid://bc3yuvtc6lgfd" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664566 (1).png" id="3_aknwl"]
+[ext_resource type="Texture2D" uid="uid://bex141nlpin64" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085664508 (2).png" id="4_6pmpd"]
+[ext_resource type="Texture2D" uid="uid://didmaq111715m" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085666221.png" id="4_sdejy"]
+[ext_resource type="Texture2D" uid="uid://q6j48gnjof1p" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665125.png" id="5_i6gcw"]
+[ext_resource type="FontFile" uid="uid://dnrp71sx1os84" path="res://assets/Font/calibri/calibri-bold.ttf" id="5_tkcnv"]
+[ext_resource type="Texture2D" uid="uid://ddgo8xkn8ml5n" path="res://assets/ThinkfinityAsset/Art/buttons/HintButtonImage.png" id="9_b3l41"]
+[ext_resource type="Texture2D" uid="uid://c78ai7n16pn45" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665064.png" id="10_nvgh2"]
+[ext_resource type="Texture2D" uid="uid://c4s22y2vb4sms" path="res://assets/ThinkfinityAsset/Art/buttons/Group 2085665065.png" id="11_bm1xd"]
+[ext_resource type="Texture2D" uid="uid://dp6fcj8iw7hcx" path="res://icon.svg" id="12_g052b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afec1"]
 texture = ExtResource("2_4ek86")
@@ -76,7 +75,8 @@ texture = ExtResource("2_4ek86")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tkcnv"]
 texture = ExtResource("2_4ek86")
 
-[node name="GameSceneUI" type="Control" unique_id=60258633 node_paths=PackedStringArray("timer", "_hintBtn", "_timerBox", "top_text", "bg", "levelBox", "_previewPowerupbtn", "_hintPowerupbtn", "_freezePowerupbtn", "_previewcount", "_hintcount", "_freezecount")]
+[node name="GameSceneUI" type="Control" unique_id=60258633 node_paths=PackedStringArray("timer", "_hintBtn", "_timerBox", "top_text", "levelBox", "_previewPowerupbtn", "_hintPowerupbtn", "_freezePowerupbtn", "_previewcount", "_hintcount", "_freezecount")]
+z_index = 4
 layout_direction = 4
 layout_mode = 3
 anchors_preset = 15
@@ -90,7 +90,6 @@ timer = NodePath("Timerlabel/Label")
 _hintBtn = NodePath("HintButton")
 _timerBox = NodePath("Timerlabel")
 top_text = NodePath("Level/Label")
-bg = NodePath("Bg")
 levelBox = NodePath("Level")
 _previewPowerupbtn = NodePath("previewbtn")
 _hintPowerupbtn = NodePath("halfhint")
@@ -98,17 +97,6 @@ _freezePowerupbtn = NodePath("FreezeTime")
 _previewcount = NodePath("previewbtn/colorect/Label")
 _hintcount = NodePath("halfhint/ColorRect/Label")
 _freezecount = NodePath("FreezeTime/ColorRect/Label2")
-
-[node name="Bg" type="TextureRect" parent="." unique_id=638895709]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_eearb")
-expand_mode = 1
 
 [node name="SettingsButton" type="Button" parent="." unique_id=358707857]
 visible = false
@@ -290,17 +278,6 @@ text = "shop"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="." unique_id=60885549]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 336.0
-offset_bottom = -384.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="previewbtn" type="TextureButton" parent="." unique_id=39499767]
 layout_mode = 1
 anchors_preset = 7
@@ -429,3 +406,14 @@ theme_override_font_sizes/font_size = 55
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GridArea" type="Control" parent="." unique_id=513351380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 416.0
+offset_bottom = -656.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

@@ -87,7 +87,7 @@ func _onLanguageBtnPressed() -> void:
 func _onCreditBtnPressed() -> void:
 	SoundManager.play_click()
 	# UIController.instance.show_popup(ScreenType.popup.CREDIT_POPUP)
-	UiManager.instance.show_popup(PopupManager.PopupType.CREDIT)
+	# UiManager.instance.show_popup(ScreenType.popup.CREDIT)
 	
 func _on_sound_pressed():
 	SoundManager.play_click()

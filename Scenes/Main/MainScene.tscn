@@ -7,35 +7,18 @@
 [ext_resource type="Texture2D" uid="uid://cw848hsblijio" path="res://assets/ThinkfinityAsset/Art/Vehicle/Group 2085664475.png" id="6_vxa78"]
 [ext_resource type="PackedScene" uid="uid://cbmot8wafocy1" path="res://tile.tscn" id="7_6epw3"]
 [ext_resource type="Script" uid="uid://c15urw73iou2u" path="res://Scripts/Main/Hint.gd" id="7_y53yf"]
-[ext_resource type="Texture2D" uid="uid://dhicdcra2jvvi" path="res://assets/Frame_1.png" id="8_ntl8m"]
-[ext_resource type="Texture2D" uid="uid://py5onioefspx" path="res://assets/Frame_2.png" id="9_attho"]
-[ext_resource type="Texture2D" uid="uid://bl3uen1n05jnd" path="res://assets/Frame_3.png" id="10_27wwl"]
-[ext_resource type="PackedScene" uid="uid://byi74ed4ag6ib" path="res://Scenes/UI/preview_overlay.tscn" id="10_ox8ul"]
-[ext_resource type="Texture2D" uid="uid://bgheb77myvjgf" path="res://assets/Frame_4.png" id="11_5wx40"]
+[ext_resource type="Texture2D" uid="uid://2pcwo0q47dhu" path="res://assets/Frame 1sss2 (1).png" id="8_y53yf"]
+[ext_resource type="Texture2D" uid="uid://dvgtjwp6cguhk" path="res://assets/Frame 11.png" id="9_4sg3s"]
+[ext_resource type="Texture2D" uid="uid://cql71d3b37pdo" path="res://assets/Frame 17.png" id="10_dc2gf"]
 [ext_resource type="PackedScene" uid="uid://cde4fwobn5rft" path="res://Scenes/UI/confetti_burst.tscn" id="11_6epw3"]
-[ext_resource type="Texture2D" uid="uid://uk1qiihki6k1" path="res://assets/Frame_7.png" id="12_3aw3s"]
+[ext_resource type="Texture2D" uid="uid://c0ubdefqjq3pv" path="res://assets/Frame 16.png" id="11_ox8ul"]
 [ext_resource type="Script" uid="uid://vr4ivet3krl4" path="res://Scripts/Main/GameManager.gd" id="12_e1a1m"]
-[ext_resource type="PackedScene" uid="uid://dqweavmudjsuw" path="res://Scenes/UI/GameSceneUI.tscn" id="12_gow0r"]
-[ext_resource type="Texture2D" uid="uid://ba6vpeh65dcqw" path="res://assets/Frame_8.png" id="13_6d1lw"]
-[ext_resource type="Texture2D" uid="uid://bv6gh1bi04363" path="res://assets/Frame_10.png" id="14_r7mt1"]
+[ext_resource type="Texture2D" uid="uid://dfxkkejuab4js" path="res://assets/Frame 14.png" id="12_yp3fl"]
+[ext_resource type="Texture2D" uid="uid://dn8gsynphfqbl" path="res://assets/Frame 13.png" id="13_2rprw"]
 [ext_resource type="Texture2D" uid="uid://dder5jt01fsoc" path="res://assets/Frame_6.png" id="15_akirb"]
-[ext_resource type="Script" uid="uid://ch8vvfr51cp18" path="res://Scenes/Main/ui_manager.gd" id="17_vxa78"]
-[ext_resource type="PackedScene" uid="uid://bh56gkvpopkkm" path="res://Scenes/UI/MainMenuScene.tscn" id="18_vxa78"]
-[ext_resource type="PackedScene" uid="uid://dl3egsnnsadmu" path="res://Scenes/UI/LevelScene.tscn" id="20_ntl8m"]
-[ext_resource type="PackedScene" uid="uid://c0qikmuxme82f" path="res://Scenes/UI/popup_panelMain.tscn" id="22_vxa78"]
-[ext_resource type="Script" uid="uid://cp3rftmv10pnd" path="res://Scripts/Main/TutorialManager.gd" id="24_27wwl"]
-[ext_resource type="Shader" uid="uid://bnq2pb3m2evnp" path="res://SpotLight/new_shader_material.gdshader" id="25_5wx40"]
-[ext_resource type="Texture2D" uid="uid://cvspghqco380k" path="res://elvira-handsprite-removebg-preview.png" id="26_5wx40"]
+[ext_resource type="PackedScene" uid="uid://3iwrtqrlv28l" path="res://UI new/ui_manager.tscn" id="18_vxa78"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3aw3s"]
-shader = ExtResource("25_5wx40")
-shader_parameter/hole1 = Vector2(-1000, -1000)
-shader_parameter/radius1 = 70.0
-shader_parameter/hole2 = Vector2(-1000, -1000)
-shader_parameter/radius2 = 70.0
-shader_parameter/overlay_color = Color(0, 0, 0, 0.75)
-shader_parameter/softness = 10.0
-shader_parameter/viewport_size = Vector2(1080, 1920)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vxa78"]
 
 [node name="GamePlayScene" type="Node2D" unique_id=1611358075]
 
@@ -69,17 +52,17 @@ z_index = 18
 script = ExtResource("5_e1a1m")
 TEX_CAR = ExtResource("6_vxa78")
 tile_scene = ExtResource("7_6epw3")
-grid_area = NodePath("../UIManager/GameSceneUI/Control")
+grid_area = NodePath("../UIManager/Panel/GameSceneUI/GridArea")
 car_controller = NodePath("../Car")
-_tex_straight = ExtResource("8_ntl8m")
-_tex_tjunction = ExtResource("9_attho")
-_tex_corner_a = ExtResource("10_27wwl")
-_tex_cross = ExtResource("11_5wx40")
-_tex_roundabout = ExtResource("12_3aw3s")
-_tex_corner_b = ExtResource("13_6d1lw")
-_tex_corner_c = ExtResource("14_r7mt1")
+_tex_straight = ExtResource("8_y53yf")
+_tex_tjunction = ExtResource("9_4sg3s")
+_tex_corner_a = ExtResource("10_dc2gf")
+_tex_cross = ExtResource("11_ox8ul")
+_tex_roundabout = SubResource("CompressedTexture2D_vxa78")
+_tex_corner_b = ExtResource("12_yp3fl")
+_tex_corner_c = ExtResource("13_2rprw")
 _tex_deadend = ExtResource("15_akirb")
-tutorial = NodePath("../TutorialLayer")
+tutorial = NodePath("../UIManager/PopUpManager/TutorialPopUp")
 
 [node name="TilesContainer" type="Node2D" parent="LevelGenerator" unique_id=13252335]
 
@@ -90,79 +73,11 @@ script = ExtResource("7_y53yf")
 script = ExtResource("12_e1a1m")
 level_generator = NodePath("../LevelGenerator")
 
-[node name="UIManager" type="CanvasLayer" parent="." unique_id=1116174838 node_paths=PackedStringArray("main_menu", "game_scene", "level_scene", "preview_overlay", "popup_manager")]
-layer = 0
-script = ExtResource("17_vxa78")
-main_menu = NodePath("MainMenu")
-game_scene = NodePath("GameSceneUI")
-level_scene = NodePath("LevelScene")
-preview_overlay = NodePath("PreviewOverlay")
-popup_manager = NodePath("../CanvasLayer/PopupPanel")
+[node name="UIManager" parent="." unique_id=27950492 instance=ExtResource("18_vxa78")]
 
-[node name="MainMenu" parent="UIManager" unique_id=60258633 instance=ExtResource("18_vxa78")]
-visible = false
-mouse_filter = 2
+[node name="TutorialPopUp" parent="UIManager/PopUpManager" parent_id_path=PackedInt32Array(27950492, 1277735982) index="0" unique_id=1821078524 node_paths=PackedStringArray("grid_area")]
+grid_area = NodePath("../../Panel/GameSceneUI/GridArea")
 
-[node name="GameSceneUI" parent="UIManager" unique_id=1981980151 instance=ExtResource("12_gow0r")]
-visible = false
-
-[node name="LevelScene" parent="UIManager" unique_id=723355462 instance=ExtResource("20_ntl8m")]
-visible = false
-mouse_filter = 2
-
-[node name="PreviewOverlay" parent="UIManager" unique_id=2099259832 instance=ExtResource("10_ox8ul")]
-visible = false
-mouse_filter = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1453976824]
-layer = 2
-
-[node name="PopupPanel" parent="CanvasLayer" unique_id=1120987855 instance=ExtResource("22_vxa78")]
-z_index = 3
-mouse_filter = 2
-
-[node name="TutorialLayer" type="CanvasLayer" parent="." unique_id=1451026294 node_paths=PackedStringArray("grid_area", "label", "hand", "spotlight")]
-script = ExtResource("24_27wwl")
-grid_area = NodePath("../UIManager/GameSceneUI/Control")
-label = NodePath("Label")
-hand = NodePath("TextureRect")
-spotlight = NodePath("Top")
-
-[node name="Top" type="ColorRect" parent="TutorialLayer" unique_id=790891520]
-visible = false
-material = SubResource("ShaderMaterial_3aw3s")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.1882353, 0.1882353, 0.1882353, 1)
-
-[node name="TextureRect" type="TextureRect" parent="TutorialLayer" unique_id=1513375294]
-z_index = 7
-offset_left = 189.00003
-offset_top = 664.0
-offset_right = 427.09518
-offset_bottom = 952.0952
-scale = Vector2(0.42, 0.42)
-mouse_filter = 2
-texture = ExtResource("26_5wx40")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="TutorialLayer" unique_id=1432342110]
-z_index = 2
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.45882353, 0.8156863, 1, 1)
-theme_override_font_sizes/font_size = 70
-text = "fgdgfdfgdgfdg"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[editable path="UIManager/GameSceneUI"]
+[editable path="UIManager"]
+[editable path="UIManager/Panel/GameSceneUI"]
+[editable path="UIManager/PopUpManager/TutorialPopUp"]

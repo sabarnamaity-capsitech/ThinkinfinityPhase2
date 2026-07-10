@@ -106,7 +106,7 @@ func load_level(level_number: int) -> void:
 
 	print("Grid Ready:", rows, "x", cols, " Cell:", disp_tile)
 	
-	UiManager.instance.show_screen(UiManager.Screen_Type.GAME)
+	UiManager.instance. switch_screen(ScreenType.Screen.GAME_HUD)
 		
 	_callAfterFullLoad1()
 
@@ -308,7 +308,7 @@ func _layout_and_spawn_sprites() -> void:
 
 
 func _callAfterFullLoad1() -> void:
-	UiManager.instance.show_screen(UiManager.Screen_Type.GAME)
+	UiManager.instance. switch_screen(ScreenType.Screen.GAME_HUD)
 
 	timer_started = false
 
@@ -374,7 +374,7 @@ func  move_tile(tile: TileRenderer) -> void:
 
 
 func _callAfterFullLoad() -> void:
-	UiManager.instance.show_screen(UiManager.Screen_Type.GAME)
+	UiManager.instance. switch_screen(ScreenType.Screen.GAME_HUD)
 	# _animate_grid_wave()
 	start_level_timer()
 	_animate_grid_wave()
@@ -691,11 +691,11 @@ func update_timer(delta: float) -> void:
 		Analytics.level_failed(level_index)
 		SoundManager.stop_timerPlay()
 		SoundManager.play_game_over()
-		UiManager.instance.show_popup(PopupManager.PopupType.LOSE)
+		UiManager.instance.show_popup(ScreenType.popup.LOSE_POPUP)
 
 
 func pause_game() -> void:
-	UiManager.instance.show_popup(PopupManager.PopupType.PAUSE)
+	UiManager.instance.show_popup(ScreenType.popup.PAUSE_POPUP)
 	timer_started = false
 
 
@@ -765,7 +765,7 @@ func _on_win_sequence_finished() -> void:
 		winConfetti1.emitting = true
 	if winConfetti2:
 		winConfetti2.emitting = true
-	UiManager.instance.show_popup(PopupManager.PopupType.WIN)
+	UiManager.instance.show_popup(ScreenType.popup.WIN_POPUP)
 	GameManager.instance.unlock_level(GameManager.instance.current_level + 1)
 	GameManager.instance.save_data()
 

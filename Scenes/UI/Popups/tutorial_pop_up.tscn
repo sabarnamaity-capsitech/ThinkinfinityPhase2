@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://c5pqxd56kymtw"]
+
+[ext_resource type="Script" uid="uid://cp3rftmv10pnd" path="res://Scripts/Main/TutorialManager.gd" id="1_2dsup"]
+[ext_resource type="Shader" uid="uid://bnq2pb3m2evnp" path="res://SpotLight/new_shader_material.gdshader" id="1_4vtcf"]
+[ext_resource type="Texture2D" uid="uid://cvspghqco380k" path="res://elvira-handsprite-removebg-preview.png" id="2_2dsup"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3aw3s"]
+shader = ExtResource("1_4vtcf")
+shader_parameter/hole1 = Vector2(-1000, -1000)
+shader_parameter/radius1 = 70.0
+shader_parameter/hole2 = Vector2(-1000, -1000)
+shader_parameter/radius2 = 70.0
+shader_parameter/overlay_color = Color(0, 0, 0, 0.75)
+shader_parameter/softness = 10.0
+shader_parameter/viewport_size = Vector2(1080, 1920)
+
+[node name="TutorialPopUp" type="Control" unique_id=1821078524 node_paths=PackedStringArray("label", "hand", "spotlight")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2dsup")
+label = NodePath("Label")
+hand = NodePath("TextureRect")
+spotlight = NodePath("Top")
+
+[node name="Top" type="ColorRect" parent="." unique_id=711702836]
+visible = false
+material = SubResource("ShaderMaterial_3aw3s")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=925157970]
+visible = false
+z_index = 7
+layout_mode = 0
+offset_left = 189.00003
+offset_top = 664.0
+offset_right = 427.09518
+offset_bottom = 952.0952
+scale = Vector2(0.42, 0.42)
+mouse_filter = 2
+texture = ExtResource("2_2dsup")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=674554066]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.45882353, 0.8156863, 1, 1)
+theme_override_font_sizes/font_size = 70
+text = "fgdgfdfgdgfdg"
+horizontal_alignment = 1
+vertical_alignment = 1
